@@ -1,0 +1,6 @@
+# Ignore Data Files (Too large for GitHub)
+*.csv
+*.parquet
+*.pkl
+data/
+dataset/
