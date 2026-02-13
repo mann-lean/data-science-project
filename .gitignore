@@ -1,0 +1,11 @@
+# Ignore ALL virtual environments in any subfolder
+venv/
+env/
+.env
+
+# Ignore Python compiled files
+__pycache__/
+*.pyc
+
+# Ignore VS Code settings
+.vscode/
