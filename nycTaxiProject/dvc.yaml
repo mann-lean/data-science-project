@@ -8,3 +8,12 @@ stages:
       - artifacts/data_ingestion/data.csv
 
 
+stages:
+  data_validation:
+  cmd: python src/ nycTaxiProject.pipeline.stage_02_data_validation.py
+  deps:
+    - src/ nycTaxiProject.pipeline.stage_02_data_validation.py
+    - artifacts/data_ingestion/data.csv
+    - config/config.yaml
+  outs:
+    - artifacts/data_validation/status.txt
