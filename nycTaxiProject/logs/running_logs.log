@@ -1,0 +1,256 @@
+[2026-02-18 12:32:23,133 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-18 12:32:23,196 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-18 15:42:54,576 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-18 15:42:56,209 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-18 15:42:56,571 : INFO : common : created directory at: artifacts]
+[2026-02-18 15:47:10,358 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-18 15:47:10,365 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-18 15:47:10,370 : INFO : common : created directory at: artifacts]
+[2026-02-18 15:47:10,376 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-02-18 15:47:24,960 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-18 15:47:24,968 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-18 15:47:24,971 : INFO : common : created directory at: artifacts]
+[2026-02-18 15:47:24,978 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-02-18 15:50:56,408 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-18 15:50:56,416 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-18 15:50:56,420 : INFO : common : created directory at: artifacts]
+[2026-02-18 15:50:56,426 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-02-18 15:54:20,435 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-18 15:54:20,443 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-18 15:54:20,447 : INFO : common : created directory at: artifacts]
+[2026-02-18 15:54:20,453 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-02-18 15:55:44,883 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-18 15:55:44,890 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-18 15:55:44,894 : INFO : common : created directory at: artifacts]
+[2026-02-18 15:55:44,899 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-02-18 15:55:44,903 : INFO : 316800895 : downloading the file formhttps://www.kaggle.com/api/v1/datasets/download/mann210cool/taxidata into file artifacts/data_ingestion/data.zip]
+[2026-02-18 15:58:21,172 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-18 15:58:21,180 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-18 15:58:21,184 : INFO : common : created directory at: artifacts]
+[2026-02-18 15:58:21,189 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-02-18 15:58:21,195 : INFO : 2896126325 : downloading the file formhttps://www.kaggle.com/api/v1/datasets/download/mann210cool/taxidata into file artifacts/data_ingestion/data.zip]
+[2026-02-18 16:02:39,945 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-18 16:02:39,952 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-18 16:02:39,957 : INFO : common : created directory at: artifacts]
+[2026-02-18 16:02:39,962 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-02-18 16:02:39,967 : INFO : 2896126325 : downloading the file formhttps://www.kaggle.com/api/v1/datasets/download/mann210cool/taxidata into file artifacts/data_ingestion/data.zip]
+[2026-02-18 16:02:56,879 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-18 16:02:56,885 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-18 16:02:56,889 : INFO : common : created directory at: artifacts]
+[2026-02-18 16:02:56,893 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-02-18 16:02:56,898 : INFO : 2896126325 : downloading the file formmann210cool/taxidata into file artifacts/data_ingestion/data.zip]
+[2026-02-18 16:08:26,064 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-18 16:08:26,071 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-18 16:08:26,123 : INFO : common : created directory at: artifacts]
+[2026-02-18 16:08:26,128 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-02-18 16:08:26,136 : INFO : 59249277 : downloading the file formmann210cool/taxidata into file artifacts/data_ingestion/data.zip]
+[2026-02-18 16:11:47,286 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-18 16:11:47,293 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-18 16:11:47,297 : INFO : common : created directory at: artifacts]
+[2026-02-18 16:11:47,303 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-02-18 16:11:47,307 : INFO : 59249277 : downloading the file formmann210cool/taxidata into file artifacts/data_ingestion/data.zip]
+[2026-02-18 16:13:51,192 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-18 16:13:51,199 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-18 16:13:51,203 : INFO : common : created directory at: artifacts]
+[2026-02-18 16:13:51,209 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-02-18 16:13:51,213 : INFO : 1305716206 : downloading the file formmann210cool/taxidata into file artifacts/data_ingestion/data.zip]
+[2026-02-18 16:13:52,693 : INFO : 1305716206 : File downloaded successfully & saved @ artifacts/data_ingestion/data.zip with size ~ 0KB]
+[2026-02-18 16:15:52,540 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-18 16:15:52,549 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-18 16:15:52,553 : INFO : common : created directory at: artifacts]
+[2026-02-18 16:15:52,577 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-02-18 16:15:52,582 : INFO : 1305716206 : downloading the file formmann210cool/taxidata into file artifacts/data_ingestion/data.zip]
+[2026-02-18 16:16:39,226 : INFO : 1305716206 : File downloaded successfully & saved @ artifacts/data_ingestion/data.zip with size ~ 0KB]
+[2026-02-18 17:19:27,464 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-18 17:19:27,476 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-18 17:19:27,483 : INFO : common : created directory at: artifacts]
+[2026-02-18 17:19:27,502 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-02-18 17:19:27,509 : INFO : 1790210910 : downloading the file formhttps://data.cityofnewyork.us/resource/4b4i-vvec.csv?$limit=500000 into file artifacts/data_ingestion/data.zip]
+[2026-02-18 17:23:23,483 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-18 17:23:23,490 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-18 17:23:23,494 : INFO : common : created directory at: artifacts]
+[2026-02-18 17:23:23,499 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-02-18 17:23:23,504 : INFO : 1790210910 : downloading the file formhttps://data.cityofnewyork.us/resource/4b4i-vvec.csv?$limit=500000 into file artifacts/data_ingestion/data.zip]
+[2026-02-18 17:30:04,626 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-18 17:30:04,634 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-18 17:30:04,641 : INFO : common : created directory at: artifacts]
+[2026-02-18 17:30:04,645 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-02-18 17:30:04,650 : INFO : 1790210910 : downloading the file formhttps://data.cityofnewyork.us/resource/4b4i-vvec.csv?$limit=500000 into file artifacts/data_ingestion/data.csv]
+[2026-02-18 17:44:59,968 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-18 17:44:59,975 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-18 17:44:59,979 : INFO : common : created directory at: artifacts]
+[2026-02-18 17:44:59,984 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-02-18 17:44:59,988 : INFO : 1790210910 : downloading the file formhttps://data.cityofnewyork.us/resource/4b4i-vvec.csv?$limit=500000 into file artifacts/data_ingestion/data.csv]
+[2026-02-18 17:49:45,417 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-18 17:49:45,424 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-18 17:49:45,428 : INFO : common : created directory at: artifacts]
+[2026-02-18 17:49:45,432 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-02-18 17:49:45,438 : INFO : 1759005053 : downloading the file formhttps://data.cityofnewyork.us/resource/4b4i-vvec.csv?$limit=500000 into file artifacts/data_ingestion/data.csv]
+[2026-02-18 17:50:26,378 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-18 17:50:26,384 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-18 17:50:26,389 : INFO : common : created directory at: artifacts]
+[2026-02-18 17:50:26,393 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-02-18 17:50:26,397 : INFO : 1759005053 : downloading the file formhttps://data.cityofnewyork.us/resource/4b4i-vvec.csv?$limit=500000 into file artifacts/data_ingestion/data.csv]
+[2026-02-18 17:51:15,282 : INFO : 1759005053 : File downloaded successfully & saved @ artifacts/data_ingestion/data.csv with size ~ 73880KB]
+[2026-02-18 17:52:17,787 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-18 17:52:17,793 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-18 17:52:17,797 : INFO : common : created directory at: artifacts]
+[2026-02-18 17:52:17,802 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-02-18 17:52:17,806 : INFO : 1759005053 : downloading the file formhttps://data.cityofnewyork.us/resource/4b4i-vvec.csv?$limit=500000 into file artifacts/data_ingestion/data.csv]
+[2026-02-18 17:53:53,520 : INFO : 1759005053 : File downloaded successfully & saved @ artifacts/data_ingestion/data.csv with size ~ 73880KB]
+[2026-02-20 12:32:22,555 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-20 12:32:22,594 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-20 12:32:22,606 : INFO : common : created directory at: artifacts]
+[2026-02-20 12:32:22,612 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-02-20 12:34:57,200 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-20 12:34:57,207 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-20 12:34:57,212 : INFO : common : created directory at: artifacts]
+[2026-02-20 12:34:57,217 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-02-20 12:34:57,221 : INFO : 2861034408 : downloading the file formmann210cool/taxidata into file artifacts/data_ingestion/data.csv]
+[2026-02-20 12:35:41,019 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-20 12:35:41,027 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-20 12:35:41,032 : INFO : common : created directory at: artifacts]
+[2026-02-20 12:35:41,035 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-02-20 12:35:41,039 : INFO : 3293157518 : downloading the file formmann210cool/taxidata into file artifacts/data_ingestion/data.csv]
+[2026-02-20 12:38:32,094 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-20 12:38:32,100 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-20 12:38:32,104 : INFO : common : created directory at: artifacts]
+[2026-02-20 12:38:32,110 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-02-20 12:38:32,114 : INFO : 3286638895 : downloading the file formmann210cool/taxidata into file artifacts/data_ingestion/data.csv]
+[2026-02-20 12:40:20,364 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-20 12:40:20,370 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-20 12:40:20,374 : INFO : common : created directory at: artifacts]
+[2026-02-20 12:40:20,440 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-02-20 12:40:20,448 : INFO : 2130523971 : downloading the file formmann210cool/taxidata into file artifacts/data_ingestion/data.csv]
+[2026-02-20 12:41:42,831 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-20 12:41:42,840 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-20 12:41:42,845 : INFO : common : created directory at: artifacts]
+[2026-02-20 12:41:42,849 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-02-20 12:41:42,854 : INFO : 3293157518 : downloading the file formmann210cool/taxidata into file artifacts/data_ingestion/data.csv]
+[2026-02-20 12:43:16,258 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-20 12:43:16,264 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-20 12:43:16,269 : INFO : common : created directory at: artifacts]
+[2026-02-20 12:43:16,274 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-02-20 12:43:16,279 : INFO : 3293157518 : downloading the file formmann210cool/taxidata into file artifacts/data_ingestion]
+[2026-02-20 12:43:41,219 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-20 12:43:41,226 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-20 12:43:41,230 : INFO : common : created directory at: artifacts]
+[2026-02-20 12:43:41,236 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-02-20 12:43:41,239 : INFO : 1430238311 : downloading the file formmann210cool/taxidata into file artifacts/data_ingestion]
+[2026-02-20 12:44:19,028 : INFO : 1430238311 : File downloaded successfully & saved @ artifacts/data_ingestion with size ~ 0KB]
+[2026-02-21 21:24:39,153 : INFO : 1902920671 : >>> Stage: Data Validation Started <<<]
+[2026-02-21 21:24:39,186 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-21 21:24:39,239 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-21 21:24:39,256 : ERROR : 1902920671 : Argument path_to_directories of type <class 'str'> to <function create_directories at 0x0000020A1AC068E0> does not match annotation type <class 'list'>]
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_2884\1902920671.py", line 3, in <module>
+    config = ConfigurationManager()
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\config\configuration.py", line 17, in __init__
+    create_directories(self.config.artifacts_root)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\ensure\main.py", line 833, in __call__
+    raise EnsureError(msg.format(arg=arg, f=self.f, t=templ, valt=type(value)))
+ensure.main.EnsureError: Argument path_to_directories of type <class 'str'> to <function create_directories at 0x0000020A1AC068E0> does not match annotation type <class 'list'>
+[2026-02-21 21:41:41,084 : INFO : 1902920671 : >>> Stage: Data Validation Started <<<]
+[2026-02-21 21:41:41,094 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-21 21:41:41,101 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-21 21:41:41,413 : INFO : common : yaml file: schema.yaml LOADED successfully]
+[2026-02-21 21:41:41,422 : INFO : common : created directory at: artifacts]
+[2026-02-21 21:41:41,439 : ERROR : 1902920671 : "'ConfigBox' object has no attribute 'root_dir'"]
+Traceback (most recent call last):
+  File "box\\box.py", line 594, in box.box.Box.__getitem__
+KeyError: 'root_dir'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 633, in box.box.Box.__getattr__
+  File "box\\box.py", line 621, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'root_dir'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 635, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'root_dir'. Did you mean: 'root_dirt'?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\config_box.py", line 29, in box.config_box.ConfigBox.__getattr__
+  File "box\\box.py", line 649, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'root_dir'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 594, in box.box.Box.__getitem__
+KeyError: 'root_dir'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 633, in box.box.Box.__getattr__
+  File "box\\box.py", line 621, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'root_dir'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 635, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'root_dir'. Did you mean: 'root_dirt'?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_2884\1902920671.py", line 4, in <module>
+    data_validation_config = config.get_data_validation_config()
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_2884\631922285.py", line 17, in get_data_validation_config
+    create_directories([config.root_dir])
+                        ^^^^^^^^^^^^^^^
+  File "box\\config_box.py", line 31, in box.config_box.ConfigBox.__getattr__
+  File "box\\box.py", line 649, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'root_dir'". Did you mean: 'root_dirt'?
+[2026-02-21 21:45:05,756 : INFO : 1902920671 : >>> Stage: Data Validation Started <<<]
+[2026-02-21 21:45:05,769 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-21 21:45:05,776 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-21 21:45:05,791 : INFO : common : yaml file: schema.yaml LOADED successfully]
+[2026-02-21 21:45:05,796 : INFO : common : created directory at: artifacts]
+[2026-02-21 21:45:05,828 : INFO : common : created directory at: artifacts/data_validation]
+[2026-02-21 21:45:05,833 : ERROR : 1902920671 : name 'DataValidation' is not defined]
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_2884\1902920671.py", line 5, in <module>
+    data_validation = DataValidation(config=data_validation_config)
+                      ^^^^^^^^^^^^^^
+NameError: name 'DataValidation' is not defined. Did you mean: 'Data_Validation'?
+[2026-02-21 21:46:40,143 : INFO : 2829047601 : >>> Stage: Data Validation Started <<<]
+[2026-02-21 21:46:40,156 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-21 21:46:40,163 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-21 21:46:40,177 : INFO : common : yaml file: schema.yaml LOADED successfully]
+[2026-02-21 21:46:40,182 : INFO : common : created directory at: artifacts]
+[2026-02-21 21:46:40,188 : INFO : common : created directory at: artifacts/data_validation]
+[2026-02-21 21:46:40,190 : ERROR : 2829047601 : 'Data_Validation' object has no attribute 'validate_all_columns']
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_2884\2829047601.py", line 6, in <module>
+    data_validation.validate_all_columns()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Data_Validation' object has no attribute 'validate_all_columns'. Did you mean: 'validation_all_columns'?
+[2026-02-21 21:47:00,440 : INFO : 3788650901 : >>> Stage: Data Validation Started <<<]
+[2026-02-21 21:47:00,449 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-21 21:47:00,456 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-21 21:47:00,476 : INFO : common : yaml file: schema.yaml LOADED successfully]
+[2026-02-21 21:47:00,481 : INFO : common : created directory at: artifacts]
+[2026-02-21 21:47:00,489 : INFO : common : created directory at: artifacts/data_validation]
+[2026-02-21 21:47:06,140 : INFO : 3788650901 : >>> Stage: Data Validation Completed! <<<]
+[2026-02-21 21:59:35,578 : INFO : main : >>>>>>Stage DATA INGESTION STAGE started <<<<<<<]
+[2026-02-21 21:59:35,629 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-21 21:59:35,633 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-21 21:59:35,635 : INFO : common : created directory at: artifacts]
+[2026-02-21 21:59:35,636 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-02-21 21:59:35,637 : INFO : data_ingestion : downloading the file formmann210cool/taxidata into file artifacts/data_ingestion/data.csv]
+[2026-02-21 23:06:31,706 : INFO : main : >>>>>>Stage DATA INGESTION STAGE started <<<<<<<]
+[2026-02-21 23:06:31,741 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-21 23:06:31,748 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-21 23:06:31,752 : INFO : common : created directory at: artifacts]
+[2026-02-21 23:06:31,758 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-02-21 23:06:31,760 : INFO : data_ingestion : downloading the file formmann210cool/taxidata into file artifacts/data_ingestion/data.csv]

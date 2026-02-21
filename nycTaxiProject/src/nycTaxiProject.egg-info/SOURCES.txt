@@ -1,0 +1,7 @@
+README.md
+setup.py
+src/nycTaxiProject.egg-info/PKG-INFO
+src/nycTaxiProject.egg-info/SOURCES.txt
+src/nycTaxiProject.egg-info/dependency_links.txt
+src/nycTaxiProject.egg-info/requires.txt
+src/nycTaxiProject.egg-info/top_level.txt

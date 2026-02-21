@@ -1,0 +1,25 @@
+# It's a simple text file that explicitly list every single column your ML model expects to see,along with exact data type that column must be.
+# Cause in PIPELINE ,everything is on automated model, there is no use of human readable code(df.head(), df.info()) 
+COLUMNS:
+  vendorid: int64  
+  tpep_pickup_datetime: str    
+  tpep_dropoff_datetime: str    
+  passenger_count: float64
+  trip_distance: float64
+  ratecodeid: float64
+  store_and_fwd_flag: str    
+  pulocationid: int64  
+  dolocationid: int64  
+  payment_type: int64  
+  fare_amount: float64
+  extra: float64
+  mta_tax: float64
+  tolls_amoun: float64
+  improvement_surcharge: float64
+  total_amount: float64
+  congestion_surcharge: float64
+  airport_fee: float64
+
+TARGET_COLUMN:
+  name: tip_amount
+

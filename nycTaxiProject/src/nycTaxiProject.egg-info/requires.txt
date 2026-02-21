@@ -1,12 +1,11 @@
 pandas
-numpy 
+numpy
 scikit-learn
 seaborn
 matplotlib
 xgboost
 lightgbm
 Flask
--e .
 Flask-Cors
 dagshub
 pyYAML
