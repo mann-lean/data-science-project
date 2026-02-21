@@ -11,9 +11,9 @@ __pycache__/
 .vscode/
 
 # ignore csv ,png & txt files
-.csv
-.txt
-.png
+*.csv
+*.txt
+*.png
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
