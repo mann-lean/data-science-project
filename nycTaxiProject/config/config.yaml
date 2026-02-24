@@ -24,3 +24,9 @@ data_transformation:
   before_encoding: "artifacts/data_transformation/before_encoding"
   train_before: "artifacts/data_transformation/before_encoding/x_train_bEncode.csv"
   test_before: "artifacts/data_transformation/before_encoding/x_test_bEncode.csv"
+
+model_training:
+  root_dir: "artifacts/model_training"
+  xtraining_data: "artifacts/data_transformation/train/x_train.csv"
+  ytraining_data: "artifacts/data_transformation/train/y_train.csv"
+  model_dir: "artifacts/model_training/sgdModel.pkl"

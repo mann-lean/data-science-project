@@ -1,1 +1,9 @@
-key : value #for avoidinig the error of empty file. This file is used for storing parameters related to the project.
+# key : value #for avoidinig the error of empty file. This file is used for storing parameters related to the project.
+loss: "squared_error"
+penalty: "l2"
+alpha: 0.0001
+max_iter: 1000
+tol: 0.001
+random_state: 42
+learning_rate: "adaptive"
+eta0: 0.01

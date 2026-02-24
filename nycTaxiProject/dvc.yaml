@@ -21,9 +21,9 @@ stages:
 
 stages:
   data_transformation:
-  cmd: python src\nycTaxiProject\pipeline\stage_03_data_transformation.py
+  cmd: python src/nycTaxiProject/pipeline/stage_03_data_transformation.py
   deps:
-    - src\nycTaxiProject\pipeline\stage_03_data_transformation.py
+    - src/nycTaxiProject/pipeline/stage_03_data_transformation.py
     - artifacts/data_ingestion/data.csv
     - config/config.yaml
   outs:
@@ -33,3 +33,14 @@ stages:
     - artifacts/data_transformation/test/y_test.csv
     - artifacts/data_transformation/before_encoding/x_train_bEncode.csv
     - artifacts/data_transformation/before_encoding/x_test_bEncode.csv
+
+stages:
+  model_training:
+  cmd: python src/nycTaxiProject/pipeline/stage_04_model_training.py
+  deps:
+    - src/nycTaxiProject/pipeline/stage_04_model_training.py
+    - artifacts/data_transformation/train/x_train.csv
+    - artifacts/data_transformation/train/y_train.csv
+    - config/config.yaml
+  outs:
+    - artifacts/model_training/sgdModel.pkl

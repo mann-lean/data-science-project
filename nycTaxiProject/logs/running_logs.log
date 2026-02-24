@@ -1070,3 +1070,569 @@ FileNotFoundError: [Errno 2] No such file or directory: 'config\\config.yaml'
 [2026-02-24 16:36:24,563 : INFO : data_transformation : Before Encoding data saved at artifacts/data_transformation/before_encoding successfully...]
 [2026-02-24 16:37:12,021 : INFO : data_transformation : Trasnfomred data saved at artifacts/data_transformation successfully...]
 [2026-02-24 16:37:12,057 : INFO : stage_03_data_transformation : >>>>>>>STAGE: DATA TRANSFORMATION ENDED<<<<<<<<< ]
+[2026-02-24 18:11:36,804 : INFO : 3416358301 : >>>>>>>STAGE: MODEL TRAINING STARTED<<<<<<<<< ]
+[2026-02-24 18:11:36,838 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-24 18:11:36,860 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-24 18:11:36,866 : INFO : common : created directory at: artifacts/model_training]
+[2026-02-24 18:11:36,869 : ERROR : 3416358301 : ModelTrainingConfig.__init__() got an unexpected keyword argument 'loss']
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3416358301.py", line 4, in <module>
+    data_transformed_config=config.get_model_training_config()
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\559693603.py", line 13, in get_model_training_config
+    model_training_config=ModelTrainingConfig(
+        root_dir=config.root_dir,
+    ...<11 lines>...
+    
+    )
+TypeError: ModelTrainingConfig.__init__() got an unexpected keyword argument 'loss'
+[2026-02-24 18:16:24,170 : INFO : 3416358301 : >>>>>>>STAGE: MODEL TRAINING STARTED<<<<<<<<< ]
+[2026-02-24 18:16:24,191 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-24 18:16:24,202 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-24 18:16:24,208 : INFO : common : created directory at: artifacts/model_training]
+[2026-02-24 18:16:24,214 : ERROR : 3071898327 : The 'loss' parameter of SGDRegressor must be a str among {'squared_error', 'epsilon_insensitive', 'squared_epsilon_insensitive', 'huber'}. Got 'squared_loss' instead.]
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3071898327.py", line 31, in train_model
+    model=sgd_model(param_kwargs,x_train,y_train)
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3071898327.py", line 24, in sgd_model
+    model.fit(x_train,y_train)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\base.py", line 1329, in wrapper
+    estimator._validate_params()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\base.py", line 492, in _validate_params
+    validate_parameter_constraints(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self._parameter_constraints,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.get_params(deep=False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        caller_name=self.__class__.__name__,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+    ...<2 lines>...
+    )
+sklearn.utils._param_validation.InvalidParameterError: The 'loss' parameter of SGDRegressor must be a str among {'squared_error', 'epsilon_insensitive', 'squared_epsilon_insensitive', 'huber'}. Got 'squared_loss' instead.
+[2026-02-24 18:16:27,220 : ERROR : 3416358301 : The 'loss' parameter of SGDRegressor must be a str among {'squared_error', 'epsilon_insensitive', 'squared_epsilon_insensitive', 'huber'}. Got 'squared_loss' instead.]
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3416358301.py", line 6, in <module>
+    model_trainer.train_model()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3071898327.py", line 36, in train_model
+    raise e
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3071898327.py", line 31, in train_model
+    model=sgd_model(param_kwargs,x_train,y_train)
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3071898327.py", line 24, in sgd_model
+    model.fit(x_train,y_train)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\base.py", line 1329, in wrapper
+    estimator._validate_params()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\base.py", line 492, in _validate_params
+    validate_parameter_constraints(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self._parameter_constraints,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.get_params(deep=False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        caller_name=self.__class__.__name__,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+    ...<2 lines>...
+    )
+sklearn.utils._param_validation.InvalidParameterError: The 'loss' parameter of SGDRegressor must be a str among {'squared_error', 'epsilon_insensitive', 'squared_epsilon_insensitive', 'huber'}. Got 'squared_loss' instead.
+[2026-02-24 18:18:20,580 : INFO : 3416358301 : >>>>>>>STAGE: MODEL TRAINING STARTED<<<<<<<<< ]
+[2026-02-24 18:18:20,603 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-24 18:18:20,621 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-24 18:18:20,628 : INFO : common : created directory at: artifacts/model_training]
+[2026-02-24 18:18:20,632 : ERROR : 3071898327 : The 'tol' parameter of SGDRegressor must be a float in the range [0.0, inf) or None. Got '1e-3' instead.]
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3071898327.py", line 31, in train_model
+    model=sgd_model(param_kwargs,x_train,y_train)
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3071898327.py", line 24, in sgd_model
+    model.fit(x_train,y_train)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\base.py", line 1329, in wrapper
+    estimator._validate_params()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\base.py", line 492, in _validate_params
+    validate_parameter_constraints(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self._parameter_constraints,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.get_params(deep=False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        caller_name=self.__class__.__name__,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+    ...<2 lines>...
+    )
+sklearn.utils._param_validation.InvalidParameterError: The 'tol' parameter of SGDRegressor must be a float in the range [0.0, inf) or None. Got '1e-3' instead.
+[2026-02-24 18:18:20,648 : ERROR : 3416358301 : The 'tol' parameter of SGDRegressor must be a float in the range [0.0, inf) or None. Got '1e-3' instead.]
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3416358301.py", line 6, in <module>
+    model_trainer.train_model()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3071898327.py", line 36, in train_model
+    raise e
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3071898327.py", line 31, in train_model
+    model=sgd_model(param_kwargs,x_train,y_train)
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3071898327.py", line 24, in sgd_model
+    model.fit(x_train,y_train)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\base.py", line 1329, in wrapper
+    estimator._validate_params()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\base.py", line 492, in _validate_params
+    validate_parameter_constraints(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self._parameter_constraints,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.get_params(deep=False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        caller_name=self.__class__.__name__,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+    ...<2 lines>...
+    )
+sklearn.utils._param_validation.InvalidParameterError: The 'tol' parameter of SGDRegressor must be a float in the range [0.0, inf) or None. Got '1e-3' instead.
+[2026-02-24 18:20:48,975 : INFO : 3416358301 : >>>>>>>STAGE: MODEL TRAINING STARTED<<<<<<<<< ]
+[2026-02-24 18:20:48,998 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-24 18:20:49,068 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-24 18:20:49,073 : INFO : common : created directory at: artifacts/model_training]
+[2026-02-24 18:20:49,085 : ERROR : 3071898327 : could not convert string to float: 'artifacts/data_transformation/train/x_train.csv']
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3071898327.py", line 31, in train_model
+    model=sgd_model(param_kwargs,x_train,y_train)
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3071898327.py", line 24, in sgd_model
+    model.fit(x_train,y_train)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\linear_model\_stochastic_gradient.py", line 1659, in fit
+    return self._fit(
+           ~~~~~~~~~^
+        X,
+        ^^
+    ...<6 lines>...
+        sample_weight=sample_weight,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\linear_model\_stochastic_gradient.py", line 1595, in _fit
+    self._partial_fit(
+    ~~~~~~~~~~~~~~~~~^
+        X,
+        ^^
+    ...<7 lines>...
+        intercept_init,
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\linear_model\_stochastic_gradient.py", line 1497, in _partial_fit
+    X, y = validate_data(
+           ~~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<7 lines>...
+        reset=first_call,
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\utils\validation.py", line 2919, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\utils\validation.py", line 1314, in check_X_y
+    X = check_array(
+        X,
+    ...<12 lines>...
+        input_name="X",
+    )
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\utils\validation.py", line 1022, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\utils\_array_api.py", line 878, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+ValueError: could not convert string to float: 'artifacts/data_transformation/train/x_train.csv'
+[2026-02-24 18:20:49,410 : ERROR : 3416358301 : could not convert string to float: 'artifacts/data_transformation/train/x_train.csv']
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3416358301.py", line 6, in <module>
+    model_trainer.train_model()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3071898327.py", line 36, in train_model
+    raise e
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3071898327.py", line 31, in train_model
+    model=sgd_model(param_kwargs,x_train,y_train)
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3071898327.py", line 24, in sgd_model
+    model.fit(x_train,y_train)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\linear_model\_stochastic_gradient.py", line 1659, in fit
+    return self._fit(
+           ~~~~~~~~~^
+        X,
+        ^^
+    ...<6 lines>...
+        sample_weight=sample_weight,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\linear_model\_stochastic_gradient.py", line 1595, in _fit
+    self._partial_fit(
+    ~~~~~~~~~~~~~~~~~^
+        X,
+        ^^
+    ...<7 lines>...
+        intercept_init,
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\linear_model\_stochastic_gradient.py", line 1497, in _partial_fit
+    X, y = validate_data(
+           ~~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<7 lines>...
+        reset=first_call,
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\utils\validation.py", line 2919, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\utils\validation.py", line 1314, in check_X_y
+    X = check_array(
+        X,
+    ...<12 lines>...
+        input_name="X",
+    )
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\utils\validation.py", line 1022, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\utils\_array_api.py", line 878, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+ValueError: could not convert string to float: 'artifacts/data_transformation/train/x_train.csv'
+[2026-02-24 18:24:05,288 : INFO : 3416358301 : >>>>>>>STAGE: MODEL TRAINING STARTED<<<<<<<<< ]
+[2026-02-24 18:24:05,306 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-24 18:24:05,316 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-24 18:24:05,321 : INFO : common : created directory at: artifacts/model_training]
+[2026-02-24 18:28:38,520 : ERROR : 3452888507 : maximum recursion depth exceeded while calling a Python object]
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3452888507.py", line 32, in train_model
+    save_model(model=model,model_dir=model_dir)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3452888507.py", line 29, in save_model
+    save_model(model=model,model_dir=model_dir)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3452888507.py", line 29, in save_model
+    save_model(model=model,model_dir=model_dir)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3452888507.py", line 29, in save_model
+    save_model(model=model,model_dir=model_dir)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [Previous line repeated 992 more times]
+RecursionError: maximum recursion depth exceeded while calling a Python object
+[2026-02-24 18:28:39,040 : ERROR : 3416358301 : maximum recursion depth exceeded while calling a Python object]
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3416358301.py", line 6, in <module>
+    model_trainer.train_model()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3452888507.py", line 36, in train_model
+    raise e
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3452888507.py", line 32, in train_model
+    save_model(model=model,model_dir=model_dir)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3452888507.py", line 29, in save_model
+    save_model(model=model,model_dir=model_dir)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3452888507.py", line 29, in save_model
+    save_model(model=model,model_dir=model_dir)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3452888507.py", line 29, in save_model
+    save_model(model=model,model_dir=model_dir)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [Previous line repeated 992 more times]
+RecursionError: maximum recursion depth exceeded while calling a Python object
+[2026-02-24 18:35:33,736 : INFO : 3416358301 : >>>>>>>STAGE: MODEL TRAINING STARTED<<<<<<<<< ]
+[2026-02-24 18:35:33,753 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-24 18:35:33,765 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-24 18:35:33,770 : INFO : common : created directory at: artifacts/model_training]
+[2026-02-24 18:39:48,083 : ERROR : 382285495 : typing.Any cannot be used with isinstance()]
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\382285495.py", line 32, in train_model
+    save_trained_model(model=model,model_dir=model_dir)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\382285495.py", line 29, in save_trained_model
+    save_model(model=model,model_dir=model_dir)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\ensure\main.py", line 868, in __call__
+    if not isinstance(value, templ):
+           ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\typing.py", line 589, in __instancecheck__
+    raise TypeError("typing.Any cannot be used with isinstance()")
+TypeError: typing.Any cannot be used with isinstance()
+[2026-02-24 18:39:48,796 : ERROR : 3416358301 : typing.Any cannot be used with isinstance()]
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3416358301.py", line 6, in <module>
+    model_trainer.train_model()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\382285495.py", line 36, in train_model
+    raise e
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\382285495.py", line 32, in train_model
+    save_trained_model(model=model,model_dir=model_dir)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\382285495.py", line 29, in save_trained_model
+    save_model(model=model,model_dir=model_dir)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\ensure\main.py", line 868, in __call__
+    if not isinstance(value, templ):
+           ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\typing.py", line 589, in __instancecheck__
+    raise TypeError("typing.Any cannot be used with isinstance()")
+TypeError: typing.Any cannot be used with isinstance()
+[2026-02-24 18:42:32,919 : INFO : 3416358301 : >>>>>>>STAGE: MODEL TRAINING STARTED<<<<<<<<< ]
+[2026-02-24 18:42:32,940 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-24 18:42:32,949 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-24 18:42:32,956 : INFO : common : created directory at: artifacts/model_training]
+[2026-02-24 18:47:38,376 : ERROR : 382285495 : typing.Any cannot be used with isinstance()]
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\382285495.py", line 32, in train_model
+    save_trained_model(model=model,model_dir=model_dir)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\382285495.py", line 29, in save_trained_model
+    save_model(model=model,model_dir=model_dir)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\ensure\main.py", line 868, in __call__
+    if not isinstance(value, templ):
+           ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\typing.py", line 589, in __instancecheck__
+    raise TypeError("typing.Any cannot be used with isinstance()")
+TypeError: typing.Any cannot be used with isinstance()
+[2026-02-24 18:47:38,385 : ERROR : 3416358301 : typing.Any cannot be used with isinstance()]
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3416358301.py", line 6, in <module>
+    model_trainer.train_model()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\382285495.py", line 36, in train_model
+    raise e
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\382285495.py", line 32, in train_model
+    save_trained_model(model=model,model_dir=model_dir)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\382285495.py", line 29, in save_trained_model
+    save_model(model=model,model_dir=model_dir)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\ensure\main.py", line 868, in __call__
+    if not isinstance(value, templ):
+           ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\typing.py", line 589, in __instancecheck__
+    raise TypeError("typing.Any cannot be used with isinstance()")
+TypeError: typing.Any cannot be used with isinstance()
+[2026-02-24 18:49:38,191 : INFO : 3416358301 : >>>>>>>STAGE: MODEL TRAINING STARTED<<<<<<<<< ]
+[2026-02-24 18:49:38,215 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-24 18:49:38,227 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-24 18:49:38,234 : INFO : common : created directory at: artifacts/model_training]
+[2026-02-24 18:55:22,990 : INFO : 3416358301 : >>>>>>>STAGE: MODEL TRAINING STARTED<<<<<<<<< ]
+[2026-02-24 18:55:23,011 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-24 18:55:23,024 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-24 18:55:23,030 : INFO : common : created directory at: artifacts/model_training]
+[2026-02-24 19:00:23,636 : ERROR : 1122185472 : typing.Any cannot be used with isinstance()]
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\1122185472.py", line 32, in train_model
+    save_trained_model(model=model,model_dir=model_dir)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\1122185472.py", line 29, in save_trained_model
+    save_model(model=model,path=model_dir)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\ensure\main.py", line 868, in __call__
+    if not isinstance(value, templ):
+           ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\typing.py", line 589, in __instancecheck__
+    raise TypeError("typing.Any cannot be used with isinstance()")
+TypeError: typing.Any cannot be used with isinstance()
+[2026-02-24 19:00:23,643 : ERROR : 3416358301 : typing.Any cannot be used with isinstance()]
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3416358301.py", line 6, in <module>
+    model_trainer.train_model()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\1122185472.py", line 36, in train_model
+    raise e
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\1122185472.py", line 32, in train_model
+    save_trained_model(model=model,model_dir=model_dir)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\1122185472.py", line 29, in save_trained_model
+    save_model(model=model,path=model_dir)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\ensure\main.py", line 868, in __call__
+    if not isinstance(value, templ):
+           ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\typing.py", line 589, in __instancecheck__
+    raise TypeError("typing.Any cannot be used with isinstance()")
+TypeError: typing.Any cannot be used with isinstance()
+[2026-02-24 19:03:12,972 : INFO : 3416358301 : >>>>>>>STAGE: MODEL TRAINING STARTED<<<<<<<<< ]
+[2026-02-24 19:03:12,991 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-24 19:03:13,001 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-24 19:03:13,005 : INFO : common : created directory at: artifacts/model_training]
+[2026-02-24 19:08:06,853 : ERROR : 3396861305 : typing.Any cannot be used with isinstance()]
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3396861305.py", line 32, in train_model
+    save_trained_model(model=model,model_dir=model_dir)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3396861305.py", line 29, in save_trained_model
+    save_model(model=model,path=model_dir)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\ensure\main.py", line 868, in __call__
+    if not isinstance(value, templ):
+           ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\typing.py", line 589, in __instancecheck__
+    raise TypeError("typing.Any cannot be used with isinstance()")
+TypeError: typing.Any cannot be used with isinstance()
+[2026-02-24 19:08:06,860 : ERROR : 3416358301 : typing.Any cannot be used with isinstance()]
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3416358301.py", line 6, in <module>
+    model_trainer.train_model()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3396861305.py", line 36, in train_model
+    raise e
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3396861305.py", line 32, in train_model
+    save_trained_model(model=model,model_dir=model_dir)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_908\3396861305.py", line 29, in save_trained_model
+    save_model(model=model,path=model_dir)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\ensure\main.py", line 868, in __call__
+    if not isinstance(value, templ):
+           ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\typing.py", line 589, in __instancecheck__
+    raise TypeError("typing.Any cannot be used with isinstance()")
+TypeError: typing.Any cannot be used with isinstance()
+[2026-02-24 19:22:05,445 : INFO : 3416358301 : >>>>>>>STAGE: MODEL TRAINING STARTED<<<<<<<<< ]
+[2026-02-24 19:22:05,467 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-24 19:22:05,478 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-24 19:22:05,484 : INFO : common : created directory at: artifacts/model_training]
+[2026-02-24 19:26:22,870 : INFO : common : model saved at: artifacts\model_training\model.pkl and size of the model is: ~ 2KB]
+[2026-02-24 19:26:22,873 : ERROR : 3396861305 : isinstance() arg 2 must be a type, a tuple of types, or a union]
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_11480\3396861305.py", line 32, in train_model
+    save_trained_model(model=model,model_dir=model_dir)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_11480\3396861305.py", line 29, in save_trained_model
+    save_model(model=model,path=model_dir)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\ensure\main.py", line 873, in __call__
+    if not isinstance(return_val, self.return_templ):
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+[2026-02-24 19:26:22,897 : ERROR : 3416358301 : isinstance() arg 2 must be a type, a tuple of types, or a union]
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_11480\3416358301.py", line 6, in <module>
+    model_trainer.train_model()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_11480\3396861305.py", line 36, in train_model
+    raise e
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_11480\3396861305.py", line 32, in train_model
+    save_trained_model(model=model,model_dir=model_dir)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_11480\3396861305.py", line 29, in save_trained_model
+    save_model(model=model,path=model_dir)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\ensure\main.py", line 873, in __call__
+    if not isinstance(return_val, self.return_templ):
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+[2026-02-24 19:32:33,662 : INFO : 3416358301 : >>>>>>>STAGE: MODEL TRAINING STARTED<<<<<<<<< ]
+[2026-02-24 19:32:33,679 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-24 19:32:33,689 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-24 19:32:33,695 : INFO : common : created directory at: artifacts/model_training]
+[2026-02-24 19:36:47,976 : INFO : common : model saved at: artifacts\model_training\model.pkl and size of the model is: ~ 2KB]
+[2026-02-24 19:36:47,979 : ERROR : 3396861305 : isinstance() arg 2 must be a type, a tuple of types, or a union]
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_11480\3396861305.py", line 32, in train_model
+    save_trained_model(model=model,model_dir=model_dir)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_11480\3396861305.py", line 29, in save_trained_model
+    save_model(model=model,path=model_dir)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\ensure\main.py", line 873, in __call__
+    if not isinstance(return_val, self.return_templ):
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+[2026-02-24 19:36:47,987 : ERROR : 3416358301 : isinstance() arg 2 must be a type, a tuple of types, or a union]
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_11480\3416358301.py", line 6, in <module>
+    model_trainer.train_model()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_11480\3396861305.py", line 36, in train_model
+    raise e
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_11480\3396861305.py", line 32, in train_model
+    save_trained_model(model=model,model_dir=model_dir)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_11480\3396861305.py", line 29, in save_trained_model
+    save_model(model=model,path=model_dir)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\ensure\main.py", line 873, in __call__
+    if not isinstance(return_val, self.return_templ):
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+[2026-02-24 19:38:00,179 : INFO : 3416358301 : >>>>>>>STAGE: MODEL TRAINING STARTED<<<<<<<<< ]
+[2026-02-24 19:38:00,199 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-24 19:38:00,209 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-24 19:38:00,215 : INFO : common : created directory at: artifacts/model_training]
+[2026-02-24 19:42:44,384 : INFO : common : model saved at: artifacts\model_training\model.pkl and size of the model is: ~ 2KB]
+[2026-02-24 19:42:44,387 : ERROR : 3396861305 : isinstance() arg 2 must be a type, a tuple of types, or a union]
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_11480\3396861305.py", line 32, in train_model
+    save_trained_model(model=model,model_dir=model_dir)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_11480\3396861305.py", line 29, in save_trained_model
+    save_model(model=model,path=model_dir)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\ensure\main.py", line 873, in __call__
+    if not isinstance(return_val, self.return_templ):
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+[2026-02-24 19:42:44,394 : ERROR : 3416358301 : isinstance() arg 2 must be a type, a tuple of types, or a union]
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_11480\3416358301.py", line 6, in <module>
+    model_trainer.train_model()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_11480\3396861305.py", line 36, in train_model
+    raise e
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_11480\3396861305.py", line 32, in train_model
+    save_trained_model(model=model,model_dir=model_dir)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_11480\3396861305.py", line 29, in save_trained_model
+    save_model(model=model,path=model_dir)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\ensure\main.py", line 873, in __call__
+    if not isinstance(return_val, self.return_templ):
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+[2026-02-24 19:46:26,910 : INFO : 3416358301 : >>>>>>>STAGE: MODEL TRAINING STARTED<<<<<<<<< ]
+[2026-02-24 19:46:26,932 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-24 19:46:26,944 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-24 19:46:26,950 : INFO : common : created directory at: artifacts/model_training]
+[2026-02-24 19:51:19,845 : INFO : common : model saved at: artifacts\model_training\model.pkl and size of the model is: ~ 2KB]
+[2026-02-24 19:51:19,863 : INFO : 3416358301 : >>>>>>>STAGE: MODEL TRAINING ENDED<<<<<<<<< ]
+[2026-02-24 20:02:54,803 : INFO : 3416358301 : >>>>>>>STAGE: MODEL TRAINING STARTED<<<<<<<<< ]
+[2026-02-24 20:02:54,822 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-24 20:02:54,833 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-24 20:02:54,838 : INFO : common : created directory at: artifacts/model_training]
+[2026-02-24 20:08:00,941 : INFO : common : model saved at: artifacts\model_training\sgdModel.pkl and size of the model is: ~ 2KB]
+[2026-02-24 20:08:00,958 : INFO : 3416358301 : >>>>>>>STAGE: MODEL TRAINING ENDED<<<<<<<<< ]
+[2026-02-24 20:36:56,522 : INFO : stage_04_model_training : >>>>>>>STAGE: MODEL TRAINING STARTED<<<<<<<<< ]
+[2026-02-24 20:36:56,610 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-24 20:36:56,634 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-24 20:36:56,641 : INFO : common : created directory at: artifacts]
+[2026-02-24 20:36:56,646 : INFO : common : created directory at: artifacts/model_training]
+[2026-02-24 20:41:53,776 : INFO : common : model saved at: artifacts\model_training\sgdModel.pkl and size of the model is: ~ 2KB]
+[2026-02-24 20:41:53,796 : INFO : stage_04_model_training : >>>>>>>STAGE: MODEL TRAINING ENDED<<<<<<<<< ]

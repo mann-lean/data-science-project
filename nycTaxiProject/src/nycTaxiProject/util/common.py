@@ -56,3 +56,14 @@ def get_size(path:Path)->str:
     size_in_kb=round(os.path.getsize(path)/1024)  # os.path.getsize returns the size of the file in bytes, we divide it by 1024 to convert it to KB and round it to 2 decimal places.
     return f"~ {size_in_kb}KB"
  
+@ensure_annotations
+def save_model(model:object,path:Path):
+    """ save the model to the given specicied path(.pkl)
+    Args:
+        model (Any):model to be saved
+        path (Path):path where the model is to be saved
+    Returns:
+        None
+     """
+    joblib.dump(model,path)
+    logger.info(f"model saved at: {path} and size of the model is: {get_size(path)}")

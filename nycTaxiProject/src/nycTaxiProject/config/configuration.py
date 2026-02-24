@@ -1,5 +1,5 @@
 # Configuration file : We will read the configuration file and create the configuration objects.Configuration file is in yaml format and we will use the yaml library to read the configuration file.
-from nycTaxiProject.entity.config_entity import DataIngestionConfig,DataValidationConfig,DataTransformationConfig
+from nycTaxiProject.entity.config_entity import DataIngestionConfig,DataValidationConfig,DataTransformationConfig,ModelTrainingConfig
 from nycTaxiProject.util.common import read_yaml,create_directories
 from nycTaxiProject.constants import *
 import os
@@ -72,3 +72,25 @@ class ConfigurationManager:
               test_before=config.test_before
          )
          return data_transformed_config
+    
+    def get_model_training_config(self)->ModelTrainingConfig:
+        config=self.config.model_training
+        params=self.params
+        create_directories([config.root_dir])
+
+        model_training_config=ModelTrainingConfig(
+            root_dir=config.root_dir,
+            xtraining_data=config.xtraining_data,
+            ytraining_data=config.ytraining_data,
+            model_dir=config.model_dir,
+            loss=params.loss,
+            penalty=params.penalty,
+            alpha=params.alpha,
+            max_iter=params.max_iter,
+            tol=params.tol,
+            random_state=params.random_state,
+            learning_rate=params.learning_rate,
+            eta0=params.eta0
+
+        )
+        return model_training_config
