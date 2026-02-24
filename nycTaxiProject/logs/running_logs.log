@@ -1636,3 +1636,164 @@ TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
 [2026-02-24 20:36:56,646 : INFO : common : created directory at: artifacts/model_training]
 [2026-02-24 20:41:53,776 : INFO : common : model saved at: artifacts\model_training\sgdModel.pkl and size of the model is: ~ 2KB]
 [2026-02-24 20:41:53,796 : INFO : stage_04_model_training : >>>>>>>STAGE: MODEL TRAINING ENDED<<<<<<<<< ]
+[2026-02-25 01:44:17,894 : INFO : 2732152694 : >>>>>>>STAGE: MODEL EVALUATION Started<<<<<<<<< ]
+[2026-02-25 01:44:18,370 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-25 01:44:18,508 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-25 01:44:18,628 : INFO : common : created directory at: artifacts/modelEvaluatioin]
+[2026-02-25 01:44:18,634 : ERROR : 2732152694 : ModelEvaluationConfig.__init__() missing 1 required positional argument: 'model_dir']
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_8536\2732152694.py", line 4, in <module>
+    model_evaluation_config=config.get_model_evaluation()
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_8536\2932978724.py", line 14, in get_model_evaluation
+    model_evaluation_config=ModelEvaluationConfig(
+        root_dir=config.root_dir,
+    ...<3 lines>...
+        y_test_dir=config.y_test_dir
+    )
+TypeError: ModelEvaluationConfig.__init__() missing 1 required positional argument: 'model_dir'
+[2026-02-25 01:44:55,323 : INFO : 2732152694 : >>>>>>>STAGE: MODEL EVALUATION Started<<<<<<<<< ]
+[2026-02-25 01:44:55,346 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-25 01:44:55,356 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-25 01:44:55,366 : INFO : common : created directory at: artifacts/modelEvaluatioin]
+[2026-02-25 01:44:59,678 : ERROR : 1727697915 : Expected 2D array, got scalar array instead:
+array=artifacts/data_transformation/train/x_train.csv.
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.]
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_8536\1727697915.py", line 7, in evaluate_model
+    y_pred = model.predict(X)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\linear_model\_stochastic_gradient.py", line 1702, in predict
+    return self._decision_function(X)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\linear_model\_stochastic_gradient.py", line 1684, in _decision_function
+    X = validate_data(self, X, accept_sparse="csr", reset=False)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\utils\validation.py", line 2902, in validate_data
+    out = check_array(X, input_name="X", **check_params)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\utils\validation.py", line 1037, in check_array
+    raise ValueError(
+    ...<4 lines>...
+    )
+ValueError: Expected 2D array, got scalar array instead:
+array=artifacts/data_transformation/train/x_train.csv.
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+[2026-02-25 01:44:59,759 : ERROR : 2732152694 : Expected 2D array, got scalar array instead:
+array=artifacts/data_transformation/train/x_train.csv.
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.]
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_8536\2732152694.py", line 8, in <module>
+    model_evaluation.evaluate_model(x,y,"training")
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_8536\1727697915.py", line 20, in evaluate_model
+    raise e
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_8536\1727697915.py", line 7, in evaluate_model
+    y_pred = model.predict(X)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\linear_model\_stochastic_gradient.py", line 1702, in predict
+    return self._decision_function(X)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\linear_model\_stochastic_gradient.py", line 1684, in _decision_function
+    X = validate_data(self, X, accept_sparse="csr", reset=False)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\utils\validation.py", line 2902, in validate_data
+    out = check_array(X, input_name="X", **check_params)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\utils\validation.py", line 1037, in check_array
+    raise ValueError(
+    ...<4 lines>...
+    )
+ValueError: Expected 2D array, got scalar array instead:
+array=artifacts/data_transformation/train/x_train.csv.
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+[2026-02-25 01:46:28,179 : INFO : 2732152694 : >>>>>>>STAGE: MODEL EVALUATION Started<<<<<<<<< ]
+[2026-02-25 01:46:28,200 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-25 01:46:28,212 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-25 01:46:28,217 : INFO : common : created directory at: artifacts/modelEvaluatioin]
+[2026-02-25 01:46:28,225 : ERROR : 1727697915 : Expected 2D array, got scalar array instead:
+array=artifacts/data_transformation/train/x_train.csv.
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.]
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_8536\1727697915.py", line 7, in evaluate_model
+    y_pred = model.predict(X)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\linear_model\_stochastic_gradient.py", line 1702, in predict
+    return self._decision_function(X)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\linear_model\_stochastic_gradient.py", line 1684, in _decision_function
+    X = validate_data(self, X, accept_sparse="csr", reset=False)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\utils\validation.py", line 2902, in validate_data
+    out = check_array(X, input_name="X", **check_params)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\utils\validation.py", line 1037, in check_array
+    raise ValueError(
+    ...<4 lines>...
+    )
+ValueError: Expected 2D array, got scalar array instead:
+array=artifacts/data_transformation/train/x_train.csv.
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+[2026-02-25 01:46:28,234 : ERROR : 2732152694 : Expected 2D array, got scalar array instead:
+array=artifacts/data_transformation/train/x_train.csv.
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.]
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_8536\2732152694.py", line 8, in <module>
+    model_evaluation.evaluate_model(x,y,"training")
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_8536\1727697915.py", line 20, in evaluate_model
+    raise e
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_8536\1727697915.py", line 7, in evaluate_model
+    y_pred = model.predict(X)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\linear_model\_stochastic_gradient.py", line 1702, in predict
+    return self._decision_function(X)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\linear_model\_stochastic_gradient.py", line 1684, in _decision_function
+    X = validate_data(self, X, accept_sparse="csr", reset=False)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\utils\validation.py", line 2902, in validate_data
+    out = check_array(X, input_name="X", **check_params)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\utils\validation.py", line 1037, in check_array
+    raise ValueError(
+    ...<4 lines>...
+    )
+ValueError: Expected 2D array, got scalar array instead:
+array=artifacts/data_transformation/train/x_train.csv.
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+[2026-02-25 01:47:33,130 : INFO : 2954336220 : >>>>>>>STAGE: MODEL EVALUATION Started<<<<<<<<< ]
+[2026-02-25 01:47:33,150 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-25 01:47:33,162 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-25 01:47:33,167 : INFO : common : created directory at: artifacts/modelEvaluatioin]
+[2026-02-25 01:47:33,170 : ERROR : 2954336220 : name 'pd' is not defined]
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_8536\2954336220.py", line 5, in <module>
+    x=pd.read_csv(model_evaluation_config.x_train_dir)
+      ^^
+NameError: name 'pd' is not defined. Did you mean: 'id'?
+[2026-02-25 01:47:59,219 : INFO : 2954336220 : >>>>>>>STAGE: MODEL EVALUATION Started<<<<<<<<< ]
+[2026-02-25 01:47:59,241 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-25 01:47:59,250 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-25 01:47:59,255 : INFO : common : created directory at: artifacts/modelEvaluatioin]
+[2026-02-25 01:48:05,301 : INFO : 2954336220 : >>>>>>>STAGE: MODEL EVALUATION ENDED<<<<<<<<< ]
+[2026-02-25 01:59:53,695 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-25 01:59:53,722 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-25 01:59:53,737 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-25 01:59:53,746 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-02-25 01:59:53,750 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-02-25 01:59:53,759 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-02-25 01:59:53,766 : INFO : common : created directory at: artifacts/data_transformation/before_encoding]
+[2026-02-25 02:00:00,139 : INFO : 2778395237 : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-02-25 02:00:00,579 : INFO : 2778395237 : FILLING MISSING VALUES]
+[2026-02-25 02:00:05,116 : INFO : 2778395237 : Preprocessing DateTime completed]
+[2026-02-25 02:00:08,493 : INFO : 2778395237 : Data Cleaning completed]
+[2026-02-25 02:00:10,256 : INFO : 2778395237 : Feature Engineering completed]
+[2026-02-25 02:00:11,291 : INFO : 2778395237 : Train-Test Split completed with test size: 71364]
+[2026-02-25 02:00:11,473 : INFO : 2778395237 : Clipping Outliers completed]
+[2026-02-25 02:00:30,578 : INFO : 2778395237 : Before Encoding data saved at artifacts/data_transformation/before_encoding successfully...]
+[2026-02-25 02:01:11,562 : INFO : 2778395237 : Trasnfomred data saved at artifacts/data_transformation successfully...]
+[2026-02-25 02:01:11,611 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION ENDED<<<<<<<<< ]
+[2026-02-25 02:07:11,425 : INFO : 3106756834 : >>>>>>>STAGE: MODEL TRAINING STARTED<<<<<<<<< ]
+[2026-02-25 02:07:11,471 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-25 02:07:11,487 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-25 02:07:11,494 : INFO : common : created directory at: artifacts/model_training]
+[2026-02-25 02:07:59,407 : INFO : common : model saved at: artifacts\model_training\sgdModel.pkl and size of the model is: ~ 2KB]
+[2026-02-25 02:07:59,428 : INFO : 3106756834 : >>>>>>>STAGE: MODEL TRAINING ENDED<<<<<<<<< ]
+[2026-02-25 02:12:03,489 : INFO : 2954336220 : >>>>>>>STAGE: MODEL EVALUATION Started<<<<<<<<< ]
+[2026-02-25 02:12:03,528 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-25 02:12:03,546 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-25 02:12:03,557 : INFO : common : created directory at: artifacts/modelEvaluatioin]
+[2026-02-25 02:12:10,528 : INFO : 2954336220 : >>>>>>>STAGE: MODEL EVALUATION ENDED<<<<<<<<< ]
+[2026-02-25 02:17:28,549 : INFO : 2382430873 : >>>>>>>STAGE: MODEL EVALUATION Started<<<<<<<<< ]
+[2026-02-25 02:17:28,571 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-25 02:17:28,585 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-25 02:17:28,591 : INFO : common : created directory at: artifacts/modelEvaluatioin]
+[2026-02-25 02:17:36,645 : INFO : 2382430873 : >>>>>>>STAGE: MODEL EVALUATION ENDED<<<<<<<<< ]

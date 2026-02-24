@@ -45,3 +45,19 @@ Traceback (most recent call last):
     with open(path_to_yaml) as yaml_file:
          ~~~~^^^^^^^^^^^^^^
 FileNotFoundError: [Errno 2] No such file or directory: 'config\\config.yaml'
+[2026-02-25 02:05:17,002 : INFO : 3106756834 : >>>>>>>STAGE: MODEL TRAINING STARTED<<<<<<<<< ]
+[2026-02-25 02:05:17,044 : ERROR : 3106756834 : [Errno 2] No such file or directory: 'config\\config.yaml']
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_14188\3106756834.py", line 3, in <module>
+    config=ConfigurationManager()
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_14188\559693603.py", line 6, in __init__
+    self.config=read_yaml(config_file_path)
+                ~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\ensure\main.py", line 872, in __call__
+    return_val = self.f(*args, **kwargs)
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\util\common.py", line 34, in read_yaml
+    raise e
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\util\common.py", line 27, in read_yaml
+    with open(path_to_yaml) as yaml_file:
+         ~~~~^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'config\\config.yaml'
