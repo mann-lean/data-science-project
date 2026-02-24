@@ -11,3 +11,16 @@ data_validation:
   root_dir: "artifacts/data_validation"
   data_dir: "artifacts/data_ingestion"
   STATUS_FILE: "artifacts/data_validation/status.txt"
+
+data_transformation:
+  root_dir: "artifacts/data_transformation"
+  data_dir: "artifacts/data_ingestion/data.csv"
+  train: "artifacts/data_transformation/train"
+  test: "artifacts/data_transformation/test"
+  x_train_dir: "artifacts/data_transformation/train/x_train.csv"
+  y_train_dir: "artifacts/data_transformation/train/y_train.csv"
+  x_test_dir: "artifacts/data_transformation/test/x_test.csv"
+  y_test_dir: "artifacts/data_transformation/test/y_test.csv"
+  before_encoding: "artifacts/data_transformation/before_encoding"
+  train_before: "artifacts/data_transformation/before_encoding/x_train_bEncode.csv"
+  test_before: "artifacts/data_transformation/before_encoding/x_test_bEncode.csv"

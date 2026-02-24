@@ -14,3 +14,17 @@ class DataValidationConfig:
     STATUS_FILE: str
     data_dir: Path
     all_schema: dir
+
+@dataclass(frozen=True) 
+class DataTransformationConfig:
+    root_dir:Path
+    data_dir:Path
+    train: Path
+    test: Path
+    x_train_dir:Path
+    y_train_dir:Path
+    x_test_dir:Path
+    y_test_dir:Path
+    before_encoding:Path
+    train_before:Path
+    test_before:Path

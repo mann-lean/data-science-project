@@ -1,5 +1,5 @@
 # Configuration file : We will read the configuration file and create the configuration objects.Configuration file is in yaml format and we will use the yaml library to read the configuration file.
-from nycTaxiProject.entity.config_entity import DataIngestionConfig,DataValidationConfig
+from nycTaxiProject.entity.config_entity import DataIngestionConfig,DataValidationConfig,DataTransformationConfig
 from nycTaxiProject.util.common import read_yaml,create_directories
 from nycTaxiProject.constants import *
 import os
@@ -39,3 +39,36 @@ class ConfigurationManager:
             all_schema=self.schema
         )
         return data_validation_config
+    
+    def get_data_transformation_config(self) -> DataTransformationConfig:
+         config=self.config.data_transformation
+         create_directories([config.root_dir])
+
+         data_transformed_config=DataTransformationConfig(
+              root_dir=config.root_dir,
+              data_dir=config.data_dir,
+              transformed_data=config.transformed_data
+         )
+         return data_transformed_config
+
+    def get_data_transformation_config(self) -> DataTransformationConfig:
+         config=self.config.data_transformation
+         create_directories([config.root_dir])
+         create_directories([config.train])
+         create_directories([config.test])
+         create_directories([config.before_encoding])
+
+         data_transformed_config=DataTransformationConfig(
+              root_dir=config.root_dir,
+              data_dir=config.data_dir,
+              train=config.train,
+              test=config.test,
+              x_train_dir=config.x_train_dir,
+              y_train_dir=config.y_train_dir,
+              x_test_dir=config.x_test_dir,
+              y_test_dir=config.y_test_dir,
+              before_encoding=config.before_encoding,
+              train_before=config.train_before,
+              test_before=config.test_before
+         )
+         return data_transformed_config

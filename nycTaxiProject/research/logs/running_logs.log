@@ -1,0 +1,47 @@
+[2026-02-23 16:51:20,821 : INFO : 1095653576 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-23 16:51:20,825 : ERROR : 1095653576 : ConfigurationManger.get_data_transformation_config() missing 1 required positional argument: 'self']
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_3520\1095653576.py", line 4, in <module>
+    data_transformed_config=config.get_data_transformation_config()
+TypeError: ConfigurationManger.get_data_transformation_config() missing 1 required positional argument: 'self'
+[2026-02-23 16:55:02,199 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-23 16:55:02,202 : ERROR : 4138332530 : 'WindowsPath' object has no attribute 'data_transformation']
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_3520\4138332530.py", line 4, in <module>
+    data_transformed_config=config.get_data_transformation_config()
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_3520\1091547533.py", line 10, in get_data_transformation_config
+    config=self.config.data_transformation
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'WindowsPath' object has no attribute 'data_transformation'
+[2026-02-23 17:00:53,601 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-23 17:00:53,605 : ERROR : 4138332530 : [Errno 2] No such file or directory: 'config\\config.yaml']
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_3520\4138332530.py", line 3, in <module>
+    config=ConfigurationManger()
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_3520\2546750440.py", line 6, in __init__
+    self.config=read_yaml(config_filepath)
+                ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\ensure\main.py", line 872, in __call__
+    return_val = self.f(*args, **kwargs)
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\util\common.py", line 34, in read_yaml
+    raise e
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\util\common.py", line 27, in read_yaml
+    with open(path_to_yaml) as yaml_file:
+         ~~~~^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'config\\config.yaml'
+[2026-02-23 17:03:04,986 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-23 17:03:04,990 : ERROR : 4138332530 : [Errno 2] No such file or directory: 'config\\config.yaml']
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_3520\4138332530.py", line 3, in <module>
+    config=ConfigurationManger()
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_3520\2546750440.py", line 6, in __init__
+    self.config=read_yaml(config_filepath)
+                ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\ensure\main.py", line 872, in __call__
+    return_val = self.f(*args, **kwargs)
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\util\common.py", line 34, in read_yaml
+    raise e
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\util\common.py", line 27, in read_yaml
+    with open(path_to_yaml) as yaml_file:
+         ~~~~^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'config\\config.yaml'

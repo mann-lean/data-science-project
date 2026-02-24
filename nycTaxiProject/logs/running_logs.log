@@ -254,3 +254,819 @@ AttributeError: 'Data_Validation' object has no attribute 'validate_all_columns'
 [2026-02-21 23:06:31,752 : INFO : common : created directory at: artifacts]
 [2026-02-21 23:06:31,758 : INFO : common : created directory at: artifacts/data_ingestion]
 [2026-02-21 23:06:31,760 : INFO : data_ingestion : downloading the file formmann210cool/taxidata into file artifacts/data_ingestion/data.csv]
+[2026-02-23 17:11:25,288 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-23 17:11:25,336 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-23 17:11:25,395 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-23 17:11:25,415 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-02-23 17:11:25,420 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-02-23 17:11:25,441 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-02-23 17:11:25,449 : ERROR : 4138332530 : DataTransformationConfig.__init__() missing 2 required positional arguments: 'train' and 'test']
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\4138332530.py", line 4, in <module>
+    data_transformed_config=config.get_data_transformation_config()
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\2546750440.py", line 15, in get_data_transformation_config
+    data_transformed_config=DataTransformationConfig(
+         root_dir=config.root_dir,
+    ...<4 lines>...
+         y_test_dir=config.y_test_dir
+    )
+TypeError: DataTransformationConfig.__init__() missing 2 required positional arguments: 'train' and 'test'
+[2026-02-23 17:16:22,761 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-23 17:16:22,774 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-23 17:16:22,782 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-23 17:16:22,785 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-02-23 17:16:22,791 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-02-23 17:16:22,797 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-02-23 17:16:27,556 : INFO : 2266496921 : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-02-23 17:16:27,616 : ERROR : 2266496921 : Error in data transformation: 'NoneType' object is not subscriptable]
+[2026-02-23 17:16:27,619 : ERROR : 4138332530 : 'NoneType' object is not subscriptable]
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\4138332530.py", line 6, in <module>
+    data_transform.data_transforamtion()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\2266496921.py", line 213, in data_transforamtion
+    raise e
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\2266496921.py", line 199, in data_transforamtion
+    df=filling_missing(df) #filling missing value
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\2266496921.py", line 15, in filling_missing
+    df['passenger_count']=df['passenger_count'].fillna(1)  #after finding mean of this columns we got 1.37 value ,after rounding we're assuming it as 1
+                          ~~^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+[2026-02-23 17:22:44,033 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-23 17:22:44,051 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-23 17:22:44,059 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-23 17:22:44,066 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-02-23 17:22:44,073 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-02-23 17:22:44,082 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-02-23 17:22:48,316 : INFO : 3723202847 : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-02-23 17:22:48,392 : ERROR : 3723202847 : Error in data transformation: 'RatecodeID']
+[2026-02-23 17:22:48,395 : ERROR : 4138332530 : 'RatecodeID']
+Traceback (most recent call last):
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3641, in get_loc
+    return self._engine.get_loc(casted_key)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 168, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 197, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7668, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7676, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'RatecodeID'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\4138332530.py", line 6, in <module>
+    data_transform.data_transforamtion()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\3723202847.py", line 221, in data_transforamtion
+    raise e
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\3723202847.py", line 207, in data_transforamtion
+    df=filling_missing(df) #filling missing value
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\3723202847.py", line 19, in filling_missing
+    df['RatecodeID']=df['RatecodeID'].fillna(99) #after investigating thsi column ,we replacing with 9.9(Null/unknown)
+                     ~~^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\frame.py", line 4378, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3648, in get_loc
+    raise KeyError(key) from err
+KeyError: 'RatecodeID'
+[2026-02-23 17:25:12,543 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-23 17:25:12,557 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-23 17:25:12,566 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-23 17:25:12,571 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-02-23 17:25:12,574 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-02-23 17:25:12,581 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-02-23 17:25:17,159 : INFO : 1526084954 : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-02-23 17:25:17,170 : ERROR : 1526084954 : Error in data transformation: 'RatecodeID']
+[2026-02-23 17:25:17,173 : ERROR : 4138332530 : 'RatecodeID']
+Traceback (most recent call last):
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3641, in get_loc
+    return self._engine.get_loc(casted_key)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 168, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 197, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7668, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7676, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'RatecodeID'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\4138332530.py", line 6, in <module>
+    data_transform.data_transforamtion()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\1526084954.py", line 222, in data_transforamtion
+    raise e
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\1526084954.py", line 208, in data_transforamtion
+    df=filling_missing(df) #filling missing value
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\1526084954.py", line 20, in filling_missing
+    df['RatecodeID']=df['RatecodeID'].fillna(99) #after investigating thsi column ,we replacing with 9.9(Null/unknown)
+                     ~~^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\frame.py", line 4378, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3648, in get_loc
+    raise KeyError(key) from err
+KeyError: 'RatecodeID'
+[2026-02-23 17:28:36,039 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-23 17:28:36,054 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-23 17:28:36,061 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-23 17:28:36,065 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-02-23 17:28:36,068 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-02-23 17:28:36,073 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-02-23 17:28:40,928 : INFO : 1223779337 : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-02-23 17:28:40,937 : ERROR : 1223779337 : Error in data transformation: 'RatecodeID']
+[2026-02-23 17:28:40,939 : ERROR : 4138332530 : 'RatecodeID']
+Traceback (most recent call last):
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3641, in get_loc
+    return self._engine.get_loc(casted_key)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 168, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 197, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7668, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7676, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'RatecodeID'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\4138332530.py", line 6, in <module>
+    data_transform.data_transforamtion()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\1223779337.py", line 222, in data_transforamtion
+    raise e
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\1223779337.py", line 208, in data_transforamtion
+    df=filling_missing(df) #filling missing value
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\1223779337.py", line 20, in filling_missing
+    df['RatecodeID']=df['RatecodeID'].fillna(99) #after investigating thsi column ,we replacing with 9.9(Null/unknown)
+                     ~~^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\frame.py", line 4378, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3648, in get_loc
+    raise KeyError(key) from err
+KeyError: 'RatecodeID'
+[2026-02-23 17:29:35,810 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-23 17:29:35,825 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-23 17:29:35,831 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-23 17:29:35,836 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-02-23 17:29:35,842 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-02-23 17:29:35,849 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-02-23 17:29:40,202 : INFO : 885741035 : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-02-23 17:29:40,340 : INFO : 885741035 : FILLING MISSING VALUES]
+[2026-02-23 17:29:46,979 : ERROR : 885741035 : Error in data transformation: 'mta_tax']
+[2026-02-23 17:29:46,983 : ERROR : 4138332530 : 'mta_tax']
+Traceback (most recent call last):
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3641, in get_loc
+    return self._engine.get_loc(casted_key)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 168, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 197, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7668, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7676, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'mta_tax'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\4138332530.py", line 6, in <module>
+    data_transform.data_transforamtion()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\885741035.py", line 222, in data_transforamtion
+    raise e
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\885741035.py", line 211, in data_transforamtion
+    df=feature_engineering(df) #feature Engineering
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\885741035.py", line 92, in feature_engineering
+    df['mta_tax'] +
+    ~~^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\frame.py", line 4378, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3648, in get_loc
+    raise KeyError(key) from err
+KeyError: 'mta_tax'
+[2026-02-23 17:34:34,372 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-23 17:34:34,387 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-23 17:34:34,395 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-23 17:34:34,402 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-02-23 17:34:34,407 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-02-23 17:34:34,416 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-02-23 17:34:39,061 : INFO : 1283925066 : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-02-23 17:34:39,074 : INFO : 1283925066 : FILLING MISSING VALUES]
+[2026-02-23 17:34:45,037 : ERROR : 1283925066 : Error in data transformation: 'improvement_surcharge']
+[2026-02-23 17:34:45,039 : ERROR : 4138332530 : 'improvement_surcharge']
+Traceback (most recent call last):
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3641, in get_loc
+    return self._engine.get_loc(casted_key)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 168, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 197, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7668, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7676, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'improvement_surcharge'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\4138332530.py", line 6, in <module>
+    data_transform.data_transforamtion()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\1283925066.py", line 223, in data_transforamtion
+    raise e
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\1283925066.py", line 212, in data_transforamtion
+    df=feature_engineering(df) #feature Engineering
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\1283925066.py", line 94, in feature_engineering
+    df['improvement_surcharge'] +
+    ~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\frame.py", line 4378, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3648, in get_loc
+    raise KeyError(key) from err
+KeyError: 'improvement_surcharge'
+[2026-02-23 17:36:02,023 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-23 17:36:02,039 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-23 17:36:02,047 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-23 17:36:02,052 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-02-23 17:36:02,057 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-02-23 17:36:02,065 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-02-23 17:36:06,366 : INFO : 1283474783 : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-02-23 17:36:06,386 : INFO : 1283474783 : FILLING MISSING VALUES]
+[2026-02-23 17:36:14,415 : ERROR : 1283474783 : Error in data transformation: A given column is not a column of the dataframe]
+[2026-02-23 17:36:14,418 : ERROR : 4138332530 : A given column is not a column of the dataframe]
+Traceback (most recent call last):
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3641, in get_loc
+    return self._engine.get_loc(casted_key)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 168, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 197, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7668, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7676, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'VendorID'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\utils\_indexing.py", line 469, in _get_column_indices
+    col_idx = all_columns.get_loc(col)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3648, in get_loc
+    raise KeyError(key) from err
+KeyError: 'VendorID'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\4138332530.py", line 6, in <module>
+    data_transform.data_transforamtion()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\1283474783.py", line 223, in data_transforamtion
+    raise e
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\1283474783.py", line 215, in data_transforamtion
+    x_train,x_test=encoding_independent(x_train,x_test,y_train) #encoding train-test spit
+                   ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\1283474783.py", line 178, in encoding_independent
+    x_trainEncoded=preprocessor.fit_transform(x_train,y_train)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\utils\_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\compose\_column_transformer.py", line 991, in fit_transform
+    self._validate_column_callables(X)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\compose\_column_transformer.py", line 545, in _validate_column_callables
+    transformer_to_input_indices[name] = _get_column_indices(X, columns)
+                                         ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\utils\_indexing.py", line 477, in _get_column_indices
+    raise ValueError("A given column is not a column of the dataframe") from e
+ValueError: A given column is not a column of the dataframe
+[2026-02-23 17:40:07,834 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-23 17:40:07,855 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-23 17:40:07,862 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-23 17:40:07,867 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-02-23 17:40:07,875 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-02-23 17:40:07,881 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-02-23 17:40:12,028 : INFO : 1296106948 : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-02-23 17:40:12,040 : INFO : 1296106948 : FILLING MISSING VALUES]
+[2026-02-23 17:40:16,153 : INFO : 1296106948 : Preprocessing DateTime completed]
+[2026-02-23 17:40:18,050 : INFO : 1296106948 : Data Cleaning completed]
+[2026-02-23 17:40:19,240 : INFO : 1296106948 : Feature Engineering completed]
+[2026-02-23 17:40:20,270 : INFO : 1296106948 : Train-Test Split completed with test size: 71469]
+[2026-02-23 17:40:20,332 : INFO : 1296106948 : Clipping Outliers completed]
+[2026-02-23 17:40:20,336 : ERROR : 1296106948 : Error in data transformation: A given column is not a column of the dataframe]
+[2026-02-23 17:40:20,338 : ERROR : 4138332530 : A given column is not a column of the dataframe]
+Traceback (most recent call last):
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3641, in get_loc
+    return self._engine.get_loc(casted_key)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 168, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 197, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7668, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7676, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'VendorID'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\utils\_indexing.py", line 469, in _get_column_indices
+    col_idx = all_columns.get_loc(col)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3648, in get_loc
+    raise KeyError(key) from err
+KeyError: 'VendorID'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\4138332530.py", line 6, in <module>
+    data_transform.data_transforamtion()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\1296106948.py", line 229, in data_transforamtion
+    raise e
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\1296106948.py", line 221, in data_transforamtion
+    x_train,x_test=encoding_independent(x_train,x_test,y_train) #encoding train-test spit
+                   ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\1296106948.py", line 184, in encoding_independent
+    x_trainEncoded=preprocessor.fit_transform(x_train,y_train)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\utils\_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\compose\_column_transformer.py", line 991, in fit_transform
+    self._validate_column_callables(X)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\compose\_column_transformer.py", line 545, in _validate_column_callables
+    transformer_to_input_indices[name] = _get_column_indices(X, columns)
+                                         ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\utils\_indexing.py", line 477, in _get_column_indices
+    raise ValueError("A given column is not a column of the dataframe") from e
+ValueError: A given column is not a column of the dataframe
+[2026-02-23 17:43:06,815 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-23 17:43:06,834 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-23 17:43:06,841 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-23 17:43:06,845 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-02-23 17:43:06,852 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-02-23 17:43:06,858 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-02-23 17:43:11,477 : INFO : 2971478646 : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-02-23 17:43:11,492 : INFO : 2971478646 : FILLING MISSING VALUES]
+[2026-02-23 17:43:15,866 : INFO : 2971478646 : Preprocessing DateTime completed]
+[2026-02-23 17:43:18,860 : INFO : 2971478646 : Data Cleaning completed]
+[2026-02-23 17:43:20,117 : INFO : 2971478646 : Feature Engineering completed]
+[2026-02-23 17:43:20,886 : INFO : 2971478646 : Train-Test Split completed with test size: 71469]
+[2026-02-23 17:43:20,975 : INFO : 2971478646 : Clipping Outliers completed]
+[2026-02-23 17:43:20,979 : ERROR : 2971478646 : Error in data transformation: A given column is not a column of the dataframe]
+[2026-02-23 17:43:20,982 : ERROR : 4138332530 : A given column is not a column of the dataframe]
+Traceback (most recent call last):
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3641, in get_loc
+    return self._engine.get_loc(casted_key)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 168, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 197, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7668, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7676, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'puLocationid'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\utils\_indexing.py", line 469, in _get_column_indices
+    col_idx = all_columns.get_loc(col)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3648, in get_loc
+    raise KeyError(key) from err
+KeyError: 'puLocationid'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\4138332530.py", line 6, in <module>
+    data_transform.data_transforamtion()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\2971478646.py", line 229, in data_transforamtion
+    raise e
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\2971478646.py", line 221, in data_transforamtion
+    x_train,x_test=encoding_independent(x_train,x_test,y_train) #encoding train-test spit
+                   ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\2971478646.py", line 184, in encoding_independent
+    x_trainEncoded=preprocessor.fit_transform(x_train,y_train)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\utils\_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\compose\_column_transformer.py", line 991, in fit_transform
+    self._validate_column_callables(X)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\compose\_column_transformer.py", line 545, in _validate_column_callables
+    transformer_to_input_indices[name] = _get_column_indices(X, columns)
+                                         ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\utils\_indexing.py", line 477, in _get_column_indices
+    raise ValueError("A given column is not a column of the dataframe") from e
+ValueError: A given column is not a column of the dataframe
+[2026-02-23 17:44:42,655 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-23 17:44:42,670 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-23 17:44:42,677 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-23 17:44:42,682 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-02-23 17:44:42,686 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-02-23 17:44:42,692 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-02-23 17:44:46,906 : INFO : 1933467906 : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-02-23 17:44:46,920 : INFO : 1933467906 : FILLING MISSING VALUES]
+[2026-02-23 17:44:51,107 : INFO : 1933467906 : Preprocessing DateTime completed]
+[2026-02-23 17:44:52,978 : INFO : 1933467906 : Data Cleaning completed]
+[2026-02-23 17:44:54,215 : INFO : 1933467906 : Feature Engineering completed]
+[2026-02-23 17:44:54,984 : INFO : 1933467906 : Train-Test Split completed with test size: 71469]
+[2026-02-23 17:44:55,053 : INFO : 1933467906 : Clipping Outliers completed]
+[2026-02-23 17:44:55,058 : ERROR : 1933467906 : Error in data transformation: A given column is not a column of the dataframe]
+[2026-02-23 17:44:55,061 : ERROR : 4138332530 : A given column is not a column of the dataframe]
+Traceback (most recent call last):
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3641, in get_loc
+    return self._engine.get_loc(casted_key)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 168, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 197, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7668, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7676, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'is_airport_trip'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\utils\_indexing.py", line 469, in _get_column_indices
+    col_idx = all_columns.get_loc(col)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3648, in get_loc
+    raise KeyError(key) from err
+KeyError: 'is_airport_trip'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\4138332530.py", line 6, in <module>
+    data_transform.data_transforamtion()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\1933467906.py", line 229, in data_transforamtion
+    raise e
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\1933467906.py", line 221, in data_transforamtion
+    x_train,x_test=encoding_independent(x_train,x_test,y_train) #encoding train-test spit
+                   ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\1933467906.py", line 184, in encoding_independent
+    x_trainEncoded=preprocessor.fit_transform(x_train,y_train)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\utils\_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\compose\_column_transformer.py", line 991, in fit_transform
+    self._validate_column_callables(X)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\compose\_column_transformer.py", line 545, in _validate_column_callables
+    transformer_to_input_indices[name] = _get_column_indices(X, columns)
+                                         ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\sklearn\utils\_indexing.py", line 477, in _get_column_indices
+    raise ValueError("A given column is not a column of the dataframe") from e
+ValueError: A given column is not a column of the dataframe
+[2026-02-23 17:46:38,292 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-23 17:46:38,308 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-23 17:46:38,316 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-23 17:46:38,321 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-02-23 17:46:38,326 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-02-23 17:46:38,330 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-02-23 17:46:42,614 : INFO : 869126 : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-02-23 17:46:42,629 : INFO : 869126 : FILLING MISSING VALUES]
+[2026-02-23 17:46:46,798 : INFO : 869126 : Preprocessing DateTime completed]
+[2026-02-23 17:46:48,608 : INFO : 869126 : Data Cleaning completed]
+[2026-02-23 17:46:49,778 : INFO : 869126 : Feature Engineering completed]
+[2026-02-23 17:46:50,463 : INFO : 869126 : Train-Test Split completed with test size: 71469]
+[2026-02-23 17:46:50,524 : INFO : 869126 : Clipping Outliers completed]
+[2026-02-23 17:47:22,342 : ERROR : 869126 : Error in data transformation: Cannot save file into a non-existent directory: 'artifacts\data_transformation\traintrain_data']
+[2026-02-23 17:47:22,344 : ERROR : 4138332530 : Cannot save file into a non-existent directory: 'artifacts\data_transformation\traintrain_data']
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\4138332530.py", line 6, in <module>
+    data_transform.data_transforamtion()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\869126.py", line 229, in data_transforamtion
+    raise e
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\869126.py", line 222, in data_transforamtion
+    save_transformed_data(x_train,x_test,y_train,y_test) # saving transformed data
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10920\869126.py", line 204, in save_transformed_data
+    y_train.to_csv(y_train_dir,index=False)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\generic.py", line 3988, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        path_or_buf,
+        ^^^^^^^^^^^^
+    ...<14 lines>...
+        storage_options=storage_options,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\io\formats\format.py", line 1025, in to_csv
+    csv_formatter.save()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\io\formats\csvs.py", line 251, in save
+    with get_handle(
+         ~~~~~~~~~~^
+        self.filepath_or_buffer,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        storage_options=self.storage_options,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as handles:
+    ^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\io\common.py", line 793, in get_handle
+    check_parent_directory(str(handle))
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\io\common.py", line 652, in check_parent_directory
+    raise OSError(rf"Cannot save file into a non-existent directory: '{parent}'")
+OSError: Cannot save file into a non-existent directory: 'artifacts\data_transformation\traintrain_data'
+[2026-02-23 17:50:17,886 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-23 17:50:17,996 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-23 17:50:18,003 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-23 17:50:18,008 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-02-23 17:50:18,012 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-02-23 17:50:18,016 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-02-23 17:50:21,762 : INFO : 869126 : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-02-23 17:50:21,777 : INFO : 869126 : FILLING MISSING VALUES]
+[2026-02-23 17:50:25,817 : INFO : 869126 : Preprocessing DateTime completed]
+[2026-02-23 17:50:27,607 : INFO : 869126 : Data Cleaning completed]
+[2026-02-23 17:50:28,840 : INFO : 869126 : Feature Engineering completed]
+[2026-02-23 17:50:29,693 : INFO : 869126 : Train-Test Split completed with test size: 71469]
+[2026-02-23 17:50:29,767 : INFO : 869126 : Clipping Outliers completed]
+[2026-02-23 17:51:08,379 : INFO : 869126 : Trasnfomred data saved at artifacts/data_transformation successfully...]
+[2026-02-23 17:51:08,405 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION ENDED<<<<<<<<< ]
+[2026-02-23 18:08:33,792 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-23 18:08:33,829 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-23 18:08:33,838 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-23 18:08:33,843 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-02-23 18:08:33,847 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-02-23 18:08:33,853 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-02-23 18:08:37,866 : INFO : 1865704966 : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-02-23 18:08:37,881 : INFO : 1865704966 : FILLING MISSING VALUES]
+[2026-02-23 18:08:41,806 : INFO : 1865704966 : Preprocessing DateTime completed]
+[2026-02-23 18:08:43,548 : INFO : 1865704966 : Data Cleaning completed]
+[2026-02-23 18:08:44,670 : INFO : 1865704966 : Feature Engineering completed]
+[2026-02-23 18:08:45,333 : INFO : 1865704966 : Train-Test Split completed with test size: 71469]
+[2026-02-23 18:08:45,392 : INFO : 1865704966 : Clipping Outliers completed]
+[2026-02-23 18:09:39,075 : INFO : 1865704966 : Trasnfomred data saved at artifacts/data_transformation successfully...]
+[2026-02-23 18:09:39,112 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION ENDED<<<<<<<<< ]
+[2026-02-23 18:34:09,401 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-23 18:34:09,416 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-23 18:34:09,424 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-23 18:34:09,430 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-02-23 18:34:09,433 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-02-23 18:34:09,438 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-02-23 18:34:13,996 : INFO : 1597884832 : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-02-23 18:34:14,014 : INFO : 1597884832 : FILLING MISSING VALUES]
+[2026-02-23 18:34:18,064 : INFO : 1597884832 : Preprocessing DateTime completed]
+[2026-02-23 18:34:19,894 : INFO : 1597884832 : Data Cleaning completed]
+[2026-02-23 18:34:21,060 : INFO : 1597884832 : Feature Engineering completed]
+[2026-02-23 18:34:21,757 : INFO : 1597884832 : Train-Test Split completed with test size: 71469]
+[2026-02-23 18:34:21,818 : INFO : 1597884832 : Clipping Outliers completed]
+[2026-02-23 18:35:13,279 : INFO : 1597884832 : Trasnfomred data saved at artifacts/data_transformation successfully...]
+[2026-02-23 18:35:13,316 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION ENDED<<<<<<<<< ]
+[2026-02-23 20:55:58,084 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-23 20:55:58,142 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-23 20:55:58,182 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-23 20:55:58,186 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-02-23 20:55:58,192 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-02-23 20:55:58,198 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-02-23 20:56:03,247 : INFO : 1332476942 : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-02-23 20:56:03,286 : INFO : 1332476942 : FILLING MISSING VALUES]
+[2026-02-23 20:56:08,477 : INFO : 1332476942 : Preprocessing DateTime completed]
+[2026-02-23 20:56:11,252 : INFO : 1332476942 : Data Cleaning completed]
+[2026-02-23 20:56:13,039 : INFO : 1332476942 : Feature Engineering completed]
+[2026-02-23 20:56:13,853 : INFO : 1332476942 : Train-Test Split completed with test size: 71469]
+[2026-02-23 20:56:13,915 : INFO : 1332476942 : Clipping Outliers completed]
+[2026-02-23 20:56:54,545 : INFO : 1332476942 : Trasnfomred data saved at artifacts/data_transformation successfully...]
+[2026-02-23 20:56:54,573 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION ENDED<<<<<<<<< ]
+[2026-02-23 21:24:57,917 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-23 21:24:57,937 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-23 21:24:57,945 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-23 21:24:57,952 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-02-23 21:24:57,957 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-02-23 21:24:57,963 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-02-23 21:24:57,972 : INFO : common : created directory at: artifacts/data_transformation/before_encoding]
+[2026-02-23 21:25:03,045 : INFO : 3587380511 : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-02-23 21:25:03,063 : INFO : 3587380511 : FILLING MISSING VALUES]
+[2026-02-23 21:25:08,124 : INFO : 3587380511 : Preprocessing DateTime completed]
+[2026-02-23 21:25:10,119 : INFO : 3587380511 : Data Cleaning completed]
+[2026-02-23 21:25:11,475 : INFO : 3587380511 : Feature Engineering completed]
+[2026-02-23 21:25:12,188 : INFO : 3587380511 : Train-Test Split completed with test size: 71469]
+[2026-02-23 21:25:12,254 : INFO : 3587380511 : Clipping Outliers completed]
+[2026-02-23 21:25:33,764 : INFO : 3587380511 : Before Encoding data saved at artifacts/data_transformation/before_encoding successfully...]
+[2026-02-23 21:26:15,529 : INFO : 3587380511 : Trasnfomred data saved at artifacts/data_transformation successfully...]
+[2026-02-23 21:26:15,564 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION ENDED<<<<<<<<< ]
+[2026-02-24 08:28:41,622 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-24 08:28:41,884 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-24 08:28:41,936 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-24 08:28:41,943 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-02-24 08:28:41,947 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-02-24 08:28:41,952 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-02-24 08:28:41,961 : INFO : common : created directory at: artifacts/data_transformation/before_encoding]
+[2026-02-24 08:28:47,287 : INFO : 884478696 : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-02-24 08:28:47,308 : INFO : 884478696 : FILLING MISSING VALUES]
+[2026-02-24 08:28:52,278 : INFO : 884478696 : Preprocessing DateTime completed]
+[2026-02-24 08:28:54,458 : INFO : 884478696 : Data Cleaning completed]
+[2026-02-24 08:28:56,395 : INFO : 884478696 : Feature Engineering completed]
+[2026-02-24 08:28:57,079 : INFO : 884478696 : Train-Test Split completed with test size: 67371]
+[2026-02-24 08:28:57,155 : INFO : 884478696 : Clipping Outliers completed]
+[2026-02-24 08:29:16,807 : INFO : 884478696 : Before Encoding data saved at artifacts/data_transformation/before_encoding successfully...]
+[2026-02-24 08:29:18,327 : ERROR : 884478696 : Error in data transformation: "['hr_sin', 'hr_cos'] not in index"]
+[2026-02-24 08:29:18,329 : ERROR : 4138332530 : "['hr_sin', 'hr_cos'] not in index"]
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_3656\4138332530.py", line 6, in <module>
+    data_transform.data_transforamtion()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_3656\884478696.py", line 256, in data_transforamtion
+    raise e
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_3656\884478696.py", line 248, in data_transforamtion
+    x_train,x_test=encoding_independent(x_train,x_test,y_train) #encoding train-test spit
+                   ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_3656\884478696.py", line 206, in encoding_independent
+    encoded_train = pd.concat([encoded_train, x_train[additional_cols]], axis=1)
+                                              ~~~~~~~^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\frame.py", line 4384, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\indexes\base.py", line 6302, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\indexes\base.py", line 6355, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['hr_sin', 'hr_cos'] not in index"
+[2026-02-24 08:30:15,168 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-24 08:30:15,191 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-24 08:30:15,198 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-24 08:30:15,205 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-02-24 08:30:15,210 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-02-24 08:30:15,214 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-02-24 08:30:15,219 : INFO : common : created directory at: artifacts/data_transformation/before_encoding]
+[2026-02-24 08:30:20,247 : INFO : 2838557437 : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-02-24 08:30:20,271 : INFO : 2838557437 : FILLING MISSING VALUES]
+[2026-02-24 08:30:25,505 : INFO : 2838557437 : Preprocessing DateTime completed]
+[2026-02-24 08:30:27,733 : INFO : 2838557437 : Data Cleaning completed]
+[2026-02-24 08:30:29,682 : INFO : 2838557437 : Feature Engineering completed]
+[2026-02-24 08:30:30,709 : INFO : 2838557437 : Train-Test Split completed with test size: 67371]
+[2026-02-24 08:30:30,859 : INFO : 2838557437 : Clipping Outliers completed]
+[2026-02-24 08:30:51,349 : INFO : 2838557437 : Before Encoding data saved at artifacts/data_transformation/before_encoding successfully...]
+[2026-02-24 08:31:23,545 : INFO : 2838557437 : Trasnfomred data saved at artifacts/data_transformation successfully...]
+[2026-02-24 08:31:23,573 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION ENDED<<<<<<<<< ]
+[2026-02-24 08:35:08,199 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-24 08:35:08,233 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-24 08:35:08,241 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-24 08:35:08,250 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-02-24 08:35:08,258 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-02-24 08:35:08,268 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-02-24 08:35:08,276 : INFO : common : created directory at: artifacts/data_transformation/before_encoding]
+[2026-02-24 08:35:17,230 : INFO : 3027617241 : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-02-24 08:35:17,280 : INFO : 3027617241 : FILLING MISSING VALUES]
+[2026-02-24 08:35:23,399 : INFO : 3027617241 : Preprocessing DateTime completed]
+[2026-02-24 08:35:25,907 : INFO : 3027617241 : Data Cleaning completed]
+[2026-02-24 08:35:27,940 : INFO : 3027617241 : Feature Engineering completed]
+[2026-02-24 08:35:28,686 : INFO : 3027617241 : Train-Test Split completed with test size: 67371]
+[2026-02-24 08:35:28,761 : INFO : 3027617241 : Clipping Outliers completed]
+[2026-02-24 08:36:00,801 : INFO : 3027617241 : Before Encoding data saved at artifacts/data_transformation/before_encoding successfully...]
+[2026-02-24 08:36:30,997 : INFO : 3027617241 : Trasnfomred data saved at artifacts/data_transformation successfully...]
+[2026-02-24 08:36:31,023 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION ENDED<<<<<<<<< ]
+[2026-02-24 11:09:06,623 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-24 11:09:06,684 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-24 11:09:06,694 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-24 11:09:06,700 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-02-24 11:09:06,708 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-02-24 11:09:06,716 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-02-24 11:09:06,723 : INFO : common : created directory at: artifacts/data_transformation/before_encoding]
+[2026-02-24 11:09:11,620 : INFO : 3027617241 : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-02-24 11:09:11,661 : INFO : 3027617241 : FILLING MISSING VALUES]
+[2026-02-24 11:09:16,524 : INFO : 3027617241 : Preprocessing DateTime completed]
+[2026-02-24 11:09:18,644 : INFO : 3027617241 : Data Cleaning completed]
+[2026-02-24 11:09:20,532 : INFO : 3027617241 : Feature Engineering completed]
+[2026-02-24 11:09:21,220 : INFO : 3027617241 : Train-Test Split completed with test size: 67371]
+[2026-02-24 11:09:21,282 : INFO : 3027617241 : Clipping Outliers completed]
+[2026-02-24 11:09:40,471 : INFO : 3027617241 : Before Encoding data saved at artifacts/data_transformation/before_encoding successfully...]
+[2026-02-24 11:10:09,121 : INFO : 3027617241 : Trasnfomred data saved at artifacts/data_transformation successfully...]
+[2026-02-24 11:10:09,146 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION ENDED<<<<<<<<< ]
+[2026-02-24 11:46:37,026 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-24 11:46:37,349 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-24 11:46:37,359 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-24 11:46:37,365 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-02-24 11:46:37,369 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-02-24 11:46:37,372 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-02-24 11:46:37,380 : INFO : common : created directory at: artifacts/data_transformation/before_encoding]
+[2026-02-24 11:46:42,226 : INFO : 1135839931 : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-02-24 11:46:42,248 : INFO : 1135839931 : FILLING MISSING VALUES]
+[2026-02-24 11:46:47,634 : INFO : 1135839931 : Preprocessing DateTime completed]
+[2026-02-24 11:46:49,677 : INFO : 1135839931 : Data Cleaning completed]
+[2026-02-24 11:46:51,339 : INFO : 1135839931 : Feature Engineering completed]
+[2026-02-24 11:46:52,001 : INFO : 1135839931 : Train-Test Split completed with test size: 71364]
+[2026-02-24 11:46:52,069 : INFO : 1135839931 : Clipping Outliers completed]
+[2026-02-24 11:47:13,763 : INFO : 1135839931 : Before Encoding data saved at artifacts/data_transformation/before_encoding successfully...]
+[2026-02-24 11:47:58,799 : INFO : 1135839931 : Trasnfomred data saved at artifacts/data_transformation successfully...]
+[2026-02-24 11:47:58,838 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION ENDED<<<<<<<<< ]
+[2026-02-24 12:03:32,008 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-24 12:03:32,072 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-24 12:03:32,082 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-24 12:03:32,087 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-02-24 12:03:32,091 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-02-24 12:03:32,098 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-02-24 12:03:32,101 : INFO : common : created directory at: artifacts/data_transformation/before_encoding]
+[2026-02-24 12:03:37,378 : INFO : 4032069590 : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-02-24 12:03:37,397 : INFO : 4032069590 : FILLING MISSING VALUES]
+[2026-02-24 12:03:42,507 : INFO : 4032069590 : Preprocessing DateTime completed]
+[2026-02-24 12:03:44,655 : INFO : 4032069590 : Data Cleaning completed]
+[2026-02-24 12:03:46,393 : INFO : 4032069590 : Feature Engineering completed]
+[2026-02-24 12:03:47,117 : INFO : 4032069590 : Train-Test Split completed with test size: 71364]
+[2026-02-24 12:03:47,223 : INFO : 4032069590 : Clipping Outliers completed]
+[2026-02-24 12:04:07,715 : INFO : 4032069590 : Before Encoding data saved at artifacts/data_transformation/before_encoding successfully...]
+[2026-02-24 12:04:54,970 : INFO : 4032069590 : Trasnfomred data saved at artifacts/data_transformation successfully...]
+[2026-02-24 12:04:55,014 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION ENDED<<<<<<<<< ]
+[2026-02-24 12:07:14,173 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-24 12:07:14,193 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-24 12:07:14,205 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-24 12:07:14,212 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-02-24 12:07:14,219 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-02-24 12:07:14,224 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-02-24 12:07:14,229 : INFO : common : created directory at: artifacts/data_transformation/before_encoding]
+[2026-02-24 12:07:20,714 : INFO : 2778395237 : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-02-24 12:07:20,732 : INFO : 2778395237 : FILLING MISSING VALUES]
+[2026-02-24 12:07:29,385 : INFO : 2778395237 : Preprocessing DateTime completed]
+[2026-02-24 12:07:32,488 : INFO : 2778395237 : Data Cleaning completed]
+[2026-02-24 12:07:34,557 : INFO : 2778395237 : Feature Engineering completed]
+[2026-02-24 12:07:35,569 : INFO : 2778395237 : Train-Test Split completed with test size: 71364]
+[2026-02-24 12:07:35,671 : INFO : 2778395237 : Clipping Outliers completed]
+[2026-02-24 12:07:59,798 : INFO : 2778395237 : Before Encoding data saved at artifacts/data_transformation/before_encoding successfully...]
+[2026-02-24 12:08:45,804 : INFO : 2778395237 : Trasnfomred data saved at artifacts/data_transformation successfully...]
+[2026-02-24 12:08:45,864 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION ENDED<<<<<<<<< ]
+[2026-02-24 15:48:44,397 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-24 15:48:44,762 : ERROR : 4138332530 : [Errno 2] No such file or directory: 'config\\config.yaml']
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_8416\4138332530.py", line 3, in <module>
+    config=ConfigurationManger()
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_8416\1747569760.py", line 6, in __init__
+    self.config=read_yaml(config_filepath)
+                ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\ensure\main.py", line 872, in __call__
+    return_val = self.f(*args, **kwargs)
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\util\common.py", line 34, in read_yaml
+    raise e
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\util\common.py", line 27, in read_yaml
+    with open(path_to_yaml) as yaml_file:
+         ~~~~^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'config\\config.yaml'
+[2026-02-24 15:54:57,042 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-24 15:54:57,046 : ERROR : 4138332530 : [Errno 2] No such file or directory: 'config\\config.yaml']
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_8416\4138332530.py", line 3, in <module>
+    config=ConfigurationManger()
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_8416\1747569760.py", line 6, in __init__
+    self.config=read_yaml(config_filepath)
+                ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\ensure\main.py", line 872, in __call__
+    return_val = self.f(*args, **kwargs)
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\util\common.py", line 34, in read_yaml
+    raise e
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\util\common.py", line 27, in read_yaml
+    with open(path_to_yaml) as yaml_file:
+         ~~~~^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'config\\config.yaml'
+[2026-02-24 15:56:31,801 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-24 15:56:31,804 : ERROR : 4138332530 : [Errno 2] No such file or directory: 'config\\config.yaml']
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_8416\4138332530.py", line 3, in <module>
+    config=ConfigurationManger()
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_8416\1747569760.py", line 6, in __init__
+    self.config=read_yaml(config_filepath)
+                ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\ensure\main.py", line 872, in __call__
+    return_val = self.f(*args, **kwargs)
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\util\common.py", line 34, in read_yaml
+    raise e
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\util\common.py", line 27, in read_yaml
+    with open(path_to_yaml) as yaml_file:
+         ~~~~^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'config\\config.yaml'
+[2026-02-24 16:00:22,088 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-24 16:00:22,114 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-24 16:00:22,129 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-24 16:00:22,134 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-02-24 16:00:22,140 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-02-24 16:00:22,150 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-02-24 16:00:22,154 : INFO : common : created directory at: artifacts/data_transformation/before_encoding]
+[2026-02-24 16:00:28,216 : INFO : 2778395237 : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-02-24 16:00:28,261 : INFO : 2778395237 : FILLING MISSING VALUES]
+[2026-02-24 16:00:33,784 : INFO : 2778395237 : Preprocessing DateTime completed]
+[2026-02-24 16:00:38,193 : INFO : 2778395237 : Data Cleaning completed]
+[2026-02-24 16:00:40,163 : INFO : 2778395237 : Feature Engineering completed]
+[2026-02-24 16:00:41,015 : INFO : 2778395237 : Train-Test Split completed with test size: 71364]
+[2026-02-24 16:00:41,085 : INFO : 2778395237 : Clipping Outliers completed]
+[2026-02-24 16:01:11,627 : INFO : 2778395237 : Before Encoding data saved at artifacts/data_transformation/before_encoding successfully...]
+[2026-02-24 16:01:59,985 : INFO : 2778395237 : Trasnfomred data saved at artifacts/data_transformation successfully...]
+[2026-02-24 16:02:00,253 : INFO : 4138332530 : >>>>>>>STAGE: DATA TRANSFORMATION ENDED<<<<<<<<< ]
+[2026-02-24 16:35:48,073 : INFO : stage_03_data_transformation : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-24 16:35:48,123 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-24 16:35:48,134 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-24 16:35:48,135 : INFO : common : created directory at: artifacts]
+[2026-02-24 16:35:48,141 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-02-24 16:35:48,150 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-02-24 16:35:48,155 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-02-24 16:35:48,157 : INFO : common : created directory at: artifacts/data_transformation/before_encoding]
+[2026-02-24 16:35:52,933 : INFO : data_transformation : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-02-24 16:35:52,946 : INFO : data_transformation : FILLING MISSING VALUES]
+[2026-02-24 16:35:57,687 : INFO : data_transformation : Preprocessing DateTime completed]
+[2026-02-24 16:35:59,820 : INFO : data_transformation : Data Cleaning completed]
+[2026-02-24 16:36:01,540 : INFO : data_transformation : Feature Engineering completed]
+[2026-02-24 16:36:02,402 : INFO : data_transformation : Train-Test Split completed with test size: 71364]
+[2026-02-24 16:36:02,475 : INFO : data_transformation : Clipping Outliers completed]
+[2026-02-24 16:36:24,563 : INFO : data_transformation : Before Encoding data saved at artifacts/data_transformation/before_encoding successfully...]
+[2026-02-24 16:37:12,021 : INFO : data_transformation : Trasnfomred data saved at artifacts/data_transformation successfully...]
+[2026-02-24 16:37:12,057 : INFO : stage_03_data_transformation : >>>>>>>STAGE: DATA TRANSFORMATION ENDED<<<<<<<<< ]
