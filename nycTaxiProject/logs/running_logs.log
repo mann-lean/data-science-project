@@ -1797,3 +1797,462 @@ NameError: name 'pd' is not defined. Did you mean: 'id'?
 [2026-02-25 02:17:28,585 : INFO : common : yaml file: params.yaml LOADED successfully]
 [2026-02-25 02:17:28,591 : INFO : common : created directory at: artifacts/modelEvaluatioin]
 [2026-02-25 02:17:36,645 : INFO : 2382430873 : >>>>>>>STAGE: MODEL EVALUATION ENDED<<<<<<<<< ]
+[2026-02-25 03:50:34,807 : INFO : 2382430873 : >>>>>>>STAGE: MODEL EVALUATION Started<<<<<<<<< ]
+[2026-02-25 03:50:34,878 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-25 03:50:34,914 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-25 03:50:34,920 : INFO : common : created directory at: artifacts/modelEvaluatioin]
+[2026-02-25 03:51:59,374 : INFO : _client : HTTP Request: POST https://dagshub.com/login/oauth/middleman "HTTP/1.1 200 OK"]
+[2026-02-25 03:52:01,430 : INFO : _client : HTTP Request: POST https://dagshub.com/login/oauth/access_token "HTTP/1.1 200 OK"]
+[2026-02-25 03:52:02,916 : INFO : _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-02-25 03:52:02,996 : INFO : helpers : Accessing as mann-lean]
+[2026-02-25 03:52:04,258 : INFO : _client : HTTP Request: GET https://dagshub.com/api/v1/repos/mann-lean/data-science-project "HTTP/1.1 200 OK"]
+[2026-02-25 03:52:05,336 : INFO : _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-02-25 03:52:05,354 : INFO : helpers : Initialized MLflow to track repo "mann-lean/data-science-project"]
+[2026-02-25 03:52:05,366 : INFO : helpers : Repository mann-lean/data-science-project initialized!]
+[2026-02-25 03:52:19,692 : ERROR : 2247700018 : save_model() got an unexpected keyword argument 'register_model']
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_12692\2247700018.py", line 33, in evaluate_model
+    mlflow.sklearn.log_model(model, "model",register_model="SGDRegressor")
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\mlflow\sklearn\__init__.py", line 477, in log_model
+    return Model.log(
+           ~~~~~~~~~^
+        artifact_path=artifact_path,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<21 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\mlflow\models\model.py", line 1209, in log
+    flavor.save_model(path=local_path, mlflow_model=mlflow_model, **kwargs)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: save_model() got an unexpected keyword argument 'register_model'
+[2026-02-25 03:52:19,726 : ERROR : 2382430873 : save_model() got an unexpected keyword argument 'register_model']
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_12692\2382430873.py", line 8, in <module>
+    model_evaluation.evaluate_model(x_train,y_train,"training")
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_12692\2247700018.py", line 37, in evaluate_model
+    raise e
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_12692\2247700018.py", line 33, in evaluate_model
+    mlflow.sklearn.log_model(model, "model",register_model="SGDRegressor")
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\mlflow\sklearn\__init__.py", line 477, in log_model
+    return Model.log(
+           ~~~~~~~~~^
+        artifact_path=artifact_path,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<21 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\mlflow\models\model.py", line 1209, in log
+    flavor.save_model(path=local_path, mlflow_model=mlflow_model, **kwargs)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: save_model() got an unexpected keyword argument 'register_model'
+[2026-02-25 03:55:28,083 : INFO : 2382430873 : >>>>>>>STAGE: MODEL EVALUATION Started<<<<<<<<< ]
+[2026-02-25 03:55:28,135 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-25 03:55:28,146 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-25 03:55:28,151 : INFO : common : created directory at: artifacts/modelEvaluatioin]
+[2026-02-25 03:55:34,781 : INFO : _client : HTTP Request: GET https://dagshub.com/api/v1/repos/mann-lean/data-science-project "HTTP/1.1 200 OK"]
+[2026-02-25 03:55:34,821 : INFO : helpers : Initialized MLflow to track repo "mann-lean/data-science-project"]
+[2026-02-25 03:55:34,840 : INFO : helpers : Repository mann-lean/data-science-project initialized!]
+[2026-02-25 03:57:07,406 : INFO : _client : HTTP Request: GET https://dagshub.com/api/v1/repos/mann-lean/data-science-project "HTTP/1.1 200 OK"]
+[2026-02-25 03:57:07,426 : INFO : helpers : Initialized MLflow to track repo "mann-lean/data-science-project"]
+[2026-02-25 03:57:07,439 : INFO : helpers : Repository mann-lean/data-science-project initialized!]
+[2026-02-25 03:57:45,214 : INFO : 2382430873 : >>>>>>>STAGE: MODEL EVALUATION ENDED<<<<<<<<< ]
+[2026-02-25 19:38:21,697 : INFO : 2382430873 : >>>>>>>STAGE: MODEL EVALUATION Started<<<<<<<<< ]
+[2026-02-25 19:38:21,825 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-25 19:38:21,916 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-25 19:38:21,933 : INFO : common : created directory at: artifacts/modelEvaluatioin]
+[2026-02-25 19:40:28,701 : INFO : _client : HTTP Request: POST https://dagshub.com/login/oauth/middleman "HTTP/1.1 200 OK"]
+[2026-02-25 19:40:30,326 : INFO : _client : HTTP Request: POST https://dagshub.com/login/oauth/access_token "HTTP/1.1 200 OK"]
+[2026-02-25 19:40:31,711 : INFO : _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-02-25 19:40:31,735 : INFO : helpers : Accessing as mann-lean]
+[2026-02-25 19:40:33,496 : INFO : _client : HTTP Request: GET https://dagshub.com/api/v1/repos/mann-lean/data-science-project "HTTP/1.1 200 OK"]
+[2026-02-25 19:40:35,060 : INFO : _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-02-25 19:40:35,075 : INFO : helpers : Initialized MLflow to track repo "mann-lean/data-science-project"]
+[2026-02-25 19:40:35,084 : INFO : helpers : Repository mann-lean/data-science-project initialized!]
+[2026-02-25 19:40:41,925 : ERROR : 1188707300 : Argument path of type <class 'str'> to <function save_evaluation at 0x0000018DD27D5580> does not match annotation type <class 'pathlib._local.Path'>]
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10460\1188707300.py", line 33, in evaluate_model
+    save_evaluation(evalutaion_dict,self.config.model_evaluation)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\ensure\main.py", line 833, in __call__
+    raise EnsureError(msg.format(arg=arg, f=self.f, t=templ, valt=type(value)))
+ensure.main.EnsureError: Argument path of type <class 'str'> to <function save_evaluation at 0x0000018DD27D5580> does not match annotation type <class 'pathlib._local.Path'>
+[2026-02-25 19:40:41,980 : ERROR : 2382430873 : Argument path of type <class 'str'> to <function save_evaluation at 0x0000018DD27D5580> does not match annotation type <class 'pathlib._local.Path'>]
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10460\2382430873.py", line 8, in <module>
+    model_evaluation.evaluate_model(x_train,y_train,"training")
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10460\1188707300.py", line 48, in evaluate_model
+    raise e
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10460\1188707300.py", line 33, in evaluate_model
+    save_evaluation(evalutaion_dict,self.config.model_evaluation)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\ensure\main.py", line 833, in __call__
+    raise EnsureError(msg.format(arg=arg, f=self.f, t=templ, valt=type(value)))
+ensure.main.EnsureError: Argument path of type <class 'str'> to <function save_evaluation at 0x0000018DD27D5580> does not match annotation type <class 'pathlib._local.Path'>
+[2026-02-25 19:42:31,759 : INFO : 2382430873 : >>>>>>>STAGE: MODEL EVALUATION Started<<<<<<<<< ]
+[2026-02-25 19:42:31,808 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-25 19:42:31,818 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-25 19:42:31,821 : INFO : common : created directory at: artifacts/modelEvaluatioin]
+[2026-02-25 19:42:38,410 : INFO : _client : HTTP Request: GET https://dagshub.com/api/v1/repos/mann-lean/data-science-project "HTTP/1.1 200 OK"]
+[2026-02-25 19:42:38,459 : INFO : helpers : Initialized MLflow to track repo "mann-lean/data-science-project"]
+[2026-02-25 19:42:38,474 : INFO : helpers : Repository mann-lean/data-science-project initialized!]
+[2026-02-25 19:42:40,982 : ERROR : 1842869336 : [Errno 2] No such file or directory: 'artifacts\\model_evaluation\\evaluation.json']
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10460\1842869336.py", line 33, in evaluate_model
+    save_evaluation(evalutaion_dict,Path(self.config.model_evaluation))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\ensure\main.py", line 835, in __call__
+    return self.f(*args, **kwargs)
+           ~~~~~~^^^^^^^^^^^^^^^^^
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\util\common.py", line 80, in save_evaluation
+    with open(path,'w') as f:
+         ~~~~^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts\\model_evaluation\\evaluation.json'
+[2026-02-25 19:42:41,045 : ERROR : 2382430873 : [Errno 2] No such file or directory: 'artifacts\\model_evaluation\\evaluation.json']
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10460\2382430873.py", line 8, in <module>
+    model_evaluation.evaluate_model(x_train,y_train,"training")
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10460\1842869336.py", line 48, in evaluate_model
+    raise e
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_10460\1842869336.py", line 33, in evaluate_model
+    save_evaluation(evalutaion_dict,Path(self.config.model_evaluation))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\dsProject\nycTaxiProject\venv\Lib\site-packages\ensure\main.py", line 835, in __call__
+    return self.f(*args, **kwargs)
+           ~~~~~~^^^^^^^^^^^^^^^^^
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\util\common.py", line 80, in save_evaluation
+    with open(path,'w') as f:
+         ~~~~^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts\\model_evaluation\\evaluation.json'
+[2026-02-25 19:49:19,809 : INFO : 2382430873 : >>>>>>>STAGE: MODEL EVALUATION Started<<<<<<<<< ]
+[2026-02-25 19:49:19,831 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-25 19:49:19,840 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-25 19:49:19,844 : INFO : common : created directory at: artifacts/modelEvaluatioin]
+[2026-02-25 19:49:25,384 : INFO : _client : HTTP Request: GET https://dagshub.com/api/v1/repos/mann-lean/data-science-project "HTTP/1.1 200 OK"]
+[2026-02-25 19:49:25,403 : INFO : helpers : Initialized MLflow to track repo "mann-lean/data-science-project"]
+[2026-02-25 19:49:25,414 : INFO : helpers : Repository mann-lean/data-science-project initialized!]
+[2026-02-25 19:49:27,094 : INFO : common : Evalution Metrices saved at artifacts\modelEvaluatioin\evaluation.json]
+[2026-02-25 19:50:32,023 : INFO : _client : HTTP Request: GET https://dagshub.com/api/v1/repos/mann-lean/data-science-project "HTTP/1.1 200 OK"]
+[2026-02-25 19:50:32,040 : INFO : helpers : Initialized MLflow to track repo "mann-lean/data-science-project"]
+[2026-02-25 19:50:32,050 : INFO : helpers : Repository mann-lean/data-science-project initialized!]
+[2026-02-25 19:50:32,863 : INFO : common : Evalution Metrices saved at artifacts\modelEvaluatioin\evaluation.json]
+[2026-02-25 19:51:03,865 : INFO : 2382430873 : >>>>>>>STAGE: MODEL EVALUATION ENDED<<<<<<<<< ]
+[2026-02-25 23:03:42,569 : INFO : stage_05_model_evaluation : >>>>>>>STAGE: MODEL EVALUATION Started<<<<<<<<< ]
+[2026-02-25 23:03:42,597 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-25 23:03:42,637 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-25 23:03:42,643 : INFO : common : created directory at: artifacts]
+[2026-02-25 23:03:42,645 : INFO : common : created directory at: artifacts/modelEvaluatioin]
+[2026-02-25 23:03:54,376 : ERROR : model_evaluation : Server disconnected without sending a response.]
+Traceback (most recent call last):
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+        pool_request.request
+    )
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpcore\_sync\connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpcore\_sync\http11.py", line 136, in handle_request
+    raise exc
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpcore\_sync\http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpcore\_sync\http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpcore\_sync\http11.py", line 231, in _receive_event
+    raise RemoteProtocolError(msg)
+httpcore.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\components\model_evaluation.py", line 21, in evaluate_model
+    dagshub.init(repo_owner='mann-lean', repo_name='data-science-project', mlflow=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\dagshub\common\init.py", line 86, in init
+    repo_api = RepoAPI(f"{repo_owner}/{repo_name}", host=host)
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\dagshub\common\api\repo.py", line 78, in __init__
+    self.auth = dagshub.auth.get_authenticator(host=host)
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\dagshub\auth\tokens.py", line 374, in get_authenticator
+    return _get_token_storage(**kwargs).get_authenticator(**kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\dagshub\auth\tokens.py", line 122, in get_authenticator
+    token = self.get_token_object(host, fail_if_no_token, **kwargs)
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\dagshub\auth\tokens.py", line 165, in get_token_object
+    user = TokenStorage.get_username_of_token(token, host)
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\dagshub\auth\tokens.py", line 239, in get_username_of_token
+    resp = http_request("GET", check_url, auth=auth)
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\dagshub\common\helpers.py", line 60, in http_request
+    return httpx.request(method, url, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpx\_api.py", line 109, in request
+    return client.request(
+           ~~~~~~~~~~~~~~^
+        method=method,
+        ^^^^^^^^^^^^^^
+    ...<8 lines>...
+        follow_redirects=follow_redirects,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpx\_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: Server disconnected without sending a response.
+[2026-02-25 23:03:55,324 : ERROR : stage_05_model_evaluation : Server disconnected without sending a response.]
+Traceback (most recent call last):
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+        pool_request.request
+    )
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpcore\_sync\connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpcore\_sync\http11.py", line 136, in handle_request
+    raise exc
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpcore\_sync\http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpcore\_sync\http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpcore\_sync\http11.py", line 231, in _receive_event
+    raise RemoteProtocolError(msg)
+httpcore.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_05_model_evaluation.py", line 19, in main
+    model_evaluation.evaluate_model(x_train,y_train,"training")
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\components\model_evaluation.py", line 61, in evaluate_model
+    raise e
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\components\model_evaluation.py", line 21, in evaluate_model
+    dagshub.init(repo_owner='mann-lean', repo_name='data-science-project', mlflow=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\dagshub\common\init.py", line 86, in init
+    repo_api = RepoAPI(f"{repo_owner}/{repo_name}", host=host)
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\dagshub\common\api\repo.py", line 78, in __init__
+    self.auth = dagshub.auth.get_authenticator(host=host)
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\dagshub\auth\tokens.py", line 374, in get_authenticator
+    return _get_token_storage(**kwargs).get_authenticator(**kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\dagshub\auth\tokens.py", line 122, in get_authenticator
+    token = self.get_token_object(host, fail_if_no_token, **kwargs)
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\dagshub\auth\tokens.py", line 165, in get_token_object
+    user = TokenStorage.get_username_of_token(token, host)
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\dagshub\auth\tokens.py", line 239, in get_username_of_token
+    resp = http_request("GET", check_url, auth=auth)
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\dagshub\common\helpers.py", line 60, in http_request
+    return httpx.request(method, url, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpx\_api.py", line 109, in request
+    return client.request(
+           ~~~~~~~~~~~~~~^
+        method=method,
+        ^^^^^^^^^^^^^^
+    ...<8 lines>...
+        follow_redirects=follow_redirects,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpx\_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: Server disconnected without sending a response.
+[2026-02-25 23:03:55,427 : ERROR : stage_05_model_evaluation : Server disconnected without sending a response.]
+Traceback (most recent call last):
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+        pool_request.request
+    )
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpcore\_sync\connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpcore\_sync\http11.py", line 136, in handle_request
+    raise exc
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpcore\_sync\http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpcore\_sync\http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpcore\_sync\http11.py", line 231, in _receive_event
+    raise RemoteProtocolError(msg)
+httpcore.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_05_model_evaluation.py", line 33, in <module>
+    obj.main()
+    ~~~~~~~~^^
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_05_model_evaluation.py", line 28, in main
+    raise e
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_05_model_evaluation.py", line 19, in main
+    model_evaluation.evaluate_model(x_train,y_train,"training")
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\components\model_evaluation.py", line 61, in evaluate_model
+    raise e
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\components\model_evaluation.py", line 21, in evaluate_model
+    dagshub.init(repo_owner='mann-lean', repo_name='data-science-project', mlflow=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\dagshub\common\init.py", line 86, in init
+    repo_api = RepoAPI(f"{repo_owner}/{repo_name}", host=host)
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\dagshub\common\api\repo.py", line 78, in __init__
+    self.auth = dagshub.auth.get_authenticator(host=host)
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\dagshub\auth\tokens.py", line 374, in get_authenticator
+    return _get_token_storage(**kwargs).get_authenticator(**kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\dagshub\auth\tokens.py", line 122, in get_authenticator
+    token = self.get_token_object(host, fail_if_no_token, **kwargs)
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\dagshub\auth\tokens.py", line 165, in get_token_object
+    user = TokenStorage.get_username_of_token(token, host)
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\dagshub\auth\tokens.py", line 239, in get_username_of_token
+    resp = http_request("GET", check_url, auth=auth)
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\dagshub\common\helpers.py", line 60, in http_request
+    return httpx.request(method, url, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpx\_api.py", line 109, in request
+    return client.request(
+           ~~~~~~~~~~~~~~^
+        method=method,
+        ^^^^^^^^^^^^^^
+    ...<8 lines>...
+        follow_redirects=follow_redirects,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpx\_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: Server disconnected without sending a response.
+[2026-02-26 13:15:48,859 : INFO : stage_05_model_evaluation : >>>>>>>STAGE: MODEL EVALUATION Started<<<<<<<<< ]
+[2026-02-26 13:15:48,958 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-26 13:15:49,013 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-26 13:15:49,014 : INFO : common : created directory at: artifacts]
+[2026-02-26 13:15:49,015 : INFO : common : created directory at: artifacts/modelEvaluatioin]
+[2026-02-26 13:15:55,078 : INFO : _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-02-26 13:15:55,118 : INFO : helpers : Accessing as mann-lean]
+[2026-02-26 13:15:56,543 : INFO : _client : HTTP Request: GET https://dagshub.com/api/v1/repos/mann-lean/data-science-project "HTTP/1.1 200 OK"]
+[2026-02-26 13:15:57,822 : INFO : _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-02-26 13:15:57,847 : INFO : helpers : Initialized MLflow to track repo "mann-lean/data-science-project"]
+[2026-02-26 13:15:57,851 : INFO : helpers : Repository mann-lean/data-science-project initialized!]
+[2026-02-26 13:16:01,084 : INFO : common : Evalution Metrices saved at artifacts\modelEvaluatioin\evaluation.json]
+[2026-02-26 13:16:56,490 : INFO : _client : HTTP Request: GET https://dagshub.com/api/v1/repos/mann-lean/data-science-project "HTTP/1.1 200 OK"]
+[2026-02-26 13:16:56,524 : INFO : helpers : Initialized MLflow to track repo "mann-lean/data-science-project"]
+[2026-02-26 13:16:56,531 : INFO : helpers : Repository mann-lean/data-science-project initialized!]
+[2026-02-26 13:16:57,427 : INFO : common : Evalution Metrices saved at artifacts\modelEvaluatioin\evaluation.json]
+[2026-02-26 13:17:27,155 : INFO : stage_05_model_evaluation : >>>>>>>STAGE: MODEL EVALUATION ENDED<<<<<<<<< ]
+[2026-02-26 14:43:17,356 : INFO : stage_05_model_evaluation : >>>>>>>STAGE: MODEL EVALUATION Started<<<<<<<<< ]
+[2026-02-26 14:43:17,761 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-26 14:43:17,789 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-26 14:43:17,790 : INFO : common : created directory at: artifacts]
+[2026-02-26 14:43:17,803 : INFO : common : created directory at: artifacts/modelEvaluation]
+[2026-02-26 14:43:25,435 : INFO : _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-02-26 14:43:25,516 : INFO : helpers : Accessing as mann-lean]
+[2026-02-26 14:43:27,037 : INFO : _client : HTTP Request: GET https://dagshub.com/api/v1/repos/mann-lean/data-science-project "HTTP/1.1 200 OK"]
+[2026-02-26 14:43:28,304 : INFO : _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-02-26 14:43:28,311 : INFO : helpers : Initialized MLflow to track repo "mann-lean/data-science-project"]
+[2026-02-26 14:43:28,314 : INFO : helpers : Repository mann-lean/data-science-project initialized!]
+[2026-02-26 14:43:32,605 : INFO : common : Evalution Metrices saved at artifacts\modelEvaluation\evaluation.json]
+[2026-02-26 14:44:26,709 : INFO : stage_05_model_evaluation : >>>>>>>STAGE: MODEL EVALUATION ENDED<<<<<<<<< ]

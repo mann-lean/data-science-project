@@ -44,3 +44,17 @@ stages:
     - config/config.yaml
   outs:
     - artifacts/model_training/sgdModel.pkl
+
+stages:
+  model_evaluation:
+  cmd: python src/nycTaxiProject/pipeline/stage_05_model_evaluation.py
+  deps:
+    - src/nycTaxiProject/pipeline/stage_05_model_evaluation.py
+    - artifacts/model_training/sgdModel.pkl
+    - artifacts/data_transformation/train/x_train.csv
+    - artifacts/data_transformation/train/y_train.csv
+    - artifacts/data_transformation/test/x_test.csv
+    - artifacts/data_transformation/test/y_test.csv
+    - config/config.yaml
+  outs:
+    - artifacts/modelEvaluation/evaluation.json

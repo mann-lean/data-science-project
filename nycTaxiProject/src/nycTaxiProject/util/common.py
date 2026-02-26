@@ -67,3 +67,17 @@ def save_model(model:object,path:Path):
      """
     joblib.dump(model,path)
     logger.info(f"model saved at: {path} and size of the model is: {get_size(path)}")
+
+@ensure_annotations
+def save_evaluation(evaluation:dict,path:Path):
+    """
+    Saves the Evaluation metrices in a JSON format
+    Args:
+        Evaluation Metrices in a Dictionary format
+    Return:
+        None
+    """
+    with open(path,'w') as f:
+        json.dump(evaluation,f,indent=4) 
+
+    logger.info(f"Evalution Metrices saved at {path}")

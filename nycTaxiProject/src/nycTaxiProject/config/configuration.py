@@ -1,6 +1,6 @@
 # Configuration file : We will read the configuration file and create the configuration objects.Configuration file is in yaml format and we will use the yaml library to read the configuration file.
-from nycTaxiProject.entity.config_entity import DataIngestionConfig,DataValidationConfig,DataTransformationConfig,ModelTrainingConfig
-from nycTaxiProject.util.common import read_yaml,create_directories
+from nycTaxiProject.entity.config_entity import DataIngestionConfig,DataValidationConfig,DataTransformationConfig,ModelTrainingConfig,ModelEvaluationConfig
+from nycTaxiProject.util.common import read_yaml,create_directories,save_evaluation
 from nycTaxiProject.constants import *
 import os
 
@@ -94,3 +94,20 @@ class ConfigurationManager:
 
         )
         return model_training_config
+    
+    def get_model_evaluation(self)->ModelEvaluationConfig:
+        config=self.config.model_evaluation
+        create_directories([config.root_dir])
+
+        model_evaluation_config=ModelEvaluationConfig(
+            root_dir=config.root_dir,
+            x_train_dir=config.x_train_dir,
+            y_train_dir=config.y_train_dir,
+            x_test_dir=config.x_test_dir,
+            y_test_dir=config.y_test_dir,
+            model_dir=config.model_dir,
+            all_params= self.params,
+            mlflow_uri= "https://dagshub.com/mann-lean/data-science-project.mlflow",
+            model_evaluation=config.model_evaluation
+        )
+        return model_evaluation_config

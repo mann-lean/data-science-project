@@ -61,3 +61,67 @@ Traceback (most recent call last):
     with open(path_to_yaml) as yaml_file:
          ~~~~^^^^^^^^^^^^^^
 FileNotFoundError: [Errno 2] No such file or directory: 'config\\config.yaml'
+[2026-02-25 12:58:59,696 : INFO : 2382430873 : >>>>>>>STAGE: MODEL EVALUATION Started<<<<<<<<< ]
+[2026-02-25 12:59:00,019 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-25 12:59:00,054 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-25 12:59:00,073 : INFO : common : created directory at: artifacts/modelEvaluatioin]
+[2026-02-25 12:59:00,076 : ERROR : 2382430873 : "'ConfigBox' object has no attribute 'evaluation_metric'"]
+Traceback (most recent call last):
+  File "box\\box.py", line 594, in box.box.Box.__getitem__
+KeyError: 'evaluation_metric'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 633, in box.box.Box.__getattr__
+  File "box\\box.py", line 621, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'evaluation_metric'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 635, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'evaluation_metric'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\config_box.py", line 29, in box.config_box.ConfigBox.__getattr__
+  File "box\\box.py", line 649, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'evaluation_metric'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 594, in box.box.Box.__getitem__
+KeyError: 'evaluation_metric'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 633, in box.box.Box.__getattr__
+  File "box\\box.py", line 621, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'evaluation_metric'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 635, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'evaluation_metric'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_1896\2382430873.py", line 4, in <module>
+    model_evaluation_config=config.get_model_evaluation()
+  File "C:\Users\MANN\AppData\Local\Temp\ipykernel_1896\3646233222.py", line 23, in get_model_evaluation
+    evaluation_metric=config.evaluation_metric
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "box\\config_box.py", line 31, in box.config_box.ConfigBox.__getattr__
+  File "box\\box.py", line 649, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'evaluation_metric'"
+[2026-02-25 13:00:33,305 : INFO : 2382430873 : >>>>>>>STAGE: MODEL EVALUATION Started<<<<<<<<< ]
+[2026-02-25 13:00:33,336 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-25 13:00:33,349 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-25 13:00:33,354 : INFO : common : created directory at: artifacts/modelEvaluatioin]
+[2026-02-25 13:00:40,987 : INFO : tokens : Removed expired tokens from the token cache]

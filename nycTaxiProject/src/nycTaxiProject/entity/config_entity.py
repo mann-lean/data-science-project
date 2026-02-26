@@ -44,3 +44,15 @@ class ModelTrainingConfig:
     random_state:int
     learning_rate:str
     eta0:float
+
+@dataclass(frozen=True)
+class ModelEvaluationConfig:
+    root_dir: Path
+    x_train_dir: Path
+    y_train_dir: Path
+    x_test_dir: Path
+    y_test_dir: Path
+    model_dir: Path
+    all_params:dict
+    mlflow_uri:str
+    model_evaluation:Path
