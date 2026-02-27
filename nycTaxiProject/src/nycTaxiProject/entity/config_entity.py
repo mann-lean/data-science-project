@@ -28,6 +28,7 @@ class DataTransformationConfig:
     before_encoding:Path
     train_before:Path
     test_before:Path
+    preprocessor_file: Path
     
 @dataclass(frozen=True)
 class ModelTrainingConfig:

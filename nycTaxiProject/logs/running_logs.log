@@ -2256,3 +2256,115 @@ httpx.RemoteProtocolError: Server disconnected without sending a response.
 [2026-02-26 14:43:28,314 : INFO : helpers : Repository mann-lean/data-science-project initialized!]
 [2026-02-26 14:43:32,605 : INFO : common : Evalution Metrices saved at artifacts\modelEvaluation\evaluation.json]
 [2026-02-26 14:44:26,709 : INFO : stage_05_model_evaluation : >>>>>>>STAGE: MODEL EVALUATION ENDED<<<<<<<<< ]
+[2026-02-27 18:41:44,946 : INFO : stage_03_data_transformation : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-27 18:41:44,977 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-27 18:41:45,006 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-27 18:41:45,008 : INFO : common : created directory at: artifacts]
+[2026-02-27 18:41:45,009 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-02-27 18:41:45,011 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-02-27 18:41:45,012 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-02-27 18:41:45,014 : INFO : common : created directory at: artifacts/data_transformation/before_encoding]
+[2026-02-27 18:41:45,016 : ERROR : stage_03_data_transformation : "'ConfigBox' object has no attribute 'preprocesor_file'"]
+Traceback (most recent call last):
+  File "box\\box.py", line 594, in box.box.Box.__getitem__
+KeyError: 'preprocesor_file'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 633, in box.box.Box.__getattr__
+  File "box\\box.py", line 621, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'preprocesor_file'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 635, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'preprocesor_file'. Did you mean: 'preprocessor_file'?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\config_box.py", line 29, in box.config_box.ConfigBox.__getattr__
+  File "box\\box.py", line 649, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'preprocesor_file'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 594, in box.box.Box.__getitem__
+KeyError: 'preprocesor_file'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 633, in box.box.Box.__getattr__
+  File "box\\box.py", line 621, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'preprocesor_file'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 635, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'preprocesor_file'. Did you mean: 'preprocessor_file'?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_03_data_transformation.py", line 19, in <module>
+    data_transformed_config=config.get_data_transformation_config()
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\config\configuration.py", line 73, in get_data_transformation_config
+    preprocesor_file=config.preprocesor_file
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "box\\config_box.py", line 31, in box.config_box.ConfigBox.__getattr__
+  File "box\\box.py", line 649, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'preprocesor_file'". Did you mean: 'preprocessor_file'?
+[2026-02-27 18:47:34,229 : INFO : stage_03_data_transformation : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-27 18:47:34,251 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-27 18:47:34,258 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-27 18:47:34,260 : INFO : common : created directory at: artifacts]
+[2026-02-27 18:47:34,261 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-02-27 18:47:34,272 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-02-27 18:47:34,273 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-02-27 18:47:34,274 : INFO : common : created directory at: artifacts/data_transformation/before_encoding]
+[2026-02-27 18:47:38,037 : INFO : data_transformation : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-02-27 18:47:38,283 : INFO : data_transformation : FILLING MISSING VALUES]
+[2026-02-27 18:47:42,248 : INFO : data_transformation : Preprocessing DateTime completed]
+[2026-02-27 18:47:45,205 : INFO : data_transformation : Data Cleaning completed]
+[2026-02-27 18:47:46,693 : INFO : data_transformation : Feature Engineering completed]
+[2026-02-27 18:47:47,564 : INFO : data_transformation : Train-Test Split completed with test size: 71364]
+[2026-02-27 18:47:47,647 : INFO : data_transformation : Clipping Outliers completed]
+[2026-02-27 18:48:03,208 : INFO : data_transformation : Before Encoding data saved at artifacts/data_transformation/before_encoding successfully...]
+[2026-02-27 18:48:04,996 : ERROR : data_transformation : Error in data transformation: 'str' object has no attribute 'preprocesor_file']
+[2026-02-27 18:48:04,998 : ERROR : stage_03_data_transformation : 'str' object has no attribute 'preprocesor_file']
+Traceback (most recent call last):
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_03_data_transformation.py", line 21, in <module>
+    data_transform.data_transforamtion()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\components\data_transformation.py", line 267, in data_transforamtion
+    raise e
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\components\data_transformation.py", line 259, in data_transforamtion
+    x_train,x_test=encoding_independent(x_train,x_test,y_train) #encoding train-test spit
+                   ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\components\data_transformation.py", line 217, in encoding_independent
+    preprocessor_path=self.config.train.preprocesor_file
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'preprocesor_file'
+[2026-02-27 18:48:47,144 : INFO : stage_03_data_transformation : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-02-27 18:48:47,161 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-27 18:48:47,169 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-27 18:48:47,170 : INFO : common : created directory at: artifacts]
+[2026-02-27 18:48:47,171 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-02-27 18:48:47,173 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-02-27 18:48:47,174 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-02-27 18:48:47,175 : INFO : common : created directory at: artifacts/data_transformation/before_encoding]
+[2026-02-27 18:48:50,641 : INFO : data_transformation : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-02-27 18:48:50,784 : INFO : data_transformation : FILLING MISSING VALUES]
+[2026-02-27 18:48:54,745 : INFO : data_transformation : Preprocessing DateTime completed]
+[2026-02-27 18:48:57,263 : INFO : data_transformation : Data Cleaning completed]
+[2026-02-27 18:48:58,792 : INFO : data_transformation : Feature Engineering completed]
+[2026-02-27 18:48:59,791 : INFO : data_transformation : Train-Test Split completed with test size: 71364]
+[2026-02-27 18:48:59,855 : INFO : data_transformation : Clipping Outliers completed]
+[2026-02-27 18:49:17,311 : INFO : data_transformation : Before Encoding data saved at artifacts/data_transformation/before_encoding successfully...]
+[2026-02-27 18:49:52,609 : INFO : data_transformation : Trasnfomred data saved at artifacts/data_transformation successfully...]
+[2026-02-27 18:49:52,642 : INFO : stage_03_data_transformation : >>>>>>>STAGE: DATA TRANSFORMATION ENDED<<<<<<<<< ]

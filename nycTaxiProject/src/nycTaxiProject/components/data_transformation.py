@@ -5,6 +5,7 @@ from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from nycTaxiProject import logger
 from nycTaxiProject.config.configuration import DataTransformationConfig
+import joblib
 
 class Data_Transformation:
     def __init__(self,config=DataTransformationConfig):
@@ -211,6 +212,10 @@ class Data_Transformation:
                 addidtional_cols=['is_weekend', 'pickup_ampm','Is_Airport_Trip', 'is_airport_peak_hour', 'is_pm_peak_hour','PickUpHr_sin', 'PickUpHr_cos']
                 encoded_train = pd.concat([encoded_train, x_train[addidtional_cols]], axis=1)
                 encoded_test = pd.concat([encoded_test, x_test[addidtional_cols]], axis=1)
+
+                # Sving the prerocessor file(.pkl)
+                preprocessor_path=self.config.preprocessor_file
+                joblib.dump(preprocessor,preprocessor_path)
 
                 return encoded_train,encoded_test
             

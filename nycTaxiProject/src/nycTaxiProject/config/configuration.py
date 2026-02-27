@@ -69,7 +69,8 @@ class ConfigurationManager:
               y_test_dir=config.y_test_dir,
               before_encoding=config.before_encoding,
               train_before=config.train_before,
-              test_before=config.test_before
+              test_before=config.test_before,
+              preprocessor_file=config.preprocessor_file
          )
          return data_transformed_config
     
