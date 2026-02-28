@@ -2368,3 +2368,50 @@ AttributeError: 'str' object has no attribute 'preprocesor_file'
 [2026-02-27 18:49:17,311 : INFO : data_transformation : Before Encoding data saved at artifacts/data_transformation/before_encoding successfully...]
 [2026-02-27 18:49:52,609 : INFO : data_transformation : Trasnfomred data saved at artifacts/data_transformation successfully...]
 [2026-02-27 18:49:52,642 : INFO : stage_03_data_transformation : >>>>>>>STAGE: DATA TRANSFORMATION ENDED<<<<<<<<< ]
+[2026-02-28 04:00:31,423 : INFO : _internal : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.42.12.104:8080]
+[2026-02-28 04:00:31,500 : INFO : _internal : [33mPress CTRL+C to quit[0m]
+[2026-02-28 04:00:31,718 : INFO : _internal :  * Restarting with stat]
+[2026-02-28 04:01:04,681 : WARNING : _internal :  * Debugger is active!]
+[2026-02-28 04:01:04,755 : INFO : _internal :  * Debugger PIN: 584-528-590]
+[2026-02-28 04:20:01,651 : INFO : _internal : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.42.12.104:8080]
+[2026-02-28 04:20:01,653 : INFO : _internal : [33mPress CTRL+C to quit[0m]
+[2026-02-28 04:24:58,142 : INFO : _internal : 127.0.0.1 - - [28/Feb/2026 04:24:58] "GET / HTTP/1.1" 200 -]
+[2026-02-28 04:25:00,440 : INFO : _internal : 127.0.0.1 - - [28/Feb/2026 04:25:00] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2026-02-28 04:26:47,480 : ERROR : app : Prediction error: 'Inference_transform' object is not callable]
+Traceback (most recent call last):
+  File "E:\dsProject\nycTaxiProject\app.py", line 40, in index
+    prediction = pipeline.Inference_transform(input_dict)
+TypeError: 'Inference_transform' object is not callable
+[2026-02-28 04:26:47,486 : INFO : _internal : 127.0.0.1 - - [28/Feb/2026 04:26:47] "POST / HTTP/1.1" 200 -]
+[2026-02-28 16:53:50,194 : INFO : _internal : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.42.12.104:8080]
+[2026-02-28 16:53:50,215 : INFO : _internal : [33mPress CTRL+C to quit[0m]
+[2026-02-28 16:54:14,713 : INFO : _internal : 127.0.0.1 - - [28/Feb/2026 16:54:14] "GET / HTTP/1.1" 200 -]
+[2026-02-28 16:54:15,115 : INFO : _internal : 127.0.0.1 - - [28/Feb/2026 16:54:15] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2026-02-28 16:59:07,550 : ERROR : app : Prediction error: 'Inference_transform' object is not callable]
+Traceback (most recent call last):
+  File "E:\dsProject\nycTaxiProject\app.py", line 40, in index
+    prediction = pipeline.Inference_transform(input_dict)
+TypeError: 'Inference_transform' object is not callable
+[2026-02-28 16:59:07,570 : INFO : _internal : 127.0.0.1 - - [28/Feb/2026 16:59:07] "POST / HTTP/1.1" 200 -]
+[2026-02-28 17:25:31,079 : INFO : _internal : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.42.12.104:8080]
+[2026-02-28 17:25:31,081 : INFO : _internal : [33mPress CTRL+C to quit[0m]
+[2026-02-28 17:25:38,327 : INFO : _internal : 127.0.0.1 - - [28/Feb/2026 17:25:38] "POST / HTTP/1.1" 200 -]
+[2026-02-28 17:26:23,836 : INFO : _internal : 127.0.0.1 - - [28/Feb/2026 17:26:23] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
+[2026-02-28 17:30:24,147 : INFO : _internal : 127.0.0.1 - - [28/Feb/2026 17:30:24] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
+[2026-02-28 17:35:47,485 : INFO : _internal : 127.0.0.1 - - [28/Feb/2026 17:35:47] "POST / HTTP/1.1" 200 -]
+[2026-02-28 17:44:58,042 : INFO : _internal : 127.0.0.1 - - [28/Feb/2026 17:44:58] "POST / HTTP/1.1" 200 -]
+[2026-02-28 17:46:10,040 : INFO : _internal : 127.0.0.1 - - [28/Feb/2026 17:46:10] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
+[2026-02-28 17:53:30,500 : INFO : _internal : 127.0.0.1 - - [28/Feb/2026 17:53:30] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
+[2026-02-28 17:57:28,770 : INFO : _internal : 127.0.0.1 - - [28/Feb/2026 17:57:28] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]

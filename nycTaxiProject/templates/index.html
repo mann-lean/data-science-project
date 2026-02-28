@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NYC Taxi Tip Predictor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --yellow: #F7C948;
+      --black: #0A0A0A;
+      --dark: #111111;
+      --card: #181818;
+      --border: #2a2a2a;
+      --text: #E8E8E0;
+      --muted: #666;
+      --accent: #F7C948;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--black);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Animated background grid */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(247,201,72,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(247,201,72,0.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Road stripe decoration */
+    .road-stripe {
+      position: fixed;
+      left: 0; right: 0;
+      height: 3px;
+      background: repeating-linear-gradient(90deg, var(--yellow) 0 40px, transparent 40px 80px);
+      z-index: 10;
+    }
+    .road-stripe.top { top: 0; }
+    .road-stripe.bottom { bottom: 0; }
+
+    /* Header */
+    header {
+      position: relative;
+      z-index: 1;
+      padding: 60px 40px 0;
+      display: flex;
+      align-items: flex-end;
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .taxi-icon {
+      font-size: 64px;
+      line-height: 1;
+      animation: bob 3s ease-in-out infinite;
+    }
+    @keyframes bob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .header-text h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(48px, 8vw, 96px);
+      letter-spacing: 2px;
+      line-height: 0.9;
+      color: var(--yellow);
+      text-shadow: 4px 4px 0 rgba(0,0,0,0.5);
+    }
+    .header-text p {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-top: 8px;
+    }
+
+    /* Main container */
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 40px auto 80px;
+      padding: 0 24px;
+    }
+
+    form {
+      display: grid;
+      gap: 2px;
+    }
+
+    /* Section label */
+    .section-label {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 13px;
+      letter-spacing: 4px;
+      color: var(--yellow);
+      padding: 28px 0 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* Grid of inputs */
+    .input-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 2px;
+    }
+
+    .field {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 16px 20px;
+      position: relative;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .field:hover {
+      border-color: rgba(247,201,72,0.3);
+      background: #1e1e1e;
+    }
+    .field:focus-within {
+      border-color: var(--yellow);
+      background: #1e1e1e;
+    }
+
+    .field label {
+      display: block;
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+      transition: color 0.2s;
+    }
+    .field:focus-within label {
+      color: var(--yellow);
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--text);
+      font-family: 'DM Mono', monospace;
+      font-size: 15px;
+      font-weight: 500;
+      appearance: none;
+    }
+    .field input::placeholder { color: #333; }
+    .field input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+      filter: invert(0.3) sepia(1) saturate(5) hue-rotate(2deg);
+      cursor: pointer;
+    }
+
+    /* Dollar/unit prefix */
+    .field .unit {
+      position: absolute;
+      right: 20px;
+      bottom: 16px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: #333;
+    }
+
+    /* Full-width date fields */
+    .field.wide {
+      grid-column: span 2;
+    }
+    @media (max-width: 580px) {
+      .field.wide { grid-column: span 1; }
+    }
+
+    /* Submit */
+    .submit-row {
+      margin-top: 32px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    button[type="submit"] {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      letter-spacing: 3px;
+      background: var(--yellow);
+      color: var(--black);
+      border: none;
+      padding: 18px 48px;
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.15s, box-shadow 0.15s;
+      clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+    }
+    button[type="submit"]:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 4px 4px 0 rgba(247,201,72,0.3);
+    }
+    button[type="submit"]:active {
+      transform: translate(1px, 1px);
+      box-shadow: none;
+    }
+
+    /* Result box */
+    .result-box {
+      background: var(--card);
+      border: 1px solid var(--yellow);
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      flex: 1;
+      min-width: 260px;
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(20px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    .result-box .label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .result-box .value {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 42px;
+      color: var(--yellow);
+      line-height: 1;
+    }
+    .result-box.error .value {
+      font-size: 16px;
+      font-family: 'DM Mono', monospace;
+      color: #e05252;
+    }
+
+    /* Meter animation on result */
+    .meter-bar {
+      height: 3px;
+      background: var(--border);
+      margin-top: 6px;
+      overflow: hidden;
+    }
+    .meter-fill {
+      height: 100%;
+      background: var(--yellow);
+      width: 0;
+      animation: fill 1s ease forwards 0.3s;
+    }
+    @keyframes fill {
+      to { width: 100%; }
+    }
+
+    /* Ticker tape at bottom */
+    .ticker {
+      position: fixed;
+      bottom: 6px;
+      left: 0; right: 0;
+      overflow: hidden;
+      z-index: 5;
+    }
+    .ticker-inner {
+      display: flex;
+      gap: 60px;
+      white-space: nowrap;
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 2px;
+      animation: ticker 30s linear infinite;
+    }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="road-stripe top"></div>
+
+  <header>
+    <div class="taxi-icon">🚕</div>
+    <div class="header-text">
+      <h1>NYC Tip Predictor</h1>
+      <p>NYC Taxi · Tip Amount Predictor · ML Inference</p>
+    </div>
+  </header>
+
+  <main>
+    <form action="/" method="POST">
+
+      <!-- Trip Info -->
+      <div class="section-label">Trip Details</div>
+      <div class="input-grid">
+        <div class="field">
+          <label>Vendor ID</label>
+          <input type="number" name="vendorid" placeholder="1 or 2" required min="1" max="2"/>
+        </div>
+        <div class="field">
+          <label>Rate Code ID</label>
+          <input type="number" name="ratecodeid" placeholder="1–6" step="1" required/>
+        </div>
+        <div class="field">
+          <label>Pickup Location ID</label>
+          <input type="number" name="pulocationid" placeholder="e.g. 132" required/>
+        </div>
+        <div class="field">
+          <label>Dropoff Location ID</label>
+          <input type="number" name="dolocationid" placeholder="e.g. 236" required/>
+        </div>
+        <div class="field">
+          <label>Passengers</label>
+          <input type="number" name="passenger_count" placeholder="1–6" min="1" max="6" required/>
+        </div>
+        <div class="field">
+          <label>Trip Distance</label>
+          <input type="number" name="trip_distance" placeholder="0.00" step="0.01" required/>
+          <span class="unit">miles</span>
+        </div>
+        <div class="field wide">
+          <label>Pickup Date &amp; Time</label>
+          <input type="datetime-local" name="pickupDateTime" required/>
+        </div>
+        <div class="field wide">
+          <label>Dropoff Date &amp; Time</label>
+          <input type="datetime-local" name="dropoffDateTime" required/>
+        </div>
+      </div>
+
+      <!-- Fare Breakdown -->
+      <div class="section-label">Fare Breakdown</div>
+      <div class="input-grid">
+        <div class="field">
+          <label>Fare Amount</label>
+          <input type="number" name="fare_amount" placeholder="0.00" step="0.01" required/>
+          <span class="unit">$</span>
+        </div>
+        <div class="field">
+          <label>Extra</label>
+          <input type="number" name="extra" placeholder="0.00" step="0.01" required/>
+          <span class="unit">$</span>
+        </div>
+        <div class="field">
+          <label>MTA Tax</label>
+          <input type="number" name="mta_tax" placeholder="0.50" step="0.01" required/>
+          <span class="unit">$</span>
+        </div>
+        <div class="field">
+          <label>Improvement Surcharge</label>
+          <input type="number" name="improvement_surcharge" placeholder="0.30" step="0.01" required/>
+          <span class="unit">$</span>
+        </div>
+        <div class="field">
+          <label>Tolls Amount</label>
+          <input type="number" name="tolls_amount" placeholder="0.00" step="0.01" required/>
+          <span class="unit">$</span>
+        </div>
+        <div class="field">
+          <label>Congestion Surcharge</label>
+          <input type="number" name="congestion_surcharge" placeholder="2.50" step="0.01" required/>
+          <span class="unit">$</span>
+        </div>
+        <div class="field">
+          <label>Airport Fee</label>
+          <input type="number" name="airport_fee" placeholder="0.00" step="0.01" required/>
+          <span class="unit">$</span>
+        </div>
+      </div>
+
+      <!-- Submit + Result -->
+      <div class="submit-row">
+        <button type="submit">Predict Tip →</button>
+
+        {% if results %}
+          {% if "Error" in results %}
+            <div class="result-box error">
+              <div>
+                <div class="label">Status</div>
+                <div class="value">{{ results }}</div>
+              </div>
+            </div>
+          {% else %}
+            <div class="result-box">
+              <div style="font-size:32px">💵</div>
+              <div>
+                <div class="label">Predicted Tip</div>
+                <div class="value">{{ results.replace("Predicted Tip amount :", "").replace("Predicted Tip Amount: ", "") }}</div>
+                <div class="meter-bar"><div class="meter-fill"></div></div>
+              </div>
+            </div>
+          {% endif %}
+        {% endif %}
+      </div>
+
+    </form>
+  </main>
+
+  <div class="road-stripe bottom"></div>
+
+  <!-- Ticker tape -->
+  <div class="ticker">
+    <div class="ticker-inner">
+      <span>NYC TAXI &amp; LIMOUSINE COMMISSION</span>
+      <span>✦</span>
+      <span>SGD REGRESSOR MODEL</span>
+      <span>✦</span>
+      <span>TIP AMOUNT PREDICTION</span>
+      <span>✦</span>
+      <span>YELLOW CAB DATA</span>
+      <span>✦</span>
+      <span>MACHINE LEARNING INFERENCE</span>
+      <span>✦</span>
+      <span>NYC TAXI &amp; LIMOUSINE COMMISSION</span>
+      <span>✦</span>
+      <span>SGD REGRESSOR MODEL</span>
+      <span>✦</span>
+      <span>TIP AMOUNT PREDICTION</span>
+      <span>✦</span>
+      <span>YELLOW CAB DATA</span>
+      <span>✦</span>
+      <span>MACHINE LEARNING INFERENCE</span>
+      <span>✦</span>
+    </div>
+  </div>
+
+</body>
+</html>
