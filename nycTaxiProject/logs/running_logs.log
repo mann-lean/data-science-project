@@ -2415,3 +2415,521 @@ TypeError: 'Inference_transform' object is not callable
 [2026-02-28 17:46:10,040 : INFO : _internal : 127.0.0.1 - - [28/Feb/2026 17:46:10] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
 [2026-02-28 17:53:30,500 : INFO : _internal : 127.0.0.1 - - [28/Feb/2026 17:53:30] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
 [2026-02-28 17:57:28,770 : INFO : _internal : 127.0.0.1 - - [28/Feb/2026 17:57:28] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -]
+[2026-02-28 23:53:37,597 : INFO : stage_01_data_ingestion : >>>>>>>>>>Data Ingestion Stage STARTED<<<<<<<<<<]
+[2026-02-28 23:53:37,678 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-28 23:53:37,712 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-28 23:53:37,714 : INFO : common : created directory at: artifacts]
+[2026-02-28 23:53:37,717 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-02-28 23:53:37,723 : INFO : data_ingestion : downloading the file formhttps://data.cityofnewyork.us/resource/4b4i-vvec.csv?$limit=500000 into file artifacts/data_ingestion/data.csv]
+[2026-02-28 23:55:44,743 : ERROR : data_ingestion : [WinError 10053] An established connection was aborted by the software in your host machine]
+Traceback (most recent call last):
+  File "e:\dsproject\nyctaxiproject\src\nycTaxiProject\components\data_ingestion.py", line 23, in download_file
+    filename,headers=request.urlretrieve(url=dataset_url,filename=download_path)
+                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\miniconda3\Lib\urllib\request.py", line 242, in urlretrieve
+    while block := fp.read(bs):
+                   ~~~~~~~^^^^
+  File "C:\Users\MANN\miniconda3\Lib\http\client.py", line 473, in read
+    return self._read_chunked(amt)
+           ~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\MANN\miniconda3\Lib\http\client.py", line 599, in _read_chunked
+    value.append(self._safe_read(amt))
+                 ~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\MANN\miniconda3\Lib\http\client.py", line 642, in _safe_read
+    data = self.fp.read(amt)
+  File "C:\Users\MANN\miniconda3\Lib\socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\MANN\miniconda3\Lib\ssl.py", line 1304, in recv_into
+    return self.read(nbytes, buffer)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\miniconda3\Lib\ssl.py", line 1138, in read
+    return self._sslobj.read(len, buffer)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+[2026-02-28 23:55:44,844 : ERROR : stage_01_data_ingestion : [WinError 10053] An established connection was aborted by the software in your host machine]
+Traceback (most recent call last):
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_01_data_ingestion.py", line 20, in <module>
+    obj.main()
+    ~~~~~~~~^^
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_01_data_ingestion.py", line 14, in main
+    data_ingestion.download_file()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "e:\dsproject\nyctaxiproject\src\nycTaxiProject\components\data_ingestion.py", line 29, in download_file
+    raise e
+  File "e:\dsproject\nyctaxiproject\src\nycTaxiProject\components\data_ingestion.py", line 23, in download_file
+    filename,headers=request.urlretrieve(url=dataset_url,filename=download_path)
+                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\miniconda3\Lib\urllib\request.py", line 242, in urlretrieve
+    while block := fp.read(bs):
+                   ~~~~~~~^^^^
+  File "C:\Users\MANN\miniconda3\Lib\http\client.py", line 473, in read
+    return self._read_chunked(amt)
+           ~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\MANN\miniconda3\Lib\http\client.py", line 599, in _read_chunked
+    value.append(self._safe_read(amt))
+                 ~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\MANN\miniconda3\Lib\http\client.py", line 642, in _safe_read
+    data = self.fp.read(amt)
+  File "C:\Users\MANN\miniconda3\Lib\socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\MANN\miniconda3\Lib\ssl.py", line 1304, in recv_into
+    return self.read(nbytes, buffer)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\miniconda3\Lib\ssl.py", line 1138, in read
+    return self._sslobj.read(len, buffer)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+[2026-02-28 23:57:05,008 : INFO : stage_01_data_ingestion : >>>>>>>>>>Data Ingestion Stage STARTED<<<<<<<<<<]
+[2026-02-28 23:57:05,032 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-02-28 23:57:05,043 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-02-28 23:57:05,048 : INFO : common : created directory at: artifacts]
+[2026-02-28 23:57:05,053 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-02-28 23:57:05,055 : INFO : data_ingestion : downloading the file formhttps://data.cityofnewyork.us/resource/4b4i-vvec.csv?$limit=500000 into file artifacts/data_ingestion/data.csv]
+[2026-02-28 23:58:18,623 : INFO : data_ingestion : File downloaded successfully & saved @ artifacts/data_ingestion/data.csv with size ~ 73880KB]
+[2026-02-28 23:58:18,625 : INFO : stage_01_data_ingestion : >>>>>>>>>>Data Ingestion Stage COMPLETED<<<<<<<<<<]
+[2026-03-01 00:23:55,567 : INFO : stage_02_data_validation : >>>>>>>>>>Data Validation Stage STARTED<<<<<<<<<<]
+[2026-03-01 00:23:55,583 : ERROR : stage_02_data_validation : DataValidationPipeline.main() missing 1 required positional argument: 'self']
+Traceback (most recent call last):
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_02_data_validation.py", line 19, in <module>
+    obj.main()
+    ~~~~~~~~^^
+TypeError: DataValidationPipeline.main() missing 1 required positional argument: 'self'
+[2026-03-01 00:27:15,861 : INFO : stage_02_data_validation : >>>>>>>>>>Data Validation Stage STARTED<<<<<<<<<<]
+[2026-03-01 00:27:15,914 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-03-01 00:27:15,932 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-03-01 00:27:15,934 : INFO : common : created directory at: artifacts]
+[2026-03-01 00:27:15,936 : INFO : common : created directory at: artifacts/data_validation]
+[2026-03-01 00:27:15,938 : ERROR : stage_02_data_validation : 'ConfigurationManager' object has no attribute 'schema']
+Traceback (most recent call last):
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_02_data_validation.py", line 19, in <module>
+    obj.main()
+    ~~~~~~~~^^
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_02_data_validation.py", line 12, in main
+    data_validation=Data_Validation(config.get_data_validation_config())
+                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "e:\dsproject\nyctaxiproject\src\nycTaxiProject\config\configuration.py", line 39, in get_data_validation_config
+    all_schema=self.schema
+               ^^^^^^^^^^^
+AttributeError: 'ConfigurationManager' object has no attribute 'schema'
+[2026-03-01 00:37:40,780 : INFO : stage_02_data_validation : >>>>>>>>>>Data Validation Stage STARTED<<<<<<<<<<]
+[2026-03-01 00:37:40,801 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-03-01 00:37:40,811 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-03-01 00:37:40,813 : INFO : common : created directory at: artifacts]
+[2026-03-01 00:37:40,815 : INFO : common : created directory at: artifacts/data_validation]
+[2026-03-01 00:37:40,816 : ERROR : stage_02_data_validation : 'ConfigurationManager' object has no attribute 'schema']
+Traceback (most recent call last):
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_02_data_validation.py", line 20, in <module>
+    obj.main()
+    ~~~~~~~~^^
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_02_data_validation.py", line 12, in main
+    data_validation_config=config.get_data_validation_config()
+  File "e:\dsproject\nyctaxiproject\src\nycTaxiProject\config\configuration.py", line 39, in get_data_validation_config
+    all_schema=self.schema
+               ^^^^^^^^^^^
+AttributeError: 'ConfigurationManager' object has no attribute 'schema'
+[2026-03-01 00:43:42,011 : INFO : stage_02_data_validation : >>>>>>>>>>Data Validation Stage STARTED<<<<<<<<<<]
+[2026-03-01 00:43:42,032 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-03-01 00:43:42,039 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-03-01 00:43:42,131 : INFO : common : yaml file: schema.yaml LOADED successfully]
+[2026-03-01 00:43:42,135 : INFO : common : created directory at: artifacts]
+[2026-03-01 00:43:42,137 : INFO : common : created directory at: artifacts/data_validation]
+[2026-03-01 00:43:42,160 : ERROR : stage_02_data_validation : [Errno 2] No such file or directory: '../artifacts/data_ingestion/data.csv']
+Traceback (most recent call last):
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_02_data_validation.py", line 20, in <module>
+    obj.main()
+    ~~~~~~~~^^
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_02_data_validation.py", line 14, in main
+    data_validation.validation_all_columns()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "e:\dsproject\nyctaxiproject\src\nycTaxiProject\components\data_validation.py", line 32, in validation_all_columns
+    raise e
+  File "e:\dsproject\nyctaxiproject\src\nycTaxiProject\components\data_validation.py", line 14, in validation_all_columns
+    df=pd.read_csv("../artifacts/data_ingestion/data.csv")
+  File "C:\Users\MANN\miniconda3\Lib\site-packages\pandas\io\parsers\readers.py", line 873, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\MANN\miniconda3\Lib\site-packages\pandas\io\parsers\readers.py", line 300, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\MANN\miniconda3\Lib\site-packages\pandas\io\parsers\readers.py", line 1645, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\miniconda3\Lib\site-packages\pandas\io\parsers\readers.py", line 1904, in _make_engine
+    self.handles = get_handle(
+                   ~~~~~~~~~~^
+        f,
+        ^^
+    ...<6 lines>...
+        storage_options=self.options.get("storage_options", None),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\MANN\miniconda3\Lib\site-packages\pandas\io\common.py", line 926, in get_handle
+    handle = open(
+        handle,
+    ...<3 lines>...
+        newline="",
+    )
+FileNotFoundError: [Errno 2] No such file or directory: '../artifacts/data_ingestion/data.csv'
+[2026-03-01 00:45:33,578 : INFO : stage_02_data_validation : >>>>>>>>>>Data Validation Stage STARTED<<<<<<<<<<]
+[2026-03-01 00:45:33,602 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-03-01 00:45:33,609 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-03-01 00:45:33,628 : INFO : common : yaml file: schema.yaml LOADED successfully]
+[2026-03-01 00:45:33,630 : INFO : common : created directory at: artifacts]
+[2026-03-01 00:45:33,631 : INFO : common : created directory at: artifacts/data_validation]
+[2026-03-01 00:45:33,655 : ERROR : stage_02_data_validation : [Errno 2] No such file or directory: '../artifacts/data_ingestion/data.csv']
+Traceback (most recent call last):
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_02_data_validation.py", line 20, in <module>
+    obj.main()
+    ~~~~~~~~^^
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_02_data_validation.py", line 14, in main
+    data_validation.validation_all_columns()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "e:\dsproject\nyctaxiproject\src\nycTaxiProject\components\data_validation.py", line 32, in validation_all_columns
+    raise e
+  File "e:\dsproject\nyctaxiproject\src\nycTaxiProject\components\data_validation.py", line 14, in validation_all_columns
+    df=pd.read_csv("../artifacts/data_ingestion/data.csv")
+  File "C:\Users\MANN\miniconda3\Lib\site-packages\pandas\io\parsers\readers.py", line 873, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\MANN\miniconda3\Lib\site-packages\pandas\io\parsers\readers.py", line 300, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\MANN\miniconda3\Lib\site-packages\pandas\io\parsers\readers.py", line 1645, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\miniconda3\Lib\site-packages\pandas\io\parsers\readers.py", line 1904, in _make_engine
+    self.handles = get_handle(
+                   ~~~~~~~~~~^
+        f,
+        ^^
+    ...<6 lines>...
+        storage_options=self.options.get("storage_options", None),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\MANN\miniconda3\Lib\site-packages\pandas\io\common.py", line 926, in get_handle
+    handle = open(
+        handle,
+    ...<3 lines>...
+        newline="",
+    )
+FileNotFoundError: [Errno 2] No such file or directory: '../artifacts/data_ingestion/data.csv'
+[2026-03-01 00:47:26,342 : INFO : stage_02_data_validation : >>>>>>>>>>Data Validation Stage STARTED<<<<<<<<<<]
+[2026-03-01 00:47:26,371 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-03-01 00:47:26,379 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-03-01 00:47:26,393 : INFO : common : yaml file: schema.yaml LOADED successfully]
+[2026-03-01 00:47:26,395 : INFO : common : created directory at: artifacts]
+[2026-03-01 00:47:26,398 : INFO : common : created directory at: artifacts/data_validation]
+[2026-03-01 00:47:26,428 : ERROR : stage_02_data_validation : [Errno 2] No such file or directory: '../artifacts/data_ingestion/data.csv']
+Traceback (most recent call last):
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_02_data_validation.py", line 20, in <module>
+    obj.main()
+    ~~~~~~~~^^
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_02_data_validation.py", line 14, in main
+    data_validation.validation_all_columns()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "e:\dsproject\nyctaxiproject\src\nycTaxiProject\components\data_validation.py", line 32, in validation_all_columns
+    raise e
+  File "e:\dsproject\nyctaxiproject\src\nycTaxiProject\components\data_validation.py", line 14, in validation_all_columns
+    df=pd.read_csv("../artifacts/data_ingestion/data.csv")
+  File "C:\Users\MANN\miniconda3\Lib\site-packages\pandas\io\parsers\readers.py", line 873, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\MANN\miniconda3\Lib\site-packages\pandas\io\parsers\readers.py", line 300, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\MANN\miniconda3\Lib\site-packages\pandas\io\parsers\readers.py", line 1645, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\miniconda3\Lib\site-packages\pandas\io\parsers\readers.py", line 1904, in _make_engine
+    self.handles = get_handle(
+                   ~~~~~~~~~~^
+        f,
+        ^^
+    ...<6 lines>...
+        storage_options=self.options.get("storage_options", None),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\MANN\miniconda3\Lib\site-packages\pandas\io\common.py", line 926, in get_handle
+    handle = open(
+        handle,
+    ...<3 lines>...
+        newline="",
+    )
+FileNotFoundError: [Errno 2] No such file or directory: '../artifacts/data_ingestion/data.csv'
+[2026-03-01 00:50:19,004 : INFO : stage_02_data_validation : >>>>>>>>>>Data Validation Stage STARTED<<<<<<<<<<]
+[2026-03-01 00:50:19,028 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-03-01 00:50:19,041 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-03-01 00:50:19,061 : INFO : common : yaml file: schema.yaml LOADED successfully]
+[2026-03-01 00:50:19,063 : INFO : common : created directory at: artifacts]
+[2026-03-01 00:50:19,064 : INFO : common : created directory at: artifacts/data_validation]
+[2026-03-01 00:50:19,089 : ERROR : stage_02_data_validation : [Errno 2] No such file or directory: '/artifacts/data_ingestion/data.csv']
+Traceback (most recent call last):
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_02_data_validation.py", line 20, in <module>
+    obj.main()
+    ~~~~~~~~^^
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_02_data_validation.py", line 14, in main
+    data_validation.validation_all_columns()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "e:\dsproject\nyctaxiproject\src\nycTaxiProject\components\data_validation.py", line 32, in validation_all_columns
+    raise e
+  File "e:\dsproject\nyctaxiproject\src\nycTaxiProject\components\data_validation.py", line 14, in validation_all_columns
+    df=pd.read_csv("/artifacts/data_ingestion/data.csv")
+  File "C:\Users\MANN\miniconda3\Lib\site-packages\pandas\io\parsers\readers.py", line 873, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\MANN\miniconda3\Lib\site-packages\pandas\io\parsers\readers.py", line 300, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\MANN\miniconda3\Lib\site-packages\pandas\io\parsers\readers.py", line 1645, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\MANN\miniconda3\Lib\site-packages\pandas\io\parsers\readers.py", line 1904, in _make_engine
+    self.handles = get_handle(
+                   ~~~~~~~~~~^
+        f,
+        ^^
+    ...<6 lines>...
+        storage_options=self.options.get("storage_options", None),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\MANN\miniconda3\Lib\site-packages\pandas\io\common.py", line 926, in get_handle
+    handle = open(
+        handle,
+    ...<3 lines>...
+        newline="",
+    )
+FileNotFoundError: [Errno 2] No such file or directory: '/artifacts/data_ingestion/data.csv'
+[2026-03-01 00:51:42,832 : INFO : stage_02_data_validation : >>>>>>>>>>Data Validation Stage STARTED<<<<<<<<<<]
+[2026-03-01 00:51:42,852 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-03-01 00:51:42,860 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-03-01 00:51:42,873 : INFO : common : yaml file: schema.yaml LOADED successfully]
+[2026-03-01 00:51:42,876 : INFO : common : created directory at: artifacts]
+[2026-03-01 00:51:42,878 : INFO : common : created directory at: artifacts/data_validation]
+[2026-03-01 00:51:47,678 : INFO : stage_02_data_validation : >>>>>>>>>>Data Validation Stage COMPLETED<<<<<<<<<<]
+[2026-03-01 00:52:30,686 : INFO : stage_02_data_validation : >>>>>>>>>>Data Validation Stage STARTED<<<<<<<<<<]
+[2026-03-01 00:52:30,707 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-03-01 00:52:30,715 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-03-01 00:52:30,738 : INFO : common : yaml file: schema.yaml LOADED successfully]
+[2026-03-01 00:52:30,740 : INFO : common : created directory at: artifacts]
+[2026-03-01 00:52:30,741 : INFO : common : created directory at: artifacts/data_validation]
+[2026-03-01 00:52:35,434 : INFO : stage_02_data_validation : >>>>>>>>>>Data Validation Stage COMPLETED<<<<<<<<<<]
+[2026-03-01 00:54:37,512 : INFO : stage_03_data_transformation : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-03-01 00:54:37,534 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-03-01 00:54:37,547 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-03-01 00:54:37,561 : INFO : common : yaml file: schema.yaml LOADED successfully]
+[2026-03-01 00:54:37,564 : INFO : common : created directory at: artifacts]
+[2026-03-01 00:54:37,565 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-03-01 00:54:37,567 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-03-01 00:54:37,568 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-03-01 00:54:37,569 : INFO : common : created directory at: artifacts/data_transformation/before_encoding]
+[2026-03-01 00:54:41,871 : INFO : data_transformation : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-03-01 00:54:41,890 : INFO : data_transformation : FILLING MISSING VALUES]
+[2026-03-01 00:54:46,303 : INFO : data_transformation : Preprocessing DateTime completed]
+[2026-03-01 00:54:48,161 : INFO : data_transformation : Data Cleaning completed]
+[2026-03-01 00:54:49,774 : INFO : data_transformation : Feature Engineering completed]
+[2026-03-01 00:54:50,452 : INFO : data_transformation : Train-Test Split completed with test size: 71364]
+[2026-03-01 00:54:50,514 : INFO : data_transformation : Clipping Outliers completed]
+[2026-03-01 00:55:09,866 : INFO : data_transformation : Before Encoding data saved at artifacts/data_transformation/before_encoding successfully...]
+[2026-03-01 00:55:52,888 : INFO : data_transformation : Trasnfomred data saved at artifacts/data_transformation successfully...]
+[2026-03-01 00:55:52,925 : INFO : stage_03_data_transformation : >>>>>>>STAGE: DATA TRANSFORMATION ENDED<<<<<<<<< ]
+[2026-03-01 00:58:31,903 : INFO : stage_03_data_transformation : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-03-01 00:58:31,924 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-03-01 00:58:31,932 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-03-01 00:58:31,946 : INFO : common : yaml file: schema.yaml LOADED successfully]
+[2026-03-01 00:58:31,948 : INFO : common : created directory at: artifacts]
+[2026-03-01 00:58:31,952 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-03-01 00:58:31,954 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-03-01 00:58:31,955 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-03-01 00:58:31,956 : INFO : common : created directory at: artifacts/data_transformation/before_encoding]
+[2026-03-01 00:58:36,209 : INFO : data_transformation : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-03-01 00:58:36,223 : INFO : data_transformation : FILLING MISSING VALUES]
+[2026-03-01 00:58:40,654 : INFO : data_transformation : Preprocessing DateTime completed]
+[2026-03-01 00:58:42,502 : INFO : data_transformation : Data Cleaning completed]
+[2026-03-01 00:58:44,109 : INFO : data_transformation : Feature Engineering completed]
+[2026-03-01 00:58:44,767 : INFO : data_transformation : Train-Test Split completed with test size: 71364]
+[2026-03-01 00:58:44,825 : INFO : data_transformation : Clipping Outliers completed]
+[2026-03-01 00:59:04,719 : INFO : data_transformation : Before Encoding data saved at artifacts/data_transformation/before_encoding successfully...]
+[2026-03-01 00:59:47,783 : INFO : data_transformation : Trasnfomred data saved at artifacts/data_transformation successfully...]
+[2026-03-01 00:59:47,813 : INFO : stage_03_data_transformation : >>>>>>>STAGE: DATA TRANSFORMATION ENDED<<<<<<<<< ]
+[2026-03-01 01:02:17,715 : INFO : stage_03_data_transformation : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-03-01 01:02:17,717 : ERROR : stage_03_data_transformation : 'str' object has no attribute 'exists']
+Traceback (most recent call last):
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_03_data_transformation.py", line 13, in main
+    if not status_file_path.exists():
+           ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'exists'
+[2026-03-01 01:02:17,729 : ERROR : stage_03_data_transformation : 'str' object has no attribute 'exists']
+Traceback (most recent call last):
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_03_data_transformation.py", line 38, in <module>
+    obj.main()
+    ~~~~~~~~^^
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_03_data_transformation.py", line 28, in main
+    raise e
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_03_data_transformation.py", line 13, in main
+    if not status_file_path.exists():
+           ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'exists'
+[2026-03-01 01:05:11,512 : INFO : stage_03_data_transformation : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-03-01 01:05:11,514 : INFO : stage_03_data_transformation : Data Validation Passed! Proceeding with Data Transformation..]
+[2026-03-01 01:05:11,535 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-03-01 01:05:11,544 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-03-01 01:05:11,557 : INFO : common : yaml file: schema.yaml LOADED successfully]
+[2026-03-01 01:05:11,560 : INFO : common : created directory at: artifacts]
+[2026-03-01 01:05:11,561 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-03-01 01:05:11,565 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-03-01 01:05:11,569 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-03-01 01:05:11,571 : INFO : common : created directory at: artifacts/data_transformation/before_encoding]
+[2026-03-01 01:05:11,573 : ERROR : stage_03_data_transformation : name 'data_transform' is not defined]
+Traceback (most recent call last):
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_03_data_transformation.py", line 24, in main
+    data_transform.data_transforamtion()
+    ^^^^^^^^^^^^^^
+NameError: name 'data_transform' is not defined. Did you mean: 'data_transformation'?
+[2026-03-01 01:05:11,586 : ERROR : stage_03_data_transformation : name 'data_transform' is not defined]
+Traceback (most recent call last):
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_03_data_transformation.py", line 38, in <module>
+    obj.main()
+    ~~~~~~~~^^
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_03_data_transformation.py", line 28, in main
+    raise e
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_03_data_transformation.py", line 24, in main
+    data_transform.data_transforamtion()
+    ^^^^^^^^^^^^^^
+NameError: name 'data_transform' is not defined. Did you mean: 'data_transformation'?
+[2026-03-01 01:06:46,894 : INFO : stage_03_data_transformation : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-03-01 01:06:46,897 : INFO : stage_03_data_transformation : Data Validation Passed! Proceeding with Data Transformation..]
+[2026-03-01 01:06:46,922 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-03-01 01:06:46,931 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-03-01 01:06:46,962 : INFO : common : yaml file: schema.yaml LOADED successfully]
+[2026-03-01 01:06:46,974 : INFO : common : created directory at: artifacts]
+[2026-03-01 01:06:46,991 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-03-01 01:06:47,000 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-03-01 01:06:47,014 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-03-01 01:06:47,021 : INFO : common : created directory at: artifacts/data_transformation/before_encoding]
+[2026-03-01 01:06:51,637 : INFO : data_transformation : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-03-01 01:06:51,652 : INFO : data_transformation : FILLING MISSING VALUES]
+[2026-03-01 01:06:56,176 : INFO : data_transformation : Preprocessing DateTime completed]
+[2026-03-01 01:06:58,319 : INFO : data_transformation : Data Cleaning completed]
+[2026-03-01 01:07:00,018 : INFO : data_transformation : Feature Engineering completed]
+[2026-03-01 01:07:00,839 : INFO : data_transformation : Train-Test Split completed with test size: 71364]
+[2026-03-01 01:07:00,903 : INFO : data_transformation : Clipping Outliers completed]
+[2026-03-01 01:07:20,800 : INFO : data_transformation : Before Encoding data saved at artifacts/data_transformation/before_encoding successfully...]
+[2026-03-01 01:08:00,837 : INFO : data_transformation : Trasnfomred data saved at artifacts/data_transformation successfully...]
+[2026-03-01 01:08:00,869 : INFO : stage_03_data_transformation : >>>>>>>STAGE: DATA TRANSFORMATION ENDED<<<<<<<<< ]
+[2026-03-01 01:08:27,468 : INFO : stage_03_data_transformation : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-03-01 01:08:27,474 : ERROR : stage_03_data_transformation : Data Validation (False) is Failed! Halting the pipeline to prevent Data Transformation on bad data.]
+Traceback (most recent call last):
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_03_data_transformation.py", line 18, in main
+    raise Exception("Data Validation (False) is Failed! Halting the pipeline to prevent Data Transformation on bad data.")
+Exception: Data Validation (False) is Failed! Halting the pipeline to prevent Data Transformation on bad data.
+[2026-03-01 01:08:27,480 : ERROR : stage_03_data_transformation : Data Validation (False) is Failed! Halting the pipeline to prevent Data Transformation on bad data.]
+Traceback (most recent call last):
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_03_data_transformation.py", line 38, in <module>
+    obj.main()
+    ~~~~~~~~^^
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_03_data_transformation.py", line 28, in main
+    raise e
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_03_data_transformation.py", line 18, in main
+    raise Exception("Data Validation (False) is Failed! Halting the pipeline to prevent Data Transformation on bad data.")
+Exception: Data Validation (False) is Failed! Halting the pipeline to prevent Data Transformation on bad data.
+[2026-03-01 01:11:39,471 : INFO : stage_04_model_training : >>>>>>>STAGE: MODEL TRAINING STARTED<<<<<<<<< ]
+[2026-03-01 01:11:39,514 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-03-01 01:11:39,539 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-03-01 01:11:39,561 : INFO : common : yaml file: schema.yaml LOADED successfully]
+[2026-03-01 01:11:39,563 : INFO : common : created directory at: artifacts]
+[2026-03-01 01:11:39,566 : INFO : common : created directory at: artifacts/model_training]
+[2026-03-01 01:12:04,211 : INFO : common : model saved at: artifacts\model_training\sgdModel.pkl and size of the model is: ~ 2KB]
+[2026-03-01 01:12:04,225 : INFO : stage_04_model_training : >>>>>>>STAGE: MODEL TRAINING ENDED<<<<<<<<< ]
+[2026-03-01 01:13:19,265 : INFO : stage_05_model_evaluation : >>>>>>>STAGE: MODEL EVALUATION Started<<<<<<<<< ]
+[2026-03-01 01:13:19,288 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-03-01 01:13:19,301 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-03-01 01:13:19,317 : INFO : common : yaml file: schema.yaml LOADED successfully]
+[2026-03-01 01:13:19,319 : INFO : common : created directory at: artifacts]
+[2026-03-01 01:13:19,321 : INFO : common : created directory at: artifacts/modelEvaluation]
+[2026-03-01 01:13:25,734 : INFO : tokens : Removed expired tokens from the token cache]
+[2026-03-01 01:17:08,803 : INFO : stage_05_model_evaluation : >>>>>>>STAGE: MODEL EVALUATION Started<<<<<<<<< ]
+[2026-03-01 01:17:08,826 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-03-01 01:17:08,844 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-03-01 01:17:08,859 : INFO : common : yaml file: schema.yaml LOADED successfully]
+[2026-03-01 01:17:08,861 : INFO : common : created directory at: artifacts]
+[2026-03-01 01:17:08,863 : INFO : common : created directory at: artifacts/modelEvaluation]
+[2026-03-01 01:17:50,296 : INFO : _client : HTTP Request: POST https://dagshub.com/login/oauth/middleman "HTTP/1.1 200 OK"]
+[2026-03-01 01:17:51,825 : INFO : _client : HTTP Request: POST https://dagshub.com/login/oauth/access_token "HTTP/1.1 200 OK"]
+[2026-03-01 01:17:53,221 : INFO : _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-03-01 01:17:53,236 : INFO : helpers : Accessing as mann-lean]
+[2026-03-01 01:17:54,322 : INFO : _client : HTTP Request: GET https://dagshub.com/api/v1/repos/mann-lean/data-science-project "HTTP/1.1 200 OK"]
+[2026-03-01 01:17:55,634 : INFO : _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-03-01 01:17:55,642 : INFO : helpers : Initialized MLflow to track repo "mann-lean/data-science-project"]
+[2026-03-01 01:17:55,646 : INFO : helpers : Repository mann-lean/data-science-project initialized!]
+[2026-03-01 01:17:59,460 : INFO : common : Evalution Metrices saved at artifacts\modelEvaluation\evaluation.json]
+[2026-03-01 01:19:02,129 : INFO : stage_05_model_evaluation : >>>>>>>STAGE: MODEL EVALUATION ENDED<<<<<<<<< ]
+[2026-03-01 01:20:37,660 : INFO : main : >>>>>>Stage DATA INGESTION STAGE started <<<<<<<]
+[2026-03-01 01:20:37,695 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-03-01 01:20:37,719 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-03-01 01:20:37,771 : INFO : common : yaml file: schema.yaml LOADED successfully]
+[2026-03-01 01:20:37,791 : INFO : common : created directory at: artifacts]
+[2026-03-01 01:20:37,834 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-03-01 01:20:37,849 : INFO : data_ingestion : downloading the file formhttps://data.cityofnewyork.us/resource/4b4i-vvec.csv?$limit=500000 into file artifacts/data_ingestion/data.csv]
+[2026-03-01 01:21:15,727 : INFO : data_ingestion : File downloaded successfully & saved @ artifacts/data_ingestion/data.csv with size ~ 73880KB]
+[2026-03-01 01:21:15,730 : INFO : main : >>>>>>Stage DATA INGESTION STAGE completed <<<<<<<
+
+x==========x]
+[2026-03-01 01:21:15,734 : INFO : main : >>>>>>Stage DATA VALIDATION STAGE started <<<<<<<]
+[2026-03-01 01:21:15,764 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-03-01 01:21:15,771 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-03-01 01:21:15,784 : INFO : common : yaml file: schema.yaml LOADED successfully]
+[2026-03-01 01:21:15,786 : INFO : common : created directory at: artifacts]
+[2026-03-01 01:21:15,788 : INFO : common : created directory at: artifacts/data_validation]
+[2026-03-01 01:21:19,798 : INFO : main : >>>>>>Stage DATA VALIDATION STAGE completed <<<<<<<
+
+x==========x]
+[2026-03-01 01:21:19,800 : INFO : main : >>>>>>Stage DATA TRANSFORMATION STAGE started <<<<<<<]
+[2026-03-01 01:21:19,805 : INFO : stage_03_data_transformation : Data Validation Passed! Proceeding with Data Transformation..]
+[2026-03-01 01:21:19,826 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-03-01 01:21:19,834 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-03-01 01:21:19,847 : INFO : common : yaml file: schema.yaml LOADED successfully]
+[2026-03-01 01:21:19,850 : INFO : common : created directory at: artifacts]
+[2026-03-01 01:21:19,852 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-03-01 01:21:19,855 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-03-01 01:21:19,857 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-03-01 01:21:19,860 : INFO : common : created directory at: artifacts/data_transformation/before_encoding]
+[2026-03-01 01:21:23,744 : INFO : data_transformation : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-03-01 01:21:24,113 : INFO : data_transformation : FILLING MISSING VALUES]
+[2026-03-01 01:21:28,950 : INFO : data_transformation : Preprocessing DateTime completed]
+[2026-03-01 01:21:31,864 : INFO : data_transformation : Data Cleaning completed]
+[2026-03-01 01:21:33,613 : INFO : data_transformation : Feature Engineering completed]
+[2026-03-01 01:21:34,689 : INFO : data_transformation : Train-Test Split completed with test size: 71364]
+[2026-03-01 01:21:34,943 : INFO : data_transformation : Clipping Outliers completed]
+[2026-03-01 01:21:54,548 : INFO : data_transformation : Before Encoding data saved at artifacts/data_transformation/before_encoding successfully...]
+[2026-03-01 01:22:35,552 : INFO : data_transformation : Trasnfomred data saved at artifacts/data_transformation successfully...]
+[2026-03-01 01:22:35,591 : INFO : main : >>>>>>Stage DATA TRANSFORMATION STAGE completed <<<<<<<
+
+x==========x]
+[2026-03-01 01:22:35,592 : INFO : main : >>>>>>Stage MODEL TRAINING STAGE started <<<<<<<]
+[2026-03-01 01:22:35,594 : INFO : stage_04_model_training : >>>>>>>STAGE: MODEL TRAINING STARTED<<<<<<<<< ]
+[2026-03-01 01:22:35,614 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-03-01 01:22:35,622 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-03-01 01:22:35,641 : INFO : common : yaml file: schema.yaml LOADED successfully]
+[2026-03-01 01:22:35,644 : INFO : common : created directory at: artifacts]
+[2026-03-01 01:22:35,645 : INFO : common : created directory at: artifacts/model_training]
+[2026-03-01 01:22:59,473 : INFO : common : model saved at: artifacts\model_training\sgdModel.pkl and size of the model is: ~ 2KB]
+[2026-03-01 01:22:59,487 : INFO : stage_04_model_training : >>>>>>>STAGE: MODEL TRAINING ENDED<<<<<<<<< ]
+[2026-03-01 01:22:59,489 : INFO : main : >>>>>>Stage MODEL TRAINING STAGE completed <<<<<<<
+
+x==========x]
+[2026-03-01 01:22:59,493 : INFO : main : >>>>>>Stage MODEL EVALUATION STAGE started <<<<<<<]
+[2026-03-01 01:22:59,495 : INFO : stage_05_model_evaluation : >>>>>>>STAGE: MODEL EVALUATION Started<<<<<<<<< ]
+[2026-03-01 01:22:59,518 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-03-01 01:22:59,530 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-03-01 01:22:59,548 : INFO : common : yaml file: schema.yaml LOADED successfully]
+[2026-03-01 01:22:59,560 : INFO : common : created directory at: artifacts]
+[2026-03-01 01:22:59,568 : INFO : common : created directory at: artifacts/modelEvaluation]
+[2026-03-01 01:23:07,025 : INFO : _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-03-01 01:23:07,065 : INFO : helpers : Accessing as mann-lean]
+[2026-03-01 01:23:08,400 : INFO : _client : HTTP Request: GET https://dagshub.com/api/v1/repos/mann-lean/data-science-project "HTTP/1.1 200 OK"]
+[2026-03-01 01:23:09,742 : INFO : _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-03-01 01:23:09,771 : INFO : helpers : Initialized MLflow to track repo "mann-lean/data-science-project"]
+[2026-03-01 01:23:09,777 : INFO : helpers : Repository mann-lean/data-science-project initialized!]
+[2026-03-01 01:23:12,433 : INFO : common : Evalution Metrices saved at artifacts\modelEvaluation\evaluation.json]
+[2026-03-01 01:23:57,983 : INFO : stage_05_model_evaluation : >>>>>>>STAGE: MODEL EVALUATION ENDED<<<<<<<<< ]
+[2026-03-01 01:23:58,002 : INFO : main : >>>>>>Stage MODEL EVALUATION STAGE completed <<<<<<<
+
+x==========x]

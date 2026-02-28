@@ -11,7 +11,7 @@ class Data_Validation:
     def validation_all_columns(self)->bool:
         try:
             validation_status=None
-            df=pd.read_csv("../artifacts/data_ingestion/data.csv")
+            df=pd.read_csv("artifacts/data_ingestion/data.csv")
             col=list(df.columns)
 
             all_schema=self.config.all_schema.keys()

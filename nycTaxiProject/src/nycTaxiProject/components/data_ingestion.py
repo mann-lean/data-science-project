@@ -1,5 +1,6 @@
 import os
-import kagglehub
+# import kagglehub
+import urllib.request as request
 from pathlib import Path
 from nycTaxiProject.util.common import read_yaml,create_directories,get_size
 from nycTaxiProject.entity.config_entity import DataIngestionConfig
@@ -18,10 +19,11 @@ class DataIngestion:
             os.makedirs(parent_dir,exist_ok=True)
             logger.info(f"downloading the file form{dataset_url} into file {download_path}")
 
-            kagglehub.dataset_download(handle=dataset_url,output_dir=download_path,force_download=True)
-            # filename,headers=request.urlretrieve(url=dataset_url,filename=download_path)
+            # kagglehub.dataset_download(handle=dataset_url,output_dir=download_path,force_download=True)
+            filename,headers=request.urlretrieve(url=dataset_url,filename=download_path)
 
             logger.info(f"File downloaded successfully & saved @ {download_path} with size {get_size(Path(download_path))}")
 
         except Exception as e:
+            logger.exception(e)
             raise e

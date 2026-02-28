@@ -2,14 +2,14 @@ artifacts_root: "artifacts"
 
 data_ingestion:
   root_dir: "artifacts/data_ingestion"
-  source_URL: "mann210cool/taxidata" # kaggle dataset
+  # source_URL: "mann210cool/taxidata" # kaggle dataset
   # source_URL: "https://data.cityofnewyork.us/api/views/4b4i-vvec/rows.csv?accessType=DOWNLOAD" #whole API dataset
-  # source_URL: "https://data.cityofnewyork.us/resource/4b4i-vvec.csv?$limit=500000" # for LOWERING THE SIZE OF THE DATASET API 
+  source_URL: "https://data.cityofnewyork.us/resource/4b4i-vvec.csv?$limit=500000" # for LOWERING THE SIZE OF THE DATASET API 
   local_data_file: "artifacts/data_ingestion/data.csv"
 
 data_validation:
   root_dir: "artifacts/data_validation"
-  data_dir: "artifacts/data_ingestion"
+  data_dir: "artifacts/data_ingestion/data.csv"
   STATUS_FILE: "artifacts/data_validation/status.txt"
 
 data_transformation:
