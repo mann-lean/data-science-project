@@ -16,3 +16,4 @@ kagglehub
 ipykernel
 python-box
 mlflow
+dvc

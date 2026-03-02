@@ -25,6 +25,7 @@ stages:
   deps:
     - src/nycTaxiProject/pipeline/stage_03_data_transformation.py
     - artifacts/data_ingestion/data.csv
+    - artifacts/data_validation/status.txt
     - config/config.yaml
   outs:
     - artifacts/data_transformation/train/x_train.csv
@@ -42,6 +43,15 @@ stages:
     - artifacts/data_transformation/train/x_train.csv
     - artifacts/data_transformation/train/y_train.csv
     - config/config.yaml
+  params:
+    - loss
+    - penalty
+    - alpha
+    - max_iter
+    - tol
+    - random_state
+    - learning_rate
+    - eta0
   outs:
     - artifacts/model_training/sgdModel.pkl
 
@@ -56,5 +66,6 @@ stages:
     - artifacts/data_transformation/test/x_test.csv
     - artifacts/data_transformation/test/y_test.csv
     - config/config.yaml
-  outs:
+  metrics:
     - artifacts/modelEvaluation/evaluation.json
+        cache: False 
