@@ -26,4 +26,4 @@ model_training depends on transformation.
 
 model_evaluation depends on both transformation (for the test data) and training (for the .pkl model).
 
-(Note: Make sure you ,don't include files (dvc.ignore,dvc.lock) into git) 
+(Note: Make sure you ,don't include files (dvc.ignore,dvc.lock) into git . Only keep dvc.yaml file ) 
