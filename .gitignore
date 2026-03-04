@@ -13,7 +13,7 @@ __pycache__/
 # ignore csv ,png & txt files
 *.csv
 *.txt
-*.png
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

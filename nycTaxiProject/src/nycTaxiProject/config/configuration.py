@@ -86,6 +86,7 @@ class ConfigurationManager:
             xtraining_data=config.xtraining_data,
             ytraining_data=config.ytraining_data,
             model_dir=config.model_dir,
+            root_model=config.root_model,
             loss=params.loss,
             penalty=params.penalty,
             alpha=params.alpha,

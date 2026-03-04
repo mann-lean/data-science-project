@@ -1,0 +1,160 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python src/nycTaxiProject/pipeline/stage_01_data_ingestion.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: f4fd0112071a13e466aaf73ec91388d2
+      size: 2118
+    - path: src/nycTaxiProject/pipeline/stage_01_data_ingestion.py
+      hash: md5
+      md5: c6551a13b47bbcd53460eb3a17673e4e
+      size: 821
+    outs:
+    - path: artifacts/data_ingestion/data.csv
+      hash: md5
+      md5: e4751b9afeb10d0f8fb1bdcfb9634766
+      size: 75652895
+  data_validation:
+    cmd: python src/nycTaxiProject/pipeline/stage_02_data_validation.py
+    deps:
+    - path: artifacts/data_ingestion/data.csv
+      hash: md5
+      md5: e4751b9afeb10d0f8fb1bdcfb9634766
+      size: 75652895
+    - path: config/config.yaml
+      hash: md5
+      md5: f4fd0112071a13e466aaf73ec91388d2
+      size: 2118
+    - path: src/nycTaxiProject/pipeline/stage_02_data_validation.py
+      hash: md5
+      md5: 1291740f666b20dca19fe1d802a862b8
+      size: 844
+    outs:
+    - path: artifacts/data_validation/status.txt
+      hash: md5
+      md5: 882eaef325a595042e680a97849eb1b8
+      size: 24
+  data_transformation:
+    cmd: python src/nycTaxiProject/pipeline/stage_03_data_transformation.py
+    deps:
+    - path: artifacts/data_ingestion/data.csv
+      hash: md5
+      md5: e4751b9afeb10d0f8fb1bdcfb9634766
+      size: 75652895
+    - path: artifacts/data_validation/status.txt
+      hash: md5
+      md5: 882eaef325a595042e680a97849eb1b8
+      size: 24
+    - path: config/config.yaml
+      hash: md5
+      md5: f4fd0112071a13e466aaf73ec91388d2
+      size: 2118
+    - path: src/nycTaxiProject/pipeline/stage_03_data_transformation.py
+      hash: md5
+      md5: 0d258b061d22e3db24f7c1b960d20b1a
+      size: 1804
+    outs:
+    - path: artifacts/data_transformation/before_encoding/x_test_bEncode.csv
+      hash: md5
+      md5: 27f18e22f956a029719d9134b5a95f98
+      size: 10630984
+    - path: artifacts/data_transformation/before_encoding/x_train_bEncode.csv
+      hash: md5
+      md5: 271da5f05da92e530d10d0b0c74bdcdf
+      size: 42547619
+    - path: artifacts/data_transformation/test/x_test.csv
+      hash: md5
+      md5: d7a9dd849ab809ed84eef7bc4aeb1d3a
+      size: 24765091
+    - path: artifacts/data_transformation/test/y_test.csv
+      hash: md5
+      md5: 1e5f2babb83c83e5b316db2e99230d53
+      size: 404660
+    - path: artifacts/data_transformation/train/preprocessor.pkl
+      hash: md5
+      md5: 980619b3faa36fcb71bae76428796d6d
+      size: 11752
+    - path: artifacts/data_transformation/train/x_train.csv
+      hash: md5
+      md5: 4744192046cb0aa0d0699c3e8770f96d
+      size: 99098719
+    - path: artifacts/data_transformation/train/y_train.csv
+      hash: md5
+      md5: c274f209b8afb8f67f38f40c0932db30
+      size: 1619233
+  model_training:
+    cmd: python src/nycTaxiProject/pipeline/stage_04_model_training.py
+    deps:
+    - path: artifacts/data_transformation/train/x_train.csv
+      hash: md5
+      md5: 4744192046cb0aa0d0699c3e8770f96d
+      size: 99098719
+    - path: artifacts/data_transformation/train/y_train.csv
+      hash: md5
+      md5: c274f209b8afb8f67f38f40c0932db30
+      size: 1619233
+    - path: config/config.yaml
+      hash: md5
+      md5: f4fd0112071a13e466aaf73ec91388d2
+      size: 2118
+    - path: src/nycTaxiProject/pipeline/stage_04_model_training.py
+      hash: md5
+      md5: 723fff450bcf7492d23958c36a61dee6
+      size: 822
+    params:
+      params.yaml:
+        alpha: 0.01
+        eta0: 0.001
+        learning_rate: adaptive
+        loss: squared_error
+        max_iter: 5000
+        penalty: l2
+        random_state: 42
+        tol: 0.001
+    outs:
+    - path: artifacts/model_training/sgdModel.pkl
+      hash: md5
+      md5: 227d2062c5a680c05fb8d99b91016771
+      size: 2070
+    - path: model/sgdModel.pkl
+      hash: md5
+      md5: 227d2062c5a680c05fb8d99b91016771
+      size: 2070
+  model_evaluation:
+    cmd: python src/nycTaxiProject/pipeline/stage_05_model_evaluation.py
+    deps:
+    - path: artifacts/data_transformation/test/x_test.csv
+      hash: md5
+      md5: d7a9dd849ab809ed84eef7bc4aeb1d3a
+      size: 24765091
+    - path: artifacts/data_transformation/test/y_test.csv
+      hash: md5
+      md5: 1e5f2babb83c83e5b316db2e99230d53
+      size: 404660
+    - path: artifacts/data_transformation/train/x_train.csv
+      hash: md5
+      md5: 4744192046cb0aa0d0699c3e8770f96d
+      size: 99098719
+    - path: artifacts/data_transformation/train/y_train.csv
+      hash: md5
+      md5: c274f209b8afb8f67f38f40c0932db30
+      size: 1619233
+    - path: artifacts/model_training/sgdModel.pkl
+      hash: md5
+      md5: 227d2062c5a680c05fb8d99b91016771
+      size: 2070
+    - path: config/config.yaml
+      hash: md5
+      md5: f4fd0112071a13e466aaf73ec91388d2
+      size: 2118
+    - path: src/nycTaxiProject/pipeline/stage_05_model_evaluation.py
+      hash: md5
+      md5: 28912df06ff89d4b2836e863ca2eb667
+      size: 1297
+    outs:
+    - path: artifacts/modelEvaluation/evaluation.json
+      hash: md5
+      md5: a0cde87e8896704d2f964a79202042f0
+      size: 241

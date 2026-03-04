@@ -15,6 +15,7 @@ class Model_Trainer:
             x_train=pd.read_csv(self.config.xtraining_data) #fetching DataFrame from the csv file which is stored in the path mentioned in the config file.
             y_train=pd.read_csv(self.config.ytraining_data) #fetching DataFrame from the csv file which is stored in the path mentioned in the config file.
             model_dir=Path(self.config.model_dir)
+            root_model=Path(self.config.root_model)
             param_kwargs=dict(
                 loss=self.config.loss,
                 penalty=self.config.penalty,
@@ -33,11 +34,15 @@ class Model_Trainer:
                 return model
             
             @staticmethod # Static method is a method that belongs to a class rather than an instance of the class. It can be called on the class itself, rather than on an instance of the class. Static methods do not have access to the instance (self) or class (cls) variables, and they are defined using the @staticmethod decorator.
-            def save_trained_model(model,model_dir:Path):
-                save_model(model=model,path=model_dir)
+            def save_trained_model(model,model_dir:Path,root_model:Path):
+                save_model(model=model,path=model_dir)  #saving the model into Artifacts
+
+                create_directories([root_model.parent])
+                save_model(model=model,path=root_model)  #saving the model into Root Directory!If artifacts not present,then it will be used for prediction.
+                
 
             model=sgd_model(param_kwargs,x_train,y_train)
-            save_trained_model(model=model,model_dir=model_dir)
+            save_trained_model(model=model,model_dir=model_dir,root_model=root_model)
 
         except Exception as e:
             logger.exception(e)

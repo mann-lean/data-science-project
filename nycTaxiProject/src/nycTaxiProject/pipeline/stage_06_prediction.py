@@ -82,7 +82,7 @@ class Inference_transform:
     
 class PredictionPipeline:
         def __init__(self):
-            self.model_path=Path("artifacts/model_training/sgdModel.pkl")
+            self.model_path=Path("model/sgdModel.pkl") #assigning Root directory model for avoidinig future model not found ,if artifacts not present
             self.model=joblib.load(self.model_path)
             self.Inference_transform=Inference_transform()
 

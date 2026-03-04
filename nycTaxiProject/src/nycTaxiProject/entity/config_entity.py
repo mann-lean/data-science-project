@@ -36,6 +36,7 @@ class ModelTrainingConfig:
     xtraining_data:Path
     ytraining_data:Path
     model_dir:Path
+    root_model:Path
     # params for model training
     loss:str
     penalty:str

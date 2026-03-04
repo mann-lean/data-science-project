@@ -5,5 +5,3 @@
 data/
 dataset/
 *.txt
-dvc.lock
-.dvcignore

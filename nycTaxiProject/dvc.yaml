@@ -50,6 +50,7 @@ stages:
       - eta0
     outs:
       - artifacts/model_training/sgdModel.pkl
+      - model/sgdModel.pkl
 
   model_evaluation:
     cmd: python src/nycTaxiProject/pipeline/stage_05_model_evaluation.py
