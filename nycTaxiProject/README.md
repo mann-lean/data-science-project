@@ -120,11 +120,6 @@ python app.py
 ```
 Navigate to `http://127.0.0.1:5000` in your web browser to access the UI and generate predictions.
 
----
-## 🔮 Future Scope
-- **Exogenous Data Integration:** Currently, this project explains ~70% of the variance in the target variable using only NYC TLC data. Because human behavior is dynamic, the remaining 30% is likely influenced by external factors. Integrating datasets like historical weather (rain, snow) or event schedules could capture the situational context that heavily influences tipping and improve model performance.
-- **Interactive Analytics Dashboard:** Expand the Flask web application to include a "Dataset Insights" page. This will feature interactive visualizations (using libraries like Plotly or Dash) to allow users to explore historical tipping trends, high-yield zones, and peak hours before making a prediction.
-- **Automated Retraining & Drift Monitoring:** As tipping behavior changes over time (concept drift) or inflation alters base fares (data drift), the model will degrade. Future iterations will include an automated CI/CD pipeline that triggers model retraining whenever new monthly data is published by the NYC TLC.
 
 ---
 ## AWS-CICD-Deployment-with-Github-Actions
@@ -186,6 +181,12 @@ Create ,connect
     AWS_ECR_LOGIN_URI = demo>>  566373416292.dkr.ecr.ap-south-1.amazonaws.com
 
     ECR_REPOSITORY_NAME = simple-app
+---
+
+## 🔮 Future Scope
+- **Exogenous Data Integration:** Currently, this project explains ~70% of the variance in the target variable using only NYC TLC data. Because human behavior is dynamic, the remaining 30% is likely influenced by external factors. Integrating datasets like historical weather (rain, snow) or event schedules could capture the situational context that heavily influences tipping and improve model performance.
+- **Interactive Analytics Dashboard:** Expand the Flask web application to include a "Dataset Insights" page. This will feature interactive visualizations (using libraries like Plotly or Dash) to allow users to explore historical tipping trends, high-yield zones, and peak hours before making a prediction.
+- **Automated Retraining & Drift Monitoring:** As tipping behavior changes over time (concept drift) or inflation alters base fares (data drift), the model will degrade. Future iterations will include an automated CI/CD pipeline that triggers model retraining whenever new monthly data is published by the NYC TLC.
 
 ---
 ## 👨‍💻 Author
