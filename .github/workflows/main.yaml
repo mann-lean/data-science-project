@@ -41,7 +41,6 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install Utilities
-        # Note: We don't need 'cd' anymore because of the global defaults above!
         run: |
           sudo apt-get update
           sudo apt-get install -y jq unzip
@@ -53,7 +52,6 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      # RESTORED MISSING STEP
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v2
@@ -90,16 +88,21 @@ jobs:
       
       - name: Pull latest images
         run: |
-         docker pull ${{secrets.AWS_ECR_LOGIN_URI}}/${{ secrets.AWS_ECR_LOGIN_URI }}:latest
+         # Safely using the dynamic registry output from the login step
+         docker pull ${{ steps.login-ecr.outputs.registry }}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
          
-      # I uncommented and slightly updated this to prevent "port already in use" crashes during redeployments
       - name: Stop and remove container if running
         run: |
          docker ps -q --filter "name=cnncls" | grep -q . && docker stop cnncls && docker rm -fv cnncls || true
        
       - name: Run Docker Image to serve users
         run: |
-         docker run -d -p 8080:8080 --name=cnncls -e 'AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}' -e 'AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}' -e 'AWS_REGION=${{ secrets.AWS_REGION }}'  ${{secrets.AWS_ECR_LOGIN_URI}}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
+         # Starting the container using the dynamic registry output
+         docker run -d -p 8080:8080 --name=cnncls \
+           -e 'AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}' \
+           -e 'AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}' \
+           -e 'AWS_REGION=${{ secrets.AWS_REGION }}' \
+           ${{ steps.login-ecr.outputs.registry }}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
       
       - name: Clean previous images and containers
         run: |
