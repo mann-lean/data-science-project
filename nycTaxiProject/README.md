@@ -109,7 +109,7 @@ dvc dag
 * `data_validation` depends on ingestion.
 * `data_transformation` depends on both ingestion and validation (acting as a circuit breaker).
 * `model_training` depends on transformation.
-* `model_evaluation` depends on both transformation (for test data) and training (for the model).
+* `model_evaluation` depends on both transformation (for test data) and training (for the model).(Note:Once you've got best hyperparameter you can then Comment MLFLOW codes,No there's no need for executing again & again)
 
 *(Note: Ensure `dvc.lock`, `dvc.yaml`, and `.dvcignore` are committed to your Git repository to guarantee reproducibility for collaborators. Do not commit your heavy data artifacts).*
 
@@ -127,9 +127,38 @@ Navigate to `http://127.0.0.1:5000` in your web browser to access the UI and gen
 - **Automated Retraining & Drift Monitoring:** As tipping behavior changes over time (concept drift) or inflation alters base fares (data drift), the model will degrade. Future iterations will include an automated CI/CD pipeline that triggers model retraining whenever new monthly data is published by the NYC TLC.
 
 ---
+## Docker file
+- **1. Create Docker Image** of the source code: Create file  by 'Dockerfile' & write some command.
+ Create folder in main.yaml in .github/workflows,In this we'll be writting CI/CD Commands
+
+- **2. Create Identity access mangement (IAM) user for deployment:** Click user in IAM, create `user`: `nycTipPredictor`,
+click on attach policy directly
+```bash
+#Policy select
+1. AmazonEC2ContainerRegistryFullAccess
+
+2. AmazonEC2FullAccess
+```
+Click on create user, & open user name.
+Go to Security credential Tab & create access key , select use case:Command Line Interface (CLI)
+
+- **3. Create Elastica Container Registery(ECR) repo to store/save docker image:** Search ECR,create Repository `Rep`: 'nyctip'
+
+- **4. Create Elastic Compute Cloud (EC2) machine (Ubuntu):**
+Name: nycTaxiPredictor-machine,
+select: UBUNTU,iNSTANCE TYPE: m7i-flex,
+Create key pair logger= key pair name:nycTipPredictor,
+allow 2 check box in Network Setting ,
+storage : 8GB
+Create
+
+connect
+
+-- **Push Your Docker Image to ECR**
+
+---
 ## 👨‍💻 Author
 **Mann**
 - **GitHub:** [@mann-lean](https://github.com/mann-lean)
 - **LinkedIn:** [Mann .](https://www.linkedin.com/in/mann-32718a1b9)
 - **Email:** mannk7062@gmail.com
-

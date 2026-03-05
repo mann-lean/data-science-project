@@ -178,3 +178,4 @@ cython_debug/
 
 # Ignore artifacts folder
 nycTaxiProject/artifacts/
+awsInfo.txt

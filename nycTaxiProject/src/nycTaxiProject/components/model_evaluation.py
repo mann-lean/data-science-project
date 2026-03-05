@@ -65,22 +65,24 @@ class Model_Evaluation:
                                  }
                 # saving evaluation metrics in a JSON file (LOCALLY)
                 save_evaluation(evalutaion_dict,Path(self.config.model_evaluation))
+
+                # COMMENTING mlflow command 'cause we've got best HYPERPARAMETER BY TUNING & analyzing ON DAGSHUB 
                 
-            # 4. LOG PARAMS: Save hyperparameter configurations (e.g., alpha, penalty)
-                if self.config.all_params:
-                    mlflow.log_params(self.config.all_params)
-            # 5. LOG METRICS: Log evaluation metrics (e.g., R2, RMSE, MSE, MAE)
-                mlflow.log_metric(f"training_R2_Score", train_r2)
-                mlflow.log_metric(f"training_RMSE", train_rmse)
-                mlflow.log_metric(f"training_MSE", train_mse)
-                mlflow.log_metric(f"training_MAE", train_mae)
+            # # 4. LOG PARAMS: Save hyperparameter configurations (e.g., alpha, penalty)
+            #     if self.config.all_params:
+            #         mlflow.log_params(self.config.all_params)
+            # # 5. LOG METRICS: Log evaluation metrics (e.g., R2, RMSE, MSE, MAE)
+            #     mlflow.log_metric(f"training_R2_Score", train_r2)
+            #     mlflow.log_metric(f"training_RMSE", train_rmse)
+            #     mlflow.log_metric(f"training_MSE", train_mse)
+            #     mlflow.log_metric(f"training_MAE", train_mae)
                 
-                mlflow.log_metric(f"testing_R2_Score", test_r2)
-                mlflow.log_metric(f"testing_RMSE", test_rmse)
-                mlflow.log_metric(f"testing_MSE", test_mse)
-                mlflow.log_metric(f"testing_MAE", test_mae)
-            # 6. LOG MODEL: Optionally, log the trained model itself for future reference
-                mlflow.sklearn.log_model(model, "model", registered_model_name="SGDRegressor")
+            #     mlflow.log_metric(f"testing_R2_Score", test_r2)
+            #     mlflow.log_metric(f"testing_RMSE", test_rmse)
+            #     mlflow.log_metric(f"testing_MSE", test_mse)
+            #     mlflow.log_metric(f"testing_MAE", test_mae)
+            # # 6. LOG MODEL: Optionally, log the trained model itself for future reference
+            #     mlflow.sklearn.log_model(model, "model", registered_model_name="SGDRegressor")
                 
         except Exception as e:
             logger.exception(e)
