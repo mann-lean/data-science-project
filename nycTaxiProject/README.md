@@ -127,7 +127,7 @@ Navigate to `http://127.0.0.1:5000` in your web browser to access the UI and gen
 - **Automated Retraining & Drift Monitoring:** As tipping behavior changes over time (concept drift) or inflation alters base fares (data drift), the model will degrade. Future iterations will include an automated CI/CD pipeline that triggers model retraining whenever new monthly data is published by the NYC TLC.
 
 ---
-## Docker file
+## AWS-CICD-Deployment-with-Github-Actions
 - **1. Create Docker Image** of the source code: Create file  by 'Dockerfile' & write some command.
  Create folder in main.yaml in .github/workflows,In this we'll be writting CI/CD Commands
 
