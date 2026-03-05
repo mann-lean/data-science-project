@@ -1,17 +1,22 @@
-name: workflow
+name: NYC Taxi Pipeline
 
 on:
   push:
     branches:
       - main
-    paths-ignore:
-      - 'README.md'
     paths:
-      - 'nycTaxiProject/**'   # ✅ Only trigger when nycTaxiProject changes
+      # MONOREPO FIX 1: Only trigger this workflow if files in this specific folder change
+      - 'nycTaxiProject/**'
+      - '.github/workflows/main.yaml'
 
 permissions:
   id-token: write
   contents: read
+
+# MONOREPO FIX 2: Set the default folder for EVERY 'run' command in this file
+defaults:
+  run:
+    working-directory: ./nycTaxiProject
 
 jobs:
   integration:
@@ -36,20 +41,22 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install Utilities
+        # Note: We don't need 'cd' anymore because of the global defaults above!
         run: |
           sudo apt-get update
           sudo apt-get install -y jq unzip
-
+          
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v2   # ✅ upgraded from v1
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
+      # RESTORED MISSING STEP
       - name: Login to Amazon ECR
         id: login-ecr
-        uses: aws-actions/amazon-ecr-login@v2             # ✅ upgraded from v1
+        uses: aws-actions/amazon-ecr-login@v2
 
       - name: Build, tag, and push image to Amazon ECR
         id: build-image
@@ -58,11 +65,11 @@ jobs:
           ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY_NAME }}
           IMAGE_TAG: latest
         run: |
-          cd nycTaxiProject                               # ✅ build from subdirectory
+          # Because of our defaults, Docker automatically finds the Dockerfile here
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-          echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT   # ✅ replaces deprecated set-output
-
+          echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
+          
   Continuous-Deployment:
     needs: build-and-push-ecr-image
     runs-on: self-hosted
@@ -71,7 +78,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v2   # ✅ upgraded from v1
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -79,24 +86,21 @@ jobs:
 
       - name: Login to Amazon ECR
         id: login-ecr
-        uses: aws-actions/amazon-ecr-login@v2             # ✅ upgraded from v1
-
-      - name: Pull latest image
+        uses: aws-actions/amazon-ecr-login@v2
+      
+      - name: Pull latest images
         run: |
-          docker pull ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
-
-      - name: Stop and remove existing container
+         docker pull ${{secrets.AWS_ECR_LOGIN_URI}}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
+         
+      # I uncommented and slightly updated this to prevent "port already in use" crashes during redeployments
+      - name: Stop and remove container if running
         run: |
-          docker ps -q --filter "name=nyctaxi" | grep -q . && docker stop nyctaxi && docker rm -fv nyctaxi || true   # ✅ uncommented & safe
-
-      - name: Run Docker container
+         docker ps -q --filter "name=cnncls" | grep -q . && docker stop cnncls && docker rm -fv cnncls || true
+       
+      - name: Run Docker Image to serve users
         run: |
-          docker run -d -p 8080:8080 --name=nyctaxi \
-            -e AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} \
-            -e AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} \
-            -e AWS_REGION=${{ secrets.AWS_REGION }} \
-            ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}:latest   # ✅ fixed env var quoting
-
-      - name: Clean up unused images
+         docker run -d -p 8080:8080 --name=cnncls -e 'AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}' -e 'AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}' -e 'AWS_REGION=${{ secrets.AWS_REGION }}'  ${{secrets.AWS_ECR_LOGIN_URI}}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
+      
+      - name: Clean previous images and containers
         run: |
-          docker system prune -f
+         docker system prune -f
