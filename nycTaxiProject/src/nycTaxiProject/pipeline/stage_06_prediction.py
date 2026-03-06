@@ -8,8 +8,8 @@ from nycTaxiProject import logger
 from pathlib import Path
 
 class Inference_transform:
-    def __init__(self, preprocessor_path="nycTaxiProject/assets/data_encoding_transformation/preprocessor.pkl"):  #if app.py is running from DSPROJECT
-    # def __init__(self, preprocessor_path="assets/data_encoding_transformation/preprocessor.pkl"):  #if app.py is running from NYCtaxiPROJECT
+    # def __init__(self, preprocessor_path="nycTaxiProject/assets/data_encoding_transformation/preprocessor.pkl"):  #if app.py is running from DSPROJECT
+    def __init__(self, preprocessor_path="assets/data_encoding_transformation/preprocessor.pkl"):  #if app.py is running from NYCtaxiPROJECT
         # Load the preprocessor once when the object is created
         self.preprocessor = joblib.load(preprocessor_path)
 
@@ -83,8 +83,8 @@ class Inference_transform:
     
 class PredictionPipeline:
         def __init__(self):
-            self.model_path=Path("nycTaxiProject/assets/model/sgdModel.pkl") #if you running app.py from DSPROJECT
-            # self.model_path=Path("assets/model/sgdModel.pkl") #IF YOU ARE RUNNING APP.PY FROM nycTaxiProject ,assigning Root directory model for avoidinig future model not found ,if artifacts not present
+            # self.model_path=Path("nycTaxiProject/assets/model/sgdModel.pkl") #if you running app.py from DSPROJECT
+            self.model_path=Path("assets/model/sgdModel.pkl") #IF YOU ARE RUNNING APP.PY FROM nycTaxiProject ,assigning Root directory model for avoidinig future model not found ,if artifacts not present
             self.model=joblib.load(self.model_path)
             self.Inference_transform=Inference_transform()
 
