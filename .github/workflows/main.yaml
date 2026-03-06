@@ -88,18 +88,15 @@ jobs:
       
       - name: Pull latest images
         run: |
-         # Safely using the dynamic registry output from the login step
          docker pull ${{ steps.login-ecr.outputs.registry }}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
          
       - name: Stop and remove container if running
         run: |
-        # FIXED: Forcefully removes the container if it exists, bypassing the "already in use" error
-        #  docker rm -f cnncls || true
-         docker ps -q --filter "name=cnncls" | grep -q . && docker stop cnncls && docker rm -fv cnncls || true
+         # FIXED: Forcefully removes the container if it exists, bypassing the "already in use" error
+         docker rm -f cnncls || true
        
       - name: Run Docker Image to serve users
         run: |
-         # Starting the container using the dynamic registry output
          docker run -d -p 8080:8080 --name=cnncls \
            -e 'AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}' \
            -e 'AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}' \
