@@ -3154,3 +3154,257 @@ x==========x]
  * Running on http://10.42.12.104:8080]
 [2026-03-04 22:27:00,599 : INFO : _internal : [33mPress CTRL+C to quit[0m]
 [2026-03-04 22:27:46,182 : INFO : _internal : 127.0.0.1 - - [04/Mar/2026 22:27:46] "POST / HTTP/1.1" 200 -]
+[2026-03-06 15:35:58,182 : INFO : _internal : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.42.12.104:8080]
+[2026-03-06 15:35:58,206 : INFO : _internal : [33mPress CTRL+C to quit[0m]
+[2026-03-06 15:36:14,780 : INFO : _internal : 127.0.0.1 - - [06/Mar/2026 15:36:14] "GET / HTTP/1.1" 200 -]
+[2026-03-06 15:38:32,358 : INFO : _internal : 127.0.0.1 - - [06/Mar/2026 15:38:32] "POST / HTTP/1.1" 200 -]
+[2026-03-06 15:51:22,393 : INFO : stage_01_data_ingestion : >>>>>>>>>>Data Ingestion Stage STARTED<<<<<<<<<<]
+[2026-03-06 15:51:22,430 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-03-06 15:51:22,444 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-03-06 15:51:22,527 : INFO : common : yaml file: schema.yaml LOADED successfully]
+[2026-03-06 15:51:22,531 : INFO : common : created directory at: artifacts]
+[2026-03-06 15:51:22,533 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-03-06 15:51:22,535 : INFO : data_ingestion : downloading the file formhttps://data.cityofnewyork.us/resource/4b4i-vvec.csv?$limit=500000 into file artifacts/data_ingestion/data.csv]
+[2026-03-06 15:52:03,727 : INFO : data_ingestion : File downloaded successfully & saved @ artifacts/data_ingestion/data.csv with size ~ 73880KB]
+[2026-03-06 15:52:03,781 : INFO : stage_01_data_ingestion : >>>>>>>>>>Data Ingestion Stage COMPLETED<<<<<<<<<<]
+[2026-03-06 15:52:14,556 : INFO : stage_02_data_validation : >>>>>>>>>>Data Validation Stage STARTED<<<<<<<<<<]
+[2026-03-06 15:52:14,597 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-03-06 15:52:14,615 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-03-06 15:52:14,673 : INFO : common : yaml file: schema.yaml LOADED successfully]
+[2026-03-06 15:52:14,687 : INFO : common : created directory at: artifacts]
+[2026-03-06 15:52:14,700 : INFO : common : created directory at: artifacts/data_validation]
+[2026-03-06 15:52:19,285 : INFO : stage_02_data_validation : >>>>>>>>>>Data Validation Stage COMPLETED<<<<<<<<<<]
+[2026-03-06 15:52:38,544 : INFO : stage_03_data_transformation : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-03-06 15:52:38,551 : INFO : stage_03_data_transformation : Data Validation Passed! Proceeding with Data Transformation..]
+[2026-03-06 15:52:38,575 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-03-06 15:52:38,588 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-03-06 15:52:38,608 : INFO : common : yaml file: schema.yaml LOADED successfully]
+[2026-03-06 15:52:38,611 : INFO : common : created directory at: artifacts]
+[2026-03-06 15:52:38,612 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-03-06 15:52:38,615 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-03-06 15:52:38,619 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-03-06 15:52:38,621 : INFO : common : created directory at: artifacts/data_transformation/before_encoding]
+[2026-03-06 15:52:42,987 : INFO : data_transformation : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-03-06 15:52:43,244 : INFO : data_transformation : FILLING MISSING VALUES]
+[2026-03-06 15:52:48,179 : INFO : data_transformation : Preprocessing DateTime completed]
+[2026-03-06 15:52:51,339 : INFO : data_transformation : Data Cleaning completed]
+[2026-03-06 15:52:53,257 : INFO : data_transformation : Feature Engineering completed]
+[2026-03-06 15:52:54,303 : INFO : data_transformation : Train-Test Split completed with test size: 71364]
+[2026-03-06 15:52:54,413 : INFO : data_transformation : Clipping Outliers completed]
+[2026-03-06 15:53:18,236 : INFO : data_transformation : Before Encoding data saved at artifacts/data_transformation/before_encoding successfully...]
+[2026-03-06 15:53:20,601 : ERROR : data_transformation : Error in data transformation: [Errno 2] No such file or directory: 'assets/data_encoding_transformation/preprocessor.pkl']
+[2026-03-06 15:53:20,602 : ERROR : stage_03_data_transformation : [Errno 2] No such file or directory: 'assets/data_encoding_transformation/preprocessor.pkl']
+Traceback (most recent call last):
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_03_data_transformation.py", line 24, in main
+    data_transform.data_transforamtion()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\components\data_transformation.py", line 267, in data_transforamtion
+    raise e
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\components\data_transformation.py", line 259, in data_transforamtion
+    x_train,x_test=encoding_independent(x_train,x_test,y_train) #encoding train-test spit
+                   ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\components\data_transformation.py", line 218, in encoding_independent
+    joblib.dump(preprocessor,preprocessor_path)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\joblib\numpy_pickle.py", line 599, in dump
+    with open(filename, "wb") as f:
+         ~~~~^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'assets/data_encoding_transformation/preprocessor.pkl'
+[2026-03-06 15:53:20,699 : ERROR : stage_03_data_transformation : [Errno 2] No such file or directory: 'assets/data_encoding_transformation/preprocessor.pkl']
+Traceback (most recent call last):
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_03_data_transformation.py", line 38, in <module>
+    obj.main()
+    ~~~~~~~~^^
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_03_data_transformation.py", line 28, in main
+    raise e
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_03_data_transformation.py", line 24, in main
+    data_transform.data_transforamtion()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\components\data_transformation.py", line 267, in data_transforamtion
+    raise e
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\components\data_transformation.py", line 259, in data_transforamtion
+    x_train,x_test=encoding_independent(x_train,x_test,y_train) #encoding train-test spit
+                   ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\components\data_transformation.py", line 218, in encoding_independent
+    joblib.dump(preprocessor,preprocessor_path)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\joblib\numpy_pickle.py", line 599, in dump
+    with open(filename, "wb") as f:
+         ~~~~^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'assets/data_encoding_transformation/preprocessor.pkl'
+[2026-03-06 16:05:00,541 : INFO : stage_01_data_ingestion : >>>>>>>>>>Data Ingestion Stage STARTED<<<<<<<<<<]
+[2026-03-06 16:05:00,588 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-03-06 16:05:00,619 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-03-06 16:05:00,653 : INFO : common : yaml file: schema.yaml LOADED successfully]
+[2026-03-06 16:05:00,657 : INFO : common : created directory at: artifacts]
+[2026-03-06 16:05:00,659 : INFO : common : created directory at: artifacts/data_ingestion]
+[2026-03-06 16:05:00,661 : INFO : data_ingestion : downloading the file formhttps://data.cityofnewyork.us/resource/4b4i-vvec.csv?$limit=500000 into file artifacts/data_ingestion/data.csv]
+[2026-03-06 16:07:29,431 : INFO : data_ingestion : File downloaded successfully & saved @ artifacts/data_ingestion/data.csv with size ~ 73880KB]
+[2026-03-06 16:07:29,432 : INFO : stage_01_data_ingestion : >>>>>>>>>>Data Ingestion Stage COMPLETED<<<<<<<<<<]
+[2026-03-06 16:07:45,221 : INFO : stage_02_data_validation : >>>>>>>>>>Data Validation Stage STARTED<<<<<<<<<<]
+[2026-03-06 16:07:45,249 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-03-06 16:07:45,256 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-03-06 16:07:45,271 : INFO : common : yaml file: schema.yaml LOADED successfully]
+[2026-03-06 16:07:45,274 : INFO : common : created directory at: artifacts]
+[2026-03-06 16:07:45,277 : INFO : common : created directory at: artifacts/data_validation]
+[2026-03-06 16:07:49,690 : INFO : stage_02_data_validation : >>>>>>>>>>Data Validation Stage COMPLETED<<<<<<<<<<]
+[2026-03-06 16:08:09,497 : INFO : stage_03_data_transformation : >>>>>>>STAGE: DATA TRANSFORMATION STARTED<<<<<<<<< ]
+[2026-03-06 16:08:09,503 : INFO : stage_03_data_transformation : Data Validation Passed! Proceeding with Data Transformation..]
+[2026-03-06 16:08:09,531 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-03-06 16:08:09,539 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-03-06 16:08:09,555 : INFO : common : yaml file: schema.yaml LOADED successfully]
+[2026-03-06 16:08:09,559 : INFO : common : created directory at: artifacts]
+[2026-03-06 16:08:09,561 : INFO : common : created directory at: artifacts/data_transformation]
+[2026-03-06 16:08:09,563 : INFO : common : created directory at: artifacts/data_transformation/train]
+[2026-03-06 16:08:09,564 : INFO : common : created directory at: artifacts/data_transformation/test]
+[2026-03-06 16:08:09,566 : INFO : common : created directory at: artifacts/data_transformation/before_encoding]
+[2026-03-06 16:08:09,569 : INFO : common : created directory at: assets/data_encoding_transformation]
+[2026-03-06 16:08:13,854 : INFO : data_transformation : Data Loaded from artifacts/data_ingestion/data.csv successfully]
+[2026-03-06 16:08:14,125 : INFO : data_transformation : FILLING MISSING VALUES]
+[2026-03-06 16:08:19,117 : INFO : data_transformation : Preprocessing DateTime completed]
+[2026-03-06 16:08:22,084 : INFO : data_transformation : Data Cleaning completed]
+[2026-03-06 16:08:23,997 : INFO : data_transformation : Feature Engineering completed]
+[2026-03-06 16:08:24,979 : INFO : data_transformation : Train-Test Split completed with test size: 71364]
+[2026-03-06 16:08:25,052 : INFO : data_transformation : Clipping Outliers completed]
+[2026-03-06 16:08:46,165 : INFO : data_transformation : Before Encoding data saved at artifacts/data_transformation/before_encoding successfully...]
+[2026-03-06 16:09:32,601 : INFO : data_transformation : Trasnfomred data saved at artifacts/data_transformation successfully...]
+[2026-03-06 16:09:32,644 : INFO : stage_03_data_transformation : >>>>>>>STAGE: DATA TRANSFORMATION ENDED<<<<<<<<< ]
+[2026-03-06 16:09:54,062 : INFO : stage_04_model_training : >>>>>>>STAGE: MODEL TRAINING STARTED<<<<<<<<< ]
+[2026-03-06 16:09:54,090 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-03-06 16:09:54,097 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-03-06 16:09:54,112 : INFO : common : yaml file: schema.yaml LOADED successfully]
+[2026-03-06 16:09:54,114 : INFO : common : created directory at: artifacts]
+[2026-03-06 16:09:54,115 : INFO : common : created directory at: artifacts/model_training]
+[2026-03-06 16:10:24,165 : INFO : common : model saved at: artifacts\model_training\sgdModel.pkl and size of the model is: ~ 2KB]
+[2026-03-06 16:10:24,170 : INFO : common : created directory at: assets\model]
+[2026-03-06 16:10:24,176 : INFO : common : model saved at: assets\model\sgdModel.pkl and size of the model is: ~ 2KB]
+[2026-03-06 16:10:24,192 : INFO : stage_04_model_training : >>>>>>>STAGE: MODEL TRAINING ENDED<<<<<<<<< ]
+[2026-03-06 16:11:19,424 : INFO : stage_05_model_evaluation : >>>>>>>STAGE: MODEL EVALUATION Started<<<<<<<<< ]
+[2026-03-06 16:11:19,451 : INFO : common : yaml file: config\config.yaml LOADED successfully]
+[2026-03-06 16:11:19,468 : INFO : common : yaml file: params.yaml LOADED successfully]
+[2026-03-06 16:11:19,491 : INFO : common : yaml file: schema.yaml LOADED successfully]
+[2026-03-06 16:11:19,494 : INFO : common : created directory at: artifacts]
+[2026-03-06 16:11:19,496 : INFO : common : created directory at: artifacts/modelEvaluation]
+[2026-03-06 16:11:27,184 : INFO : tokens : Removed expired tokens from the token cache]
+[2026-03-06 16:12:12,163 : INFO : _client : HTTP Request: POST https://dagshub.com/login/oauth/middleman "HTTP/1.1 200 OK"]
+[2026-03-06 16:12:13,299 : INFO : _client : HTTP Request: POST https://dagshub.com/login/oauth/access_token "HTTP/1.1 200 OK"]
+[2026-03-06 16:12:14,997 : INFO : _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-03-06 16:12:15,026 : INFO : helpers : Accessing as mann-lean]
+[2026-03-06 16:12:16,524 : INFO : _client : HTTP Request: GET https://dagshub.com/api/v1/repos/mann-lean/data-science-project "HTTP/1.1 200 OK"]
+[2026-03-06 16:12:18,544 : INFO : _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-03-06 16:12:18,575 : INFO : helpers : Initialized MLflow to track repo "mann-lean/data-science-project"]
+[2026-03-06 16:12:18,588 : INFO : helpers : Repository mann-lean/data-science-project initialized!]
+[2026-03-06 16:12:24,182 : INFO : common : Evalution Metrices saved at artifacts\modelEvaluation\evaluation.json]
+[2026-03-06 16:12:25,099 : INFO : stage_05_model_evaluation : >>>>>>>STAGE: MODEL EVALUATION ENDED<<<<<<<<< ]
+[2026-03-06 16:15:43,605 : INFO : _internal : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.42.12.104:8080]
+[2026-03-06 16:15:43,619 : INFO : _internal : [33mPress CTRL+C to quit[0m]
+[2026-03-06 16:15:49,566 : INFO : _internal : 127.0.0.1 - - [06/Mar/2026 16:15:49] "GET / HTTP/1.1" 200 -]
+[2026-03-06 16:17:42,520 : ERROR : stage_06_prediction : Time data 20223-01-01T00:09 is not ISO8601 format, at position 0. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.]
+Traceback (most recent call last):
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_06_prediction.py", line 91, in predict
+    model_input=self.Inference_transform.process(user_input)
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_06_prediction.py", line 78, in process
+    df = self.dateTime_extraction(df)
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_06_prediction.py", line 17, in dateTime_extraction
+    df['pickupDateTime'] = pd.to_datetime(df['pickupDateTime'], format='ISO8601')
+                           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\tools\datetimes.py", line 1072, in to_datetime
+    values = convert_listlike(arg._values, format)
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\tools\datetimes.py", line 435, in _convert_listlike_datetimes
+    return _array_strptime_with_fallback(arg, name, utc, format, exact, errors)
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\tools\datetimes.py", line 469, in _array_strptime_with_fallback
+    result, tz_out = array_strptime(arg, fmt, exact=exact, errors=errors, utc=utc)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/tslibs/strptime.pyx", line 501, in pandas._libs.tslibs.strptime.array_strptime
+  File "pandas/_libs/tslibs/strptime.pyx", line 449, in pandas._libs.tslibs.strptime.array_strptime
+ValueError: Time data 20223-01-01T00:09 is not ISO8601 format, at position 0. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+[2026-03-06 16:17:42,563 : ERROR : app : Prediction error: Time data 20223-01-01T00:09 is not ISO8601 format, at position 0. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.]
+Traceback (most recent call last):
+  File "E:\dsProject\nycTaxiProject\app.py", line 40, in index
+    prediction = pipeline.predict(input_dict)
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_06_prediction.py", line 97, in predict
+    raise e
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_06_prediction.py", line 91, in predict
+    model_input=self.Inference_transform.process(user_input)
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_06_prediction.py", line 78, in process
+    df = self.dateTime_extraction(df)
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_06_prediction.py", line 17, in dateTime_extraction
+    df['pickupDateTime'] = pd.to_datetime(df['pickupDateTime'], format='ISO8601')
+                           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\tools\datetimes.py", line 1072, in to_datetime
+    values = convert_listlike(arg._values, format)
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\tools\datetimes.py", line 435, in _convert_listlike_datetimes
+    return _array_strptime_with_fallback(arg, name, utc, format, exact, errors)
+  File "E:\dsProject\nycTaxiProject\venv\Lib\site-packages\pandas\core\tools\datetimes.py", line 469, in _array_strptime_with_fallback
+    result, tz_out = array_strptime(arg, fmt, exact=exact, errors=errors, utc=utc)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/tslibs/strptime.pyx", line 501, in pandas._libs.tslibs.strptime.array_strptime
+  File "pandas/_libs/tslibs/strptime.pyx", line 449, in pandas._libs.tslibs.strptime.array_strptime
+ValueError: Time data 20223-01-01T00:09 is not ISO8601 format, at position 0. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+[2026-03-06 16:17:42,595 : INFO : _internal : 127.0.0.1 - - [06/Mar/2026 16:17:42] "POST / HTTP/1.1" 200 -]
+[2026-03-06 16:21:41,619 : ERROR : stage_06_prediction : 'ColumnTransformer' object has no attribute 'predict']
+Traceback (most recent call last):
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_06_prediction.py", line 92, in predict
+    prediction=self.model.predict(model_input)
+               ^^^^^^^^^^^^^^^^^^
+AttributeError: 'ColumnTransformer' object has no attribute 'predict'
+[2026-03-06 16:21:41,641 : ERROR : app : Prediction error: 'ColumnTransformer' object has no attribute 'predict']
+Traceback (most recent call last):
+  File "E:\dsProject\nycTaxiProject\app.py", line 40, in index
+    prediction = pipeline.predict(input_dict)
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_06_prediction.py", line 97, in predict
+    raise e
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_06_prediction.py", line 92, in predict
+    prediction=self.model.predict(model_input)
+               ^^^^^^^^^^^^^^^^^^
+AttributeError: 'ColumnTransformer' object has no attribute 'predict'
+[2026-03-06 16:21:41,651 : INFO : _internal : 127.0.0.1 - - [06/Mar/2026 16:21:41] "POST / HTTP/1.1" 200 -]
+[2026-03-06 16:27:10,179 : INFO : _internal : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.42.12.104:8080]
+[2026-03-06 16:27:10,180 : INFO : _internal : [33mPress CTRL+C to quit[0m]
+[2026-03-06 16:27:24,253 : INFO : _internal : 127.0.0.1 - - [06/Mar/2026 16:27:24] "GET / HTTP/1.1" 200 -]
+[2026-03-06 16:28:50,339 : ERROR : stage_06_prediction : 'ColumnTransformer' object has no attribute 'predict']
+Traceback (most recent call last):
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_06_prediction.py", line 92, in predict
+    prediction=self.model.predict(model_input)
+               ^^^^^^^^^^^^^^^^^^
+AttributeError: 'ColumnTransformer' object has no attribute 'predict'
+[2026-03-06 16:28:50,344 : ERROR : app : Prediction error: 'ColumnTransformer' object has no attribute 'predict']
+Traceback (most recent call last):
+  File "E:\dsProject\nycTaxiProject\app.py", line 40, in index
+    prediction = pipeline.predict(input_dict)
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_06_prediction.py", line 97, in predict
+    raise e
+  File "E:\dsProject\nycTaxiProject\src\nycTaxiProject\pipeline\stage_06_prediction.py", line 92, in predict
+    prediction=self.model.predict(model_input)
+               ^^^^^^^^^^^^^^^^^^
+AttributeError: 'ColumnTransformer' object has no attribute 'predict'
+[2026-03-06 16:28:50,358 : INFO : _internal : 127.0.0.1 - - [06/Mar/2026 16:28:50] "POST / HTTP/1.1" 200 -]
+[2026-03-06 16:34:12,741 : INFO : _internal : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.42.12.104:8080]
+[2026-03-06 16:34:12,743 : INFO : _internal : [33mPress CTRL+C to quit[0m]
+[2026-03-06 16:34:15,630 : INFO : _internal : 127.0.0.1 - - [06/Mar/2026 16:34:15] "GET / HTTP/1.1" 200 -]
+[2026-03-06 16:36:48,018 : INFO : _internal : 127.0.0.1 - - [06/Mar/2026 16:36:48] "POST / HTTP/1.1" 200 -]
+[2026-03-06 16:39:31,718 : INFO : _internal : 127.0.0.1 - - [06/Mar/2026 16:39:31] "POST / HTTP/1.1" 200 -]

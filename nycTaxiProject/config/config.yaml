@@ -24,14 +24,16 @@ data_transformation:
   before_encoding: "artifacts/data_transformation/before_encoding"
   train_before: "artifacts/data_transformation/before_encoding/x_train_bEncode.csv"
   test_before: "artifacts/data_transformation/before_encoding/x_test_bEncode.csv"
-  preprocessor_file: "artifacts/data_transformation/train/preprocessor.pkl"
+  preprocessor_dir: "assets/data_encoding_transformation"
+  preprocessor_file: "assets/data_encoding_transformation/preprocessor.pkl"
+
 
 model_training:
   root_dir: "artifacts/model_training"
   xtraining_data: "artifacts/data_transformation/train/x_train.csv"
   ytraining_data: "artifacts/data_transformation/train/y_train.csv"
   model_dir: "artifacts/model_training/sgdModel.pkl"
-  root_model: "model/sgdModel.pkl"
+  root_model: "assets/model/sgdModel.pkl"
 
 model_evaluation:
   root_dir: "artifacts/modelEvaluation"

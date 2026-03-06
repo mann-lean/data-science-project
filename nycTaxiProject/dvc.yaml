@@ -30,7 +30,7 @@ stages:
       - artifacts/data_transformation/test/y_test.csv
       - artifacts/data_transformation/before_encoding/x_train_bEncode.csv
       - artifacts/data_transformation/before_encoding/x_test_bEncode.csv
-      - artifacts/data_transformation/train/preprocessor.pkl
+      - assets/data_encoding_transformation/preprocessor.pkl
 
   model_training:
     cmd: python src/nycTaxiProject/pipeline/stage_04_model_training.py
@@ -50,7 +50,7 @@ stages:
       - eta0
     outs:
       - artifacts/model_training/sgdModel.pkl
-      - model/sgdModel.pkl
+      - assets/model/sgdModel.pkl
 
   model_evaluation:
     cmd: python src/nycTaxiProject/pipeline/stage_05_model_evaluation.py

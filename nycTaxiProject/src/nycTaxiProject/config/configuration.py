@@ -42,16 +42,6 @@ class ConfigurationManager:
         )
         return data_validation_config
     
-    def get_data_transformation_config(self) -> DataTransformationConfig:
-         config=self.config.data_transformation
-         create_directories([config.root_dir])
-
-         data_transformed_config=DataTransformationConfig(
-              root_dir=config.root_dir,
-              data_dir=config.data_dir,
-              transformed_data=config.transformed_data
-         )
-         return data_transformed_config
 
     def get_data_transformation_config(self) -> DataTransformationConfig:
          config=self.config.data_transformation
@@ -59,6 +49,7 @@ class ConfigurationManager:
          create_directories([config.train])
          create_directories([config.test])
          create_directories([config.before_encoding])
+         create_directories([config.preprocessor_dir])
 
          data_transformed_config=DataTransformationConfig(
               root_dir=config.root_dir,

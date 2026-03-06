@@ -5,8 +5,8 @@ stages:
     deps:
     - path: config/config.yaml
       hash: md5
-      md5: f4fd0112071a13e466aaf73ec91388d2
-      size: 2118
+      md5: 852ed1d63aafbfd33adaa54ac649b443
+      size: 2186
     - path: src/nycTaxiProject/pipeline/stage_01_data_ingestion.py
       hash: md5
       md5: c6551a13b47bbcd53460eb3a17673e4e
@@ -25,8 +25,8 @@ stages:
       size: 75652895
     - path: config/config.yaml
       hash: md5
-      md5: f4fd0112071a13e466aaf73ec91388d2
-      size: 2118
+      md5: 852ed1d63aafbfd33adaa54ac649b443
+      size: 2186
     - path: src/nycTaxiProject/pipeline/stage_02_data_validation.py
       hash: md5
       md5: 1291740f666b20dca19fe1d802a862b8
@@ -49,8 +49,8 @@ stages:
       size: 24
     - path: config/config.yaml
       hash: md5
-      md5: f4fd0112071a13e466aaf73ec91388d2
-      size: 2118
+      md5: 852ed1d63aafbfd33adaa54ac649b443
+      size: 2186
     - path: src/nycTaxiProject/pipeline/stage_03_data_transformation.py
       hash: md5
       md5: 0d258b061d22e3db24f7c1b960d20b1a
@@ -72,33 +72,33 @@ stages:
       hash: md5
       md5: 1e5f2babb83c83e5b316db2e99230d53
       size: 404660
-    - path: artifacts/data_transformation/train/preprocessor.pkl
-      hash: md5
-      md5: 980619b3faa36fcb71bae76428796d6d
-      size: 11752
     - path: artifacts/data_transformation/train/x_train.csv
       hash: md5
-      md5: 4744192046cb0aa0d0699c3e8770f96d
-      size: 99098719
+      md5: 1458d5d0d374d58561d8ce530b363c17
+      size: 99130694
     - path: artifacts/data_transformation/train/y_train.csv
       hash: md5
       md5: c274f209b8afb8f67f38f40c0932db30
       size: 1619233
+    - path: assets/data_encoding_transformation/preprocessor.pkl
+      hash: md5
+      md5: 980619b3faa36fcb71bae76428796d6d
+      size: 11752
   model_training:
     cmd: python src/nycTaxiProject/pipeline/stage_04_model_training.py
     deps:
     - path: artifacts/data_transformation/train/x_train.csv
       hash: md5
-      md5: 4744192046cb0aa0d0699c3e8770f96d
-      size: 99098719
+      md5: 1458d5d0d374d58561d8ce530b363c17
+      size: 99130694
     - path: artifacts/data_transformation/train/y_train.csv
       hash: md5
       md5: c274f209b8afb8f67f38f40c0932db30
       size: 1619233
     - path: config/config.yaml
       hash: md5
-      md5: f4fd0112071a13e466aaf73ec91388d2
-      size: 2118
+      md5: 852ed1d63aafbfd33adaa54ac649b443
+      size: 2186
     - path: src/nycTaxiProject/pipeline/stage_04_model_training.py
       hash: md5
       md5: 723fff450bcf7492d23958c36a61dee6
@@ -116,11 +116,11 @@ stages:
     outs:
     - path: artifacts/model_training/sgdModel.pkl
       hash: md5
-      md5: 227d2062c5a680c05fb8d99b91016771
+      md5: c250ffcac92e9f7e84702409181a7802
       size: 2070
-    - path: model/sgdModel.pkl
+    - path: assets/model/sgdModel.pkl
       hash: md5
-      md5: 227d2062c5a680c05fb8d99b91016771
+      md5: c250ffcac92e9f7e84702409181a7802
       size: 2070
   model_evaluation:
     cmd: python src/nycTaxiProject/pipeline/stage_05_model_evaluation.py
@@ -135,20 +135,20 @@ stages:
       size: 404660
     - path: artifacts/data_transformation/train/x_train.csv
       hash: md5
-      md5: 4744192046cb0aa0d0699c3e8770f96d
-      size: 99098719
+      md5: 1458d5d0d374d58561d8ce530b363c17
+      size: 99130694
     - path: artifacts/data_transformation/train/y_train.csv
       hash: md5
       md5: c274f209b8afb8f67f38f40c0932db30
       size: 1619233
     - path: artifacts/model_training/sgdModel.pkl
       hash: md5
-      md5: 227d2062c5a680c05fb8d99b91016771
+      md5: c250ffcac92e9f7e84702409181a7802
       size: 2070
     - path: config/config.yaml
       hash: md5
-      md5: f4fd0112071a13e466aaf73ec91388d2
-      size: 2118
+      md5: 852ed1d63aafbfd33adaa54ac649b443
+      size: 2186
     - path: src/nycTaxiProject/pipeline/stage_05_model_evaluation.py
       hash: md5
       md5: 28912df06ff89d4b2836e863ca2eb667
@@ -156,5 +156,5 @@ stages:
     outs:
     - path: artifacts/modelEvaluation/evaluation.json
       hash: md5
-      md5: a0cde87e8896704d2f964a79202042f0
+      md5: 3b0e8bed8cedd6061679e1f10ea8420f
       size: 241
