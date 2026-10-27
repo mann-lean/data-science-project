@@ -8,7 +8,9 @@ This lack of actionable foresight creates specific pain points for two main grou
 - **For Drivers (Inefficiency):** Drivers cannot easily identify which specific zones, times, or effective routes will yield the highest return on their time. They need data to know where to wait.
 - **For Customers (Static Tipping):** Customers are often prompted with rigid, static tip suggestions (e.g., 20%, 25%, 30%). Predicting an expected tip amount provides a dynamic, context-aware baseline that can help customers decide on a fair tip based on historical norms for that specific route and time.
 
-**The Solution:** This project introduces a predictive machine learning pipeline that shifts strategy from a reactive "guessing game" to a proactive, data-driven approach. By forecasting the exact tip amount based on spatial (pickup/drop-off zones) and temporal (time, day, rush hour) factors, this system empowers drivers to strategically position themselves in high-yield scenarios while offering transparent tip estimates for riders.
+**The Solution:** 
+
+This project introduces a predictive machine learning pipeline that shifts strategy from a reactive "guessing game" to a proactive, data-driven approach. By forecasting the exact tip amount based on spatial (pickup/drop-off zones) and temporal (time, day, rush hour) factors, this system empowers drivers to strategically position themselves in high-yield scenarios while offering transparent tip estimates for riders.
 ---
 ## 🧠 Overview
 
@@ -178,7 +180,7 @@ Create ,connect
 
     AWS_REGION = us-east-1
 
-    AWS_ECR_LOGIN_URI = demo>>  566373416292.dkr.ecr.ap-south-1.amazonaws.com
+    AWS_ECR_LOGIN_URI = demo>>  5663756516292.dkr.ecr.ap-south-1.amazonaws.com<<
 
     ECR_REPOSITORY_NAME = simple-app
 ---
